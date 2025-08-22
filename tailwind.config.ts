@@ -22,8 +22,8 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--background)", // Using custom CSS variable
+        foreground: "var(--foreground)", // Using custom CSS variable
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -45,12 +45,12 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--popover)", // Using custom CSS variable
+          foreground: "var(--popover-foreground)", // Using custom CSS variable
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--card)", // Using custom CSS variable
+          foreground: "var(--card-foreground)", // Using custom CSS variable
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -62,6 +62,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom colors for easier use
+        'dyad-bg': 'var(--dyad-primary-bg)',
+        'dyad-text': 'var(--dyad-primary-text)',
       },
       borderRadius: {
         lg: "var(--radius)",
