@@ -12,10 +12,10 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, imageUrl, descript
   return (
     <Link
       to={`/program/${id}`}
-      className="flex flex-col w-64 h-64 bg-dyad-bg border border-dyad-text/20 rounded-lg overflow-hidden shadow-lg
+      className="flex flex-col w-64 bg-dyad-bg border border-dyad-text/20 rounded-lg overflow-hidden shadow-lg
                  hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out group cursor-pointer"
     >
-      <div className="relative w-full h-3/5 overflow-hidden">
+      <div className="relative w-full aspect-video overflow-hidden"> {/* Modificato qui per 16:9 */}
         <img
           src={imageUrl}
           alt={title}
