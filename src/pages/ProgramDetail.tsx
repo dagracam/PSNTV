@@ -1,9 +1,10 @@
 import Layout from "@/components/Layout";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import PlaylistItem from "@/components/PlaylistItem";
+// PlaylistItem non è più necessario se la sezione della playlist viene rimossa
+// import PlaylistItem from "@/components/PlaylistItem";
 
-// Dati fittizi della playlist, ordinati dal più recente al più vecchio
+// Dati fittizi della playlist, non più usati direttamente per la visualizzazione ma mantenuti per riferimento se servisse in futuro
 const dummyPlaylistItems = [
   {
     id: "ep4",
@@ -39,6 +40,7 @@ const ProgramDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   // Stato per l'URL del video attualmente selezionato nel player
+  // Manteniamo questo stato per coerenza, anche se non ci sono elementi cliccabili nella playlist
   const [currentVideoUrl, setCurrentVideoUrl] = useState<string>(
     dummyPlaylistItems[0]?.videoUrl || "https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi"
   );
@@ -51,9 +53,10 @@ const ProgramDetail: React.FC = () => {
     // Altri dettagli del programma
   };
 
-  const handlePlaylistItemClick = (videoUrl: string) => {
-    setCurrentVideoUrl(videoUrl);
-  };
+  // La funzione handlePlaylistItemClick non è più necessaria se non c'è una playlist cliccabile
+  // const handlePlaylistItemClick = (videoUrl: string) => {
+  //   setCurrentVideoUrl(videoUrl);
+  // };
 
   return (
     <Layout>
@@ -70,22 +73,7 @@ const ProgramDetail: React.FC = () => {
             className="w-full h-full border-0"
           ></iframe>
         </div>
-
-        <section>
-          <h2 className="text-2xl font-bold text-dyad-text mb-4">Episodi e Contenuti Correlati</h2>
-          <div className="grid grid-cols-1 gap-4">
-            {dummyPlaylistItems.map((item) => (
-              <PlaylistItem
-                key={item.id}
-                {...item}
-                onClick={handlePlaylistItemClick} // Passa il gestore di click
-              />
-            ))}
-          </div>
-          <p className="text-sm text-dyad-text/60 mt-4">
-            Nota: I video in questa playlist sono esempi. Il cambio del video nel player avviene aggiornando l'URL dell'iframe. Se il servizio esterno non supporta la selezione di video tramite parametri URL, l'iframe potrebbe non cambiare come previsto.
-          </p>
-        </section>
+        {/* La sezione della playlist e la nota sono state rimosse */}
       </div>
     </Layout>
   );
