@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MadeWithDyad } from "./made-with-dyad";
-// Rimosso l'import del logo, useremo il percorso assoluto direttamente nel tag img
-// import logo from "../../public/LOGO PSN 2025 copia.png"; 
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="sticky top-0 z-40 w-full border-b border-dyad-text/20 bg-dyad-bg/40 backdrop-blur-sm p-4 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src="/LOGO PSN 2025 copia.png" alt="PSN Logo" className="h-10" /> {/* Percorso assoluto */}
+            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" /> {/* Percorso aggiornato */}
           </Link>
           {/* Qui potresti aggiungere la navigazione principale */}
         </div>
