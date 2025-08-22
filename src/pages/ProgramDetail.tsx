@@ -1,6 +1,38 @@
 import Layout from "@/components/Layout";
 import React from "react";
 import { useParams } from "react-router-dom";
+import PlaylistItem from "@/components/PlaylistItem"; // Importa il nuovo componente
+
+const dummyPlaylistItems = [
+  {
+    id: "ep1",
+    title: "Amici Pelosi - Episodio 1: L'Incontro",
+    thumbnailUrl: "https://via.placeholder.com/120x80/213058/d9d9d9?text=Ep1",
+    duration: "25:30",
+    videoUrl: "https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi", // Esempio, in realtà cambierebbe per ogni video
+  },
+  {
+    id: "ep2",
+    title: "Amici Pelosi - Episodio 2: Nuove Avventure",
+    thumbnailUrl: "https://via.placeholder.com/120x80/213058/d9d9d9?text=Ep2",
+    duration: "28:15",
+    videoUrl: "https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi",
+  },
+  {
+    id: "ep3",
+    title: "Amici Pelosi - Episodio 3: Un Legame Speciale",
+    thumbnailUrl: "https://via.placeholder.com/120x80/213058/d9d9d9?text=Ep3",
+    duration: "22:00",
+    videoUrl: "https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi",
+  },
+  {
+    id: "ep4",
+    title: "Amici Pelosi - Dietro le Quinte",
+    thumbnailUrl: "https://via.placeholder.com/120x80/213058/d9d9d9?text=Bonus",
+    duration: "15:45",
+    videoUrl: "https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi",
+  },
+];
 
 const ProgramDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -29,19 +61,16 @@ const ProgramDetail: React.FC = () => {
           ></iframe>
         </div>
 
-        {/* Qui potresti aggiungere altre sezioni come episodi correlati, cast, ecc. */}
         <section>
-          <h2 className="text-2xl font-bold text-dyad-text mb-4">Altri Contenuti</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-dyad-bg border border-dyad-text/20 p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-dyad-text">Episodio 1</h3>
-              <p className="text-dyad-text/70">Un'introduzione ai protagonisti.</p>
-            </div>
-            <div className="bg-dyad-bg border border-dyad-text/20 p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-dyad-text">Dietro le Quinte</h3>
-              <p className="text-dyad-text/70">Scopri come è stato realizzato il programma.</p>
-            </div>
+          <h2 className="text-2xl font-bold text-dyad-text mb-4">Episodi e Contenuti Correlati</h2>
+          <div className="grid grid-cols-1 gap-4">
+            {dummyPlaylistItems.map((item) => (
+              <PlaylistItem key={item.id} {...item} />
+            ))}
           </div>
+          <p className="text-sm text-dyad-text/60 mt-4">
+            Nota: I video in questa playlist sono esempi. In un'applicazione reale, i dati verrebbero caricati da un'API o da una fonte dati specifica per la playlist.
+          </p>
         </section>
       </div>
     </Layout>
