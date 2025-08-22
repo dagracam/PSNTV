@@ -6,17 +6,22 @@ interface PlaylistItemProps {
   title: string;
   thumbnailUrl: string;
   duration: string;
-  // In un'applicazione reale, qui potresti aggiungere un onClick per riprodurre il video
-  // o un Link per navigare a una pagina specifica del video.
+  videoUrl: string; // Aggiunto videoUrl per il player
+  onClick: (videoUrl: string) => void; // Aggiunto gestore di click
 }
 
 const PlaylistItem: React.FC<PlaylistItemProps> = ({
   title,
   thumbnailUrl,
   duration,
+  videoUrl,
+  onClick,
 }) => {
   return (
-    <div className="flex items-center space-x-4 p-3 bg-dyad-bg border border-dyad-text/20 rounded-lg shadow-sm hover:bg-dyad-bg/80 transition-colors duration-200 cursor-pointer">
+    <div
+      className="flex items-center space-x-4 p-3 bg-dyad-bg border border-dyad-text/20 rounded-lg shadow-sm hover:bg-dyad-bg/80 transition-colors duration-200 cursor-pointer"
+      onClick={() => onClick(videoUrl)} // Chiamata onClick con l'URL del video
+    >
       <div className="relative w-24 h-16 flex-shrink-0 rounded-md overflow-hidden">
         <img
           src={thumbnailUrl}
