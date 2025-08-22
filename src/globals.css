@@ -98,3 +98,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .bg-radial-gradient-dark-edges {
+    background-image: radial-gradient(circle at center, var(--dyad-primary-bg) 0%, #000000 100%);
+  }
+}

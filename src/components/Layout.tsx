@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-dyad-bg text-dyad-text">
+    <div className="min-h-screen flex flex-col bg-radial-gradient-dark-edges text-dyad-text">
       <header className="sticky top-0 z-40 w-full border-b border-dyad-text/20 bg-dyad-bg p-4 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold text-dyad-text hover:text-dyad-text/80 transition-colors duration-200">
