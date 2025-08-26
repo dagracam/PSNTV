@@ -14,8 +14,8 @@ interface ProgramCardProps {
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
-    <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0"> {/* Aggiunto w-64 e flex-shrink-0 */}
-      <div className="relative w-full h-48 overflow-hidden rounded-lg">
+    <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0">
+      <div className="relative w-full aspect-video overflow-hidden rounded-lg"> {/* Modificato h-48 in aspect-video */}
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
             src="/days-of-war.png"
