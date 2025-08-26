@@ -14,13 +14,13 @@ interface ProgramCardProps {
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
-    <Link to={`/program/${program.id}`} className="group block">
+    <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0"> {/* Aggiunto w-64 e flex-shrink-0 */}
       <div className="relative w-full h-48 overflow-hidden rounded-lg">
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
             src="/days-of-war.png"
             alt="Days of War"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg" // Modificato object-contain in object-cover e aggiunto h-full
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
           />
         </div>
       </div>
