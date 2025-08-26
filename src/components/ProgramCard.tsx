@@ -1,35 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Badge } from "./ui/badge";
 
 interface ProgramCardProps {
-  id: string;
-  title: string;
-  imageUrl: string;
-  description: string;
+  program: {
+    id: string;
+    title: string;
+    image: string;
+    category: string;
+    description: string;
+  };
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, imageUrl, description }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
-    <Link
-      to={`/program/${id}`}
-      className="flex flex-col w-64 bg-dyad-bg border border-dyad-text/20 rounded-lg overflow-hidden shadow-lg
-                 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out group cursor-pointer"
-    >
-      <div className="relative w-full aspect-video overflow-hidden"> {/* Modificato qui per 16:9 */}
+    <Link to={`/program/${program.id}`} className="group block">
+      <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
         <img
-          src={imageUrl}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
+          src={program.image}
+          alt={program.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center"> {/* Aggiunto flexbox per centrare l'immagine */}
+          <img 
+            src="/days-of-war.png" 
+            alt="Days of War" 
+            className="max-w-[80%] max-h-[80%] object-contain" // Stile per l'immagine overlay
+          />
+        </div>
       </div>
       <div className="p-3 flex-grow flex flex-col justify-between">
         <h3 className="text-lg font-semibold text-dyad-text group-hover:text-dyad-text/90 transition-colors duration-200 truncate">
-          {title}
+          {program.title}
         </h3>
-        <p className="text-sm text-dyad-text/70 mt-1 line-clamp-2">
-          {description}
+        <p className="text-sm text-dyad-text/70 mb-2 line-clamp-2">
+          {program.description}
         </p>
+        <div className="flex justify-between items-center mt-auto">
+          <Badge variant="secondary">{program.category}</Badge>
+          {/* Qui potresti aggiungere altre informazioni o azioni */}
+        </div>
       </div>
     </Link>
   );
