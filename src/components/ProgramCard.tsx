@@ -15,13 +15,12 @@ interface ProgramCardProps {
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
     <Link to={`/program/${program.id}`} className="group block">
-      <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-        {/* Rimosso l'img con program.image, ora days-of-war.png è l'unica immagine */}
+      <div className="relative w-full h-48 overflow-hidden rounded-lg"> {/* Modificato da rounded-t-lg a rounded-lg */}
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
-            src="/days-of-war.png" // Ora questa è l'unica immagine visualizzata
+            src="/days-of-war.png"
             alt="Days of War"
-            className="w-full object-contain transition-transform duration-300 group-hover:scale-105" // Mantenuto l'effetto hover
+            className="w-full object-contain transition-transform duration-300 group-hover:scale-105 rounded-lg" // Modificato da rounded-t-lg a rounded-lg
           />
         </div>
       </div>
