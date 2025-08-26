@@ -3,14 +3,14 @@ import ProgramCard from "@/components/ProgramCard";
 import React from "react";
 
 const dummyPrograms = [
-  { id: '1', title: 'Amici Pelosi', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Amici+Pelosi', description: 'Le avventure dei nostri amici a quattro zampe.', category: 'Animazione' },
-  { id: '2', title: 'Notizie del Giorno', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Notizie+del+Giorno', description: 'Tutti gli aggiornamenti in tempo reale.', category: 'Notizie' },
-  { id: '3', title: 'Cucina Italiana', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Cucina+Italiana', description: 'Ricette tradizionali e moderne.', category: 'Cucina' },
-  { id: '4', title: 'Documentari Natura', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Documentari+Natura', description: 'Esplora la bellezza del mondo animale.', category: 'Documentari' },
-  { id: '5', title: 'Serie TV Drammatiche', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Serie+TV+Drammatiche', description: 'Storie avvincenti e personaggi complessi.', category: 'Serie TV' },
-  { id: '6', title: 'Commedie Italiane', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Commedie+Italiane', description: 'Per una serata all\'insegna del buon umore.', category: 'Commedia' },
-  { id: '7', title: 'Sport Live', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Sport+Live', description: 'Le migliori partite e gli eventi sportivi.', category: 'Sport' },
-  { id: '8', title: 'Musica e Concerti', image: 'https://via.placeholder.com/300x180/213058/d9d9d9?text=Musica+e+Concerti', description: 'Esibizioni dal vivo e speciali musicali.', category: 'Musica' },
+  { id: '1', title: 'Amici Pelosi', image: '/placeholder.svg', description: 'Le avventure dei nostri amici a quattro zampe.', category: 'Animazione' },
+  { id: '2', title: 'Notizie del Giorno', image: '/placeholder.svg', description: 'Tutti gli aggiornamenti in tempo reale.', category: 'Notizie' },
+  { id: '3', title: 'Cucina Italiana', image: '/placeholder.svg', description: 'Ricette tradizionali e moderne.', category: 'Cucina' },
+  { id: '4', title: 'Documentari Natura', image: '/placeholder.svg', description: 'Esplora la bellezza del mondo animale.', category: 'Documentari' },
+  { id: '5', title: 'Serie TV Drammatiche', image: '/placeholder.svg', description: 'Storie avvincenti e personaggi complessi.', category: 'Serie TV' },
+  { id: '6', title: 'Commedie Italiane', image: '/placeholder.svg', description: 'Per una serata all\'insegna del buon umore.', category: 'Commedia' },
+  { id: '7', title: 'Sport Live', image: '/placeholder.svg', description: 'Le migliori partite e gli eventi sportivi.', category: 'Sport' },
+  { id: '8', title: 'Musica e Concerti', image: '/placeholder.svg', description: 'Esibizioni dal vivo e speciali musicali.', category: 'Musica' },
 ];
 
 const Index = () => {
