@@ -19,13 +19,13 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         <img
           src={program.image}
           alt={program.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300" // Rimosso group-hover:scale-105 da qui
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
             src="/days-of-war.png"
             alt="Days of War"
-            className="w-full object-contain" // Modificato per riempire la larghezza
+            className="w-full object-contain transition-transform duration-300 group-hover:scale-105" // Aggiunto group-hover:scale-105 qui
           />
         </div>
       </div>
