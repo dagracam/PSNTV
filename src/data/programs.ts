@@ -6,14 +6,14 @@ export const programs: Program[] = [
     title: 'Per Sempre Scugnizzo', // Titolo aggiornato
     description: 'Un viaggio emozionante attraverso le storie di persone comuni che hanno lasciato un segno indelebile.',
     imageUrl: '/images/premio-per-sempre-scugnizzo.jpg', // Immagine aggiornata
-    videoUrl: 'https://www.raiplay.it/video/2024/05/Premio-per-sempre---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi_Video_1', // URL unico di esempio
   },
   {
     id: 'premio-diego-special',
     title: 'Per Sempre Con Diego',
     description: 'Un tributo speciale a Diego Armando Maradona, ripercorrendo i momenti indimenticabili della sua carriera e della sua vita.',
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
-    videoUrl: 'https://www.raiplay.it/video/2024/05/Premio-per-sempre---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Con_Diego_Video_2', // URL unico di esempio
   },
   {
     id: 'doc-nelle-tue-mani',
