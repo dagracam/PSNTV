@@ -48,7 +48,7 @@ const ProgramDetail: React.FC = () => {
   // In un'applicazione reale, qui faresti un fetch dei dati del programma usando l'ID
   const program = {
     id: id,
-    title: `Programma ${id}: Amici Pelosi`, // Esempio di titolo dinamico
+    title: id === '1' ? 'Amici Pelosi' : `Programma ${id}`, // Modifica qui per il titolo
     description: "Questa è la descrizione dettagliata del programma Amici Pelosi. Qui puoi trovare tutti gli episodi e le informazioni relative a questa serie affascinante sui nostri amici a quattro zampe.",
     // Altri dettagli del programma
   };
