@@ -13,7 +13,12 @@ const Index = () => {
   // Using the actual programs data for display
   // For demonstration, let's slice the programs array for different sections
   const allFeatured = programs.slice(0, 4);
-  const featuredPrograms = [allFeatured[1], allFeatured[0], ...allFeatured.slice(2)]; // Swap first two
+  // Ensure 'premio-diego-special' is first and 'premio-per-sempre-original' is second for specific links
+  const featuredPrograms = [
+    programs.find(p => p.id === 'premio-diego-special')!,
+    programs.find(p => p.id === 'premio-per-sempre-original')!,
+    ...allFeatured.filter(p => p.id !== 'premio-diego-special' && p.id !== 'premio-per-sempre-original')
+  ];
 
   const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
   const recommendedPrograms = programs; // Display all for recommended
@@ -38,8 +43,12 @@ const Index = () => {
           <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {featuredPrograms.map((program, index) => (
               <React.Fragment key={program.id}>
-                {index === 0 && program.id === 'premio-diego-special' ? (
+                {program.id === 'premio-diego-special' ? (
                   <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
+                    <ProgramCard program={program} disableLink={true} />
+                  </Link>
+                ) : program.id === 'premio-per-sempre-original' ? (
+                  <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
                     <ProgramCard program={program} disableLink={true} />
                   </Link>
                 ) : (

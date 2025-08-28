@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
-import PerSempreConDiego from "./pages/PerSempreConDiego"; // Importa la nuova pagina
+import PerSempreConDiego from "./pages/PerSempreConDiego";
+import PerSempreScugnizzo from "./pages/PerSempreScugnizzo"; // Importa la nuova pagina
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/program/:id" element={<ProgramDetail />} />
-          <Route path="/persemprecondiego" element={<PerSempreConDiego />} /> {/* Nuova rotta */}
+          <Route path="/persemprecondiego" element={<PerSempreConDiego />} />
+          <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} /> {/* Nuova rotta */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
