@@ -11,7 +11,8 @@ const Index = () => {
 
   // Using the actual programs data for display
   // For demonstration, let's slice the programs array for different sections
-  const featuredPrograms = programs.slice(0, 4);
+  const allFeatured = programs.slice(0, 4);
+  const featuredPrograms = [allFeatured[1], allFeatured[0], ...allFeatured.slice(2)]; // Swap first two
   const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
   const recommendedPrograms = programs; // Display all for recommended
 
