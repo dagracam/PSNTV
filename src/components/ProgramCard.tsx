@@ -14,7 +14,7 @@ interface ProgramCardProps {
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
-    <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0 snap-start">
+    <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0">
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
@@ -31,6 +31,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         <p className="text-sm text-dyad-text/70 mb-2 line-clamp-2">
           {program.description}
         </p>
+        {/* Rimosso il div che conteneva il Badge */}
       </div>
     </Link>
   );
