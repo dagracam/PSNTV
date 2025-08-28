@@ -1,31 +1,67 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { programs } from '../data/programs';
-import ProgramCard from '../components/ProgramCard';
+import Layout from "@/components/Layout";
+import ProgramCard from "@/components/ProgramCard";
+import React from "react";
+import useDragScroll from "@/hooks/useDragScroll"; // Importa il nuovo hook
 
-const Index: React.FC = () => {
+const dummyPrograms = [
+  { id: '1', title: 'Amici Pelosi', image: '/placeholder.svg', description: 'Le avventure dei nostri amici a quattro zampe.', category: 'Animazione' },
+  { id: '2', title: 'Notizie del Giorno', image: '/placeholder.svg', description: 'Tutti gli aggiornamenti in tempo reale.', category: 'Notizie' },
+  { id: '3', title: 'Cucina Italiana', image: '/placeholder.svg', description: 'Ricette tradizionali e moderne.', category: 'Cucina' },
+  { id: '4', title: 'Documentari Natura', image: '/placeholder.svg', description: 'Esplora la bellezza del mondo animale.', category: 'Documentari' },
+  { id: '5', title: 'Serie TV Drammatiche', image: '/placeholder.svg', description: 'Storie avvincenti e personaggi complessi.', category: 'Serie TV' },
+  { id: '6', title: 'Commedie Italiane', image: '/placeholder.svg', description: 'Per una serata all\'insegna del buon umore.', category: 'Commedia' },
+  { id: '7', title: 'Sport Live', image: '/placeholder.svg', description: 'Le migliori partite e gli eventi sportivi.', category: 'Sport' },
+  { id: '8', title: 'Musica e Concerti', image: '/placeholder.svg', description: 'Esibizioni dal vivo e speciali musicali.', category: 'Musica' },
+];
+
+const Index = () => {
+  const featuredRef = useDragScroll<HTMLDivElement>();
+  const newArrivalsRef = useDragScroll<HTMLDivElement>();
+  const recommendedRef = useDragScroll<HTMLDivElement>();
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Static banner */}
-      <div className="relative w-full h-48 rounded-lg overflow-hidden mb-8">
-        <img
-          src="/images/premio-per-sempre-con-diego.jpg"
-          alt="Premio Per Sempre con Diego"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
-          <h2 className="text-3xl font-bold text-white">Premio Per Sempre con Diego</h2>
+    <Layout>
+      <div className="space-y-10">
+        {/* Player iframe */}
+        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
+          <iframe
+            src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
+            title="Live Player"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+            scrolling="no"
+          ></iframe>
         </div>
-      </div>
 
-      {/* Program cards */}
-      <h2 className="text-2xl font-bold text-dyad-text mb-6">Programmi in evidenza</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {programs.map((program) => (
-          <ProgramCard key={program.id} program={program} />
-        ))}
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
+          <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+            {dummyPrograms.slice(0, 4).map((program) => (
+              <ProgramCard key={program.id} program={program} />
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
+          <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+            {dummyPrograms.slice(4, 8).map((program) => (
+              <ProgramCard key={program.id} program={program} />
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Consigliati per Te</h2>
+          <div ref={recommendedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+            {dummyPrograms.map((program) => (
+              <ProgramCard key={program.id} program={program} />
+            ))}
+          </div>
+        </section>
       </div>
-    </div>
+    </Layout>
   );
 };
 
