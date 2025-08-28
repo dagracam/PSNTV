@@ -11,10 +11,10 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col">
-      <header className="sticky top-0 z-40 w-full bg-black shadow-lg border-b border-dyad-border"> {/* Modificato qui: bg-black e shadow-lg */}
+      <header className="sticky top-0 z-40 w-full bg-black/50 backdrop-blur-md shadow-lg border-b border-dyad-border"> {/* Modificato qui per l'effetto liquid glass */}
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
-            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
+            <img src="/logo-psn-liquid-glass.png" alt="PSN Logo" className="h-10" /> {/* Aggiornato il percorso dell'immagine */}
           </Link>
           {/* Qui potresti aggiungere la navigazione principale */}
         </div>
