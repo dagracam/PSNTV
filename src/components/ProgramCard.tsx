@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Rimosso: import { Badge } from "./ui/badge"; // Non più necessario
+import { Program } from '../types/program'; // Import the Program type
 
 interface ProgramCardProps {
-  program: {
-    id: string;
-    title: string;
-    image: string;
-    category: string;
-    description: string;
-  };
+  program: Program; // Use the imported Program type
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
@@ -18,8 +12,8 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
-            src="/days-of-war.png"
-            alt="Days of War"
+            src={program.imageUrl} // Usa program.imageUrl
+            alt={program.title} // Usa program.title per il testo alt
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
           />
         </div>
@@ -31,7 +25,6 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         <p className="text-sm text-dyad-text/70 mb-2 line-clamp-2">
           {program.description}
         </p>
-        {/* Rimosso il div che conteneva il Badge */}
       </div>
     </Link>
   );
