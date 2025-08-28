@@ -25,6 +25,7 @@ const Index = () => {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             className="w-full h-full border-0"
+            scrolling="no" // Aggiunto per rimuovere la barra di scorrimento
           ></iframe>
         </div>
 
