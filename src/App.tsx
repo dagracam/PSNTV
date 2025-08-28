@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
-import ArticleDetail from "./pages/ArticleDetail"; // Importa la nuova pagina ArticleDetail
 
 const queryClient = new QueryClient();
 
@@ -20,7 +19,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/program/:id" element={<ProgramDetail />} />
-          <Route path="/article/:id" element={<ArticleDetail />} /> {/* Nuova rotta per gli articoli */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

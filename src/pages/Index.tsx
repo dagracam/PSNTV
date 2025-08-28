@@ -140,7 +140,7 @@ const Index: React.FC = () => {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
         <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-          {dummyPrograms.map((program) => ( // Rimosso .slice(0, 4) per mostrare tutti i programmi
+          {dummyPrograms.slice(0, 4).map((program) => (
             <ProgramCard key={program.id} program={program} />
           ))}
         </div>
