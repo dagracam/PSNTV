@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import ProgramCard from "@/components/ProgramCard";
-import ArticleCard from "@/components/ArticleCard";
+// Rimosso: import ArticleCard from "@/components/ArticleCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Dati dummy per i programmi
@@ -83,33 +83,33 @@ const dummyPrograms = [
   },
 ];
 
-// Dati dummy per gli articoli
-const dummyArticles = [
-  {
-    id: "a1",
-    title: "Il Futuro dell'Intelligenza Artificiale",
-    description: "Un'analisi approfondita su come l'IA sta plasmando il nostro mondo.",
-    imageUrl: "/placeholder-article-1.jpg",
-    date: "15 Maggio 2024",
-    author: "Redazione PSN",
-  },
-  {
-    id: "a2",
-    title: "Dieci Destinazioni da Sogno per il 2025",
-    description: "Scopri i luoghi imperdibili per la tua prossima avventura.",
-    imageUrl: "/placeholder-article-2.jpg",
-    date: "10 Maggio 2024",
-    author: "Viaggiatore Curioso",
-  },
-  {
-    id: "a3",
-    title: "Benefici del Yoga per la Mente e il Corpo",
-    description: "Come la pratica dello yoga può migliorare la tua vita quotidiana.",
-    imageUrl: "/placeholder-article-3.jpg",
-    date: "08 Maggio 2024",
-    author: "Esperto di Benessere",
-  },
-];
+// Rimosso: Dati dummy per gli articoli
+// const dummyArticles = [
+//   {
+//     id: "a1",
+//     title: "Il Futuro dell'Intelligenza Artificiale",
+//     description: "Un'analisi approfondita su come l'IA sta plasmando il nostro mondo.",
+//     imageUrl: "/placeholder-article-1.jpg",
+//     date: "15 Maggio 2024",
+//     author: "Redazione PSN",
+//   },
+//   {
+//     id: "a2",
+//     title: "Dieci Destinazioni da Sogno per il 2025",
+//     description: "Scopri i luoghi imperdibili per la tua prossima avventura.",
+//     imageUrl: "/placeholder-article-2.jpg",
+//     date: "10 Maggio 2024",
+//     author: "Viaggiatore Curioso",
+//   },
+//   {
+//     id: "a3",
+//     title: "Benefici del Yoga per la Mente e il Corpo",
+//     description: "Come la pratica dello yoga può migliorare la tua vita quotidiana.",
+//     imageUrl: "/placeholder-article-3.jpg",
+//     date: "08 Maggio 2024",
+//     author: "Esperto di Benessere",
+//   },
+// ];
 
 const Index: React.FC = () => {
   const featuredRef = useRef<HTMLDivElement>(null);
@@ -146,15 +146,15 @@ const Index: React.FC = () => {
         </div>
       </section>
 
-      {/* Sezione Ultimi Articoli */}
-      <section className="mb-12">
+      {/* Rimosso: Sezione Ultimi Articoli */}
+      {/* <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6 text-dyad-text">Ultimi Articoli</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {dummyArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Sezione Categorie */}
       <section className="mb-12">
