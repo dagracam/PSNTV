@@ -7,6 +7,7 @@
     --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
     --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
+    --dyad-edge-bg: #10182c; /* Nuovo colore per i bordi del gradiente */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
@@ -52,6 +53,7 @@
     --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
     --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
+    --dyad-edge-bg: #10182c; /* Nuovo colore per i bordi del gradiente */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
@@ -97,7 +99,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at center, var(--dyad-primary-bg) 0%, var(--dyad-edge-bg) 100%);
+    @apply text-foreground;
   }
 }
 
