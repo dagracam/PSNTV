@@ -10,7 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col"> {/* Aggiunto flex-col per il layout */}
+    <div className="min-h-screen text-dyad-text flex flex-col"> {/* Rimosso bg-dyad-bg per mostrare il gradiente del body */}
       <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
