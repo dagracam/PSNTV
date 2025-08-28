@@ -10,16 +10,16 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col">
-      <header className="sticky top-0 z-40 w-full bg-black/50 backdrop-blur-md shadow-lg border-b border-dyad-border"> {/* Modificato qui per l'effetto liquid glass */}
+    <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col"> {/* Aggiunto flex-col per il layout */}
+      <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
-            <img src="/logo-psn-liquid-glass.png" alt="PSN Logo" className="h-10" /> {/* Aggiornato il percorso dell'immagine */}
+            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
           </Link>
           {/* Qui potresti aggiungere la navigazione principale */}
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main>
+      <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
       
       {/* Nuovo Footer per il contenuto principale */}
       <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
