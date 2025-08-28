@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
-            <img src="/psn-2024-trasparente.png" alt="PSN Logo" className="h-10" /> {/* Percorso aggiornato */}
+            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" /> {/* Percorso aggiornato */}
           </Link>
           {/* Qui potresti aggiungere la navigazione principale */}
         </div>
