@@ -13,7 +13,7 @@ export const programs: Program[] = [
     title: 'Per Sempre Con Diego',
     description: 'Un tributo speciale a Diego Armando Maradona, ripercorrendo i momenti indimenticabili della sua carriera e della sua vita.',
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Con_Diego_Video_2', // URL unico di esempio
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego', // URL aggiornato
   },
   {
     id: 'doc-nelle-tue-mani',
