@@ -10,8 +10,8 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col"> {/* Aggiunto flex-col per il layout */}
-      <header className="sticky top-0 z-40 w-full bg-[var(--dyad-footer-bg)] border-b border-dyad-border"> {/* Modificato qui */}
+    <div className="min-h-screen bg-dyad-bg text-dyad-text flex flex-col">
+      <header className="sticky top-0 z-40 w-full bg-black shadow-lg border-b border-dyad-border"> {/* Modificato qui: bg-black e shadow-lg */}
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
             <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Qui potresti aggiungere la navigazione principale */}
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
+      <main className="container mx-auto px-4 flex-grow">{children}</main>
       
       {/* Nuovo Footer per il contenuto principale */}
       <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
