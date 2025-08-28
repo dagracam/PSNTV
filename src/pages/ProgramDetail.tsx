@@ -29,8 +29,10 @@ const ProgramDetail: React.FC = () => {
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
-            src={program.videoUrl} // Usa l'URL del video specifico del programma
-            title={program.title}
+            width="100%"
+            height="545"
+            src="https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full border-0"
