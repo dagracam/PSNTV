@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import ProgramCard from "@/components/ProgramCard";
-// Rimosso: import ArticleCard from "@/components/ArticleCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Dati dummy per i programmi
@@ -83,58 +82,12 @@ const dummyPrograms = [
   },
 ];
 
-// Rimosso: Dati dummy per gli articoli
-// const dummyArticles = [
-//   {
-//     id: "a1",
-//     title: "Il Futuro dell'Intelligenza Artificiale",
-//     description: "Un'analisi approfondita su come l'IA sta plasmando il nostro mondo.",
-//     imageUrl: "/placeholder-article-1.jpg",
-//     date: "15 Maggio 2024",
-//     author: "Redazione PSN",
-//   },
-//   {
-//     id: "a2",
-//     title: "Dieci Destinazioni da Sogno per il 2025",
-//     description: "Scopri i luoghi imperdibili per la tua prossima avventura.",
-//     imageUrl: "/placeholder-article-2.jpg",
-//     date: "10 Maggio 2024",
-//     author: "Viaggiatore Curioso",
-//   },
-//   {
-//     id: "a3",
-//     title: "Benefici del Yoga per la Mente e il Corpo",
-//     description: "Come la pratica dello yoga può migliorare la tua vita quotidiana.",
-//     imageUrl: "/placeholder-article-3.jpg",
-//     date: "08 Maggio 2024",
-//     author: "Esperto di Benessere",
-//   },
-// ];
-
 const Index: React.FC = () => {
   const featuredRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="py-8">
-      {/* Hero Section */}
-      <section className="relative h-[400px] bg-cover bg-center rounded-lg overflow-hidden mb-12" style={{ backgroundImage: "url('/hero-banner.jpg')" }}>
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-extrabold mb-4 leading-tight">Benvenuto su PSN</h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">La tua fonte di informazione e intrattenimento. Esplora i nostri programmi e articoli esclusivi.</p>
-            <div className="flex justify-center">
-              <Input
-                type="text"
-                placeholder="Cerca programmi o articoli..."
-                className="w-full max-w-md bg-white/90 text-dyad-text border-none focus:ring-2 focus:ring-dyad-primary-text"
-              />
-              <Button className="ml-2 bg-dyad-accent hover:bg-dyad-accent/90 text-white">
-                <Search className="h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Rimosso: Hero Section */}
 
       {/* Sezione In Evidenza */}
       <section className="mb-12">
@@ -145,16 +98,6 @@ const Index: React.FC = () => {
           ))}
         </div>
       </section>
-
-      {/* Rimosso: Sezione Ultimi Articoli */}
-      {/* <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-dyad-text">Ultimi Articoli</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {dummyArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </section> */}
 
       {/* Sezione Categorie */}
       <section className="mb-12">
