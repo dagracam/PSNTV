@@ -71,7 +71,7 @@ const ProgramDetail: React.FC = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full border-0"
-            scrolling="no" // Aggiunto per rimuovere la barra di scorrimento
+            // Rimosso scrolling="no" per riabilitare la barra di scorrimento
           ></iframe>
         </div>
         {/* La sezione della playlist e la nota sono state rimosse */}
