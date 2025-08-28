@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
       
       {/* Nuovo Footer per il contenuto principale */}
-      <footer className="w-full bg-dyad-bg/80 backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
+      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
         <div className="container mx-auto flex flex-col items-center space-y-4">
           <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-12" />
           <div className="text-sm text-dyad-text/70 space-y-1">

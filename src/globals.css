@@ -6,6 +6,7 @@
   :root {
     --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
+    --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
@@ -50,6 +51,7 @@
   .dark {
     --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
+    --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
