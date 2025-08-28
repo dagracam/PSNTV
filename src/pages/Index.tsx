@@ -1,68 +1,96 @@
-import Layout from "@/components/Layout";
-import ProgramCard from "@/components/ProgramCard";
-import React from "react";
-import useDragScroll from "@/hooks/useDragScroll"; // Importa il nuovo hook
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { PlayCircle } from "lucide-react";
 
-const dummyPrograms = [
-  { id: '1', title: 'Amici Pelosi', image: '/placeholder.svg', description: 'Le avventure dei nostri amici a quattro zampe.', category: 'Animazione' },
-  { id: '2', title: 'Notizie del Giorno', image: '/placeholder.svg', description: 'Tutti gli aggiornamenti in tempo reale.', category: 'Notizie' },
-  { id: '3', title: 'Cucina Italiana', image: '/placeholder.svg', description: 'Ricette tradizionali e moderne.', category: 'Cucina' },
-  { id: '4', title: 'Documentari Natura', image: '/placeholder.svg', description: 'Esplora la bellezza del mondo animale.', category: 'Documentari' },
-  { id: '5', title: 'Serie TV Drammatiche', image: '/placeholder.svg', description: 'Storie avvincenti e personaggi complessi.', category: 'Serie TV' },
-  { id: '6', title: 'Commedie Italiane', image: '/placeholder.svg', description: 'Per una serata all\'insegna del buon umore.', category: 'Commedia' },
-  { id: '7', title: 'Sport Live', image: '/placeholder.svg', description: 'Le migliori partite e gli eventi sportivi.', category: 'Sport' },
-  { id: '8', title: 'Musica e Concerti', image: '/placeholder.svg', description: 'Esibizioni dal vivo e speciali musicali.', category: 'Musica' },
-];
+// Componente per una singola scheda di programma
+interface ProgramCardProps {
+  program: {
+    id: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    category: string;
+    isLive: boolean;
+  };
+}
 
-const Index = () => {
-  const featuredRef = useDragScroll<HTMLDivElement>();
-  const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  const recommendedRef = useDragScroll<HTMLDivElement>();
+const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => (
+  <Card className="w-[300px] flex-shrink-0 bg-dyad-card text-dyad-text border-dyad-border shadow-lg">
+    <div className="relative">
+      <img src={program.imageUrl} alt={program.title} className="w-full h-40 object-cover rounded-t-lg" />
+      {program.isLive && (
+        <Badge variant="destructive" className="absolute top-2 left-2 bg-red-600 text-white">LIVE</Badge>
+      )}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-t-lg">
+        <PlayCircle className="h-12 w-12 text-white" />
+      </div>
+    </div>
+    <CardHeader>
+      <CardTitle className="text-lg font-semibold">{program.title}</CardTitle>
+      <Badge variant="secondary" className="self-start">{program.category}</Badge>
+    </CardHeader>
+    <CardContent>
+      <p className="text-sm text-dyad-text/80 line-clamp-2">{program.description}</p>
+      <Button className="mt-4 w-full bg-dyad-primary text-dyad-primary-foreground hover:bg-dyad-primary/90">
+        Guarda Ora
+      </Button>
+    </CardContent>
+  </Card>
+);
+
+// Genera un array di 25 programmi fittizi
+const generateDummyPrograms = (count: number) => {
+  const programs = [];
+  for (let i = 1; i <= count; i++) {
+    programs.push({
+      id: `program-${i}`,
+      title: `Programma ${i}`,
+      description: `Questa è una descrizione dettagliata per il Programma ${i}. Parla di argomenti interessanti e attuali.`,
+      imageUrl: `https://picsum.photos/seed/${i}/300/200`, // Immagini diverse per ogni scheda
+      category: i % 3 === 0 ? "Notizie" : i % 3 === 1 ? "Sport" : "Cultura",
+      isLive: i % 5 === 0, // Alcuni saranno live
+    });
+  }
+  return programs;
+};
+
+const dummyPrograms = generateDummyPrograms(25); // Genera 25 programmi
+
+const IndexPage: React.FC = () => {
+  const featuredRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Layout>
-      <div className="space-y-10">
-        {/* Player iframe */}
-        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
-          <iframe
-            src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
-            title="Live Player"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full border-0"
-            scrolling="no"
-          ></iframe>
+    <div className="py-8">
+      <section className="mb-12">
+        <h1 className="text-4xl font-extrabold text-center mb-4 text-dyad-text">Benvenuto su PSN</h1>
+        <p className="text-xl text-center text-dyad-text/80 max-w-2xl mx-auto">
+          La tua fonte di informazione e intrattenimento. Scopri i nostri programmi in diretta e on-demand.
+        </p>
+        <div className="flex justify-center mt-8 space-x-4">
+          <Button className="bg-dyad-primary text-dyad-primary-foreground hover:bg-dyad-primary/90 px-6 py-3 text-lg">
+            Esplora i Programmi
+          </Button>
+          <Button variant="outline" className="border-dyad-border text-dyad-text hover:bg-dyad-muted px-6 py-3 text-lg">
+            Registrati
+          </Button>
         </div>
+      </section>
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
-          <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {dummyPrograms.slice(0, 4).map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
+        <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+          {dummyPrograms.map((program) => ( // Ora mappa tutti i 25 programmi
+            <ProgramCard key={program.id} program={program} />
+          ))}
+        </div>
+      </section>
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
-          <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {dummyPrograms.slice(4, 8).map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Consigliati per Te</h2>
-          <div ref={recommendedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {dummyPrograms.map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </Layout>
+      {/* Altre sezioni della pagina possono essere aggiunte qui */}
+    </div>
   );
 };
 
-export default Index;
+export default IndexPage;
