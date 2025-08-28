@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import ProgramCard from "@/components/ProgramCard";
 import React from "react";
+import useDragScroll from "@/hooks/useDragScroll"; // Importa il nuovo hook
 
 const dummyPrograms = [
   { id: '1', title: 'Amici Pelosi', image: '/placeholder.svg', description: 'Le avventure dei nostri amici a quattro zampe.', category: 'Animazione' },
@@ -14,11 +15,15 @@ const dummyPrograms = [
 ];
 
 const Index = () => {
+  const featuredRef = useDragScroll<HTMLDivElement>();
+  const newArrivalsRef = useDragScroll<HTMLDivElement>();
+  const recommendedRef = useDragScroll<HTMLDivElement>();
+
   return (
     <Layout>
       <div className="space-y-10">
         {/* Player iframe */}
-        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl"> {/* Rimosso mb-8 */}
+        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
             src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
             title="Live Player"
@@ -31,7 +36,7 @@ const Index = () => {
 
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
-          <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+          <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {dummyPrograms.slice(0, 4).map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
@@ -40,7 +45,7 @@ const Index = () => {
 
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
-          <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+          <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {dummyPrograms.slice(4, 8).map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
@@ -49,7 +54,7 @@ const Index = () => {
 
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Consigliati per Te</h2>
-          <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+          <div ref={recommendedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {dummyPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
