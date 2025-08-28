@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Badge } from "./ui/badge";
+// Rimosso: import { Badge } from "./ui/badge"; // Non più necessario
 
 interface ProgramCardProps {
   program: {
     id: string;
     title: string;
-    image: string; // Questo prop non sarà più usato direttamente per l'immagine, ma mantenuto per compatibilità
+    image: string;
     category: string;
     description: string;
   };
@@ -15,7 +15,7 @@ interface ProgramCardProps {
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
     <Link to={`/program/${program.id}`} className="group block w-64 flex-shrink-0">
-      <div className="relative w-full aspect-video overflow-hidden rounded-lg"> {/* Modificato h-48 in aspect-video */}
+      <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
           <img
             src="/days-of-war.png"
@@ -31,10 +31,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         <p className="text-sm text-dyad-text/70 mb-2 line-clamp-2">
           {program.description}
         </p>
-        <div className="flex justify-between items-center mt-auto">
-          <Badge variant="secondary">{program.category}</Badge>
-          {/* Qui potresti aggiungere altre informazioni o azioni */}
-        </div>
+        {/* Rimosso il div che conteneva il Badge */}
       </div>
     </Link>
   );
