@@ -25,6 +25,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
         <div className="container mx-auto flex flex-col items-center space-y-4">
           <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-12" />
+          <p className="text-sm">
+            <a href="mailto:redazione@persemprenews.it" className="text-dyad-link-blue hover:underline">
+              Contattaci
+            </a>
+          </p>
           <div className="text-sm text-dyad-text/70 space-y-1">
             <p>© 2025 - PSN - Tutti i diritti riservati. P.Iva 09786561218</p>
             <p>La Voce degli Ultimi Cooperativa Giornalistica - Sede legale: Via A. Camillo De Meis, 326 – 80147 – Napoli (NA)</p>

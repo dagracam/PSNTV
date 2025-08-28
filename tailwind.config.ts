@@ -65,6 +65,7 @@ export default {
         // Custom colors for easier use
         'dyad-bg': 'var(--dyad-primary-bg)',
         'dyad-text': 'var(--dyad-primary-text)',
+        'dyad-link-blue': '#0099FF', // Nuovo colore per i link
       },
       borderRadius: {
         lg: "var(--radius)",
