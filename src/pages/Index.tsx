@@ -17,6 +17,17 @@ const Index = () => {
   return (
     <Layout>
       <div className="space-y-10">
+        {/* Player iframe aggiunto qui */}
+        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl mb-8">
+          <iframe
+            src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
+            title="Live Player"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+          ></iframe>
+        </div>
+
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
           <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
