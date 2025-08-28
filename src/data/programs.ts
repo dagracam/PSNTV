@@ -10,7 +10,7 @@ export const programs: Program[] = [
   },
   {
     id: 'premio-diego-special',
-    title: 'Premio Per Sempre con Diego',
+    title: 'Per Sempre Con Diego', // Titolo aggiornato
     description: 'Un tributo speciale a Diego Armando Maradona, ripercorrendo i momenti indimenticabili della sua carriera e della sua vita.',
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Premio-per-sempre---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html', // Using the same video URL for now
