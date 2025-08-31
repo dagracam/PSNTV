@@ -2,8 +2,9 @@ import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe, Facebook, Youtube, Instagram } from "lucide-react";
+import { Facebook, Youtube, Instagram } from "lucide-react";
 import XIcon from "./XIcon"; // Importa il nuovo componente XIcon
+import TikTokIcon from "./TikTokIcon"; // Importa il nuovo componente TikTokIcon
 
 interface MoreMenuDialogProps {
   isOpen: boolean;
@@ -23,7 +24,7 @@ const MoreMenuDialog: React.FC<MoreMenuDialogProps> = ({ isOpen, onClose }) => {
     { label: "Facebook", icon: Facebook, path: "https://www.facebook.com/persemprenews" },
     { label: "Youtube", icon: Youtube, path: "https://www.youtube.com/persemprenews" },
     { label: "Instagram", icon: Instagram, path: "https://www.instagram.com/persemprenews_/" },
-    { label: "TikTok", icon: Globe, path: "https://www.tiktok.com/@persemprenews" },
+    { label: "TikTok", icon: TikTokIcon, path: "https://www.tiktok.com/@persemprenews" }, // Usa TikTokIcon
   ];
 
   return (

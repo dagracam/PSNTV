@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Menu, Globe, Facebook, Youtube, Instagram } from "lucide-react";
+import { Home, Search, Menu, Facebook, Youtube, Instagram } from "lucide-react";
 import XIcon from "./XIcon"; // Importa il nuovo componente XIcon
+import TikTokIcon from "./TikTokIcon"; // Importa il nuovo componente TikTokIcon
 import SearchDialog from "./SearchDialog";
 import MoreMenuDialog from "./MoreMenuDialog";
 
@@ -23,31 +24,31 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
             {/* Social Media Icons */}
-            <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+            <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
               <XIcon className="h-5 w-5" /> {/* Usa XIcon */}
             </a>
-            <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+            <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
               <Facebook className="h-5 w-5" />
             </a>
-            <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+            <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
               <Youtube className="h-5 w-5" />
             </a>
-            <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+            <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
-              <Globe className="h-5 w-5" />
+            <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <TikTokIcon className="h-5 w-5" /> {/* Usa TikTokIcon */}
             </a>
 
             <button
               onClick={() => setIsSearchDialogOpen(true)}
-              className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
+              className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
             >
               <Search className="h-5 w-5" />
             </button>
             <button
               onClick={() => setIsMoreMenuDialogOpen(true)}
-              className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
+              className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -75,20 +76,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer di navigazione mobile esistente */}
       <footer className="fixed bottom-0 left-0 right-0 bg-dyad-bg/80 backdrop-blur-sm border-t border-dyad-border p-4 md:hidden">
         <nav className="flex justify-around items-center">
-          <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-link-blue">
             <Home className="h-5 w-5" />
             Home
           </Link>
           <button
             onClick={() => setIsSearchDialogOpen(true)}
-            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
+            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-link-blue"
           >
             <Search className="h-5 w-5" />
             Cerca
           </button>
           <button
             onClick={() => setIsMoreMenuDialogOpen(true)}
-            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
+            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-link-blue"
           >
             <Menu className="h-5 w-5" />
             Altro
