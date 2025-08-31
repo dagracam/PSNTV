@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Menu, X, Facebook, Youtube, Instagram, Globe } from "lucide-react"; // Sostituito Tiktok con Globe
+import { Home, Search, Menu, Globe, Facebook, Youtube, Instagram } from "lucide-react";
+import XIcon from "./XIcon"; // Importa il nuovo componente XIcon
 import SearchDialog from "./SearchDialog";
 import MoreMenuDialog from "./MoreMenuDialog";
 
@@ -23,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="hidden md:flex items-center space-x-6">
             {/* Social Media Icons */}
             <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
-              <X className="h-5 w-5" />
+              <XIcon className="h-5 w-5" /> {/* Usa XIcon */}
             </a>
             <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
               <Facebook className="h-5 w-5" />
@@ -35,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Instagram className="h-5 w-5" />
             </a>
             <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
-              <Globe className="h-5 w-5" /> {/* Sostituito Tiktok con Globe */}
+              <Globe className="h-5 w-5" />
             </a>
 
             <button
