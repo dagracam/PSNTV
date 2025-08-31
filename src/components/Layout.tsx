@@ -56,10 +56,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Home className="h-5 w-5" />
             Home
           </Link>
-          <Link to="/search" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <button
+            onClick={() => setIsSearchDialogOpen(true)} // Apre il dialog di ricerca anche su mobile
+            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
+          >
             <Search className="h-5 w-5" />
             Cerca
-          </Link>
+          </button>
           <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
             <Menu className="h-5 w-5" />
             Altro
