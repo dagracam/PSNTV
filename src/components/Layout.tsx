@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Menu } from "lucide-react";
+import { Home, Search, Menu, X, Facebook, Youtube, Instagram, Globe } from "lucide-react"; // Sostituito Tiktok con Globe
 import SearchDialog from "./SearchDialog";
-import MoreMenuDialog from "./MoreMenuDialog"; // Importa il nuovo componente
+import MoreMenuDialog from "./MoreMenuDialog";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isSearchDialogOpen, setIsSearchDialogOpen] = useState(false);
-  const [isMoreMenuDialogOpen, setIsMoreMenuDialogOpen] = useState(false); // Nuovo stato per il menu "Altro"
+  const [isMoreMenuDialogOpen, setIsMoreMenuDialogOpen] = useState(false);
 
   return (
     <div className="min-h-screen text-dyad-text flex flex-col">
@@ -21,6 +21,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Link>
           {/* Icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
+            {/* Social Media Icons */}
+            <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+              <X className="h-5 w-5" />
+            </a>
+            <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+              <Youtube className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-text group">
+              <Globe className="h-5 w-5" /> {/* Sostituito Tiktok con Globe */}
+            </a>
+
             <button
               onClick={() => setIsSearchDialogOpen(true)}
               className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
@@ -28,7 +45,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Search className="h-5 w-5" />
             </button>
             <button
-              onClick={() => setIsMoreMenuDialogOpen(true)} // Apre il dialog del menu "Altro"
+              onClick={() => setIsMoreMenuDialogOpen(true)}
               className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
             >
               <Menu className="h-5 w-5" />
@@ -69,7 +86,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             Cerca
           </button>
           <button
-            onClick={() => setIsMoreMenuDialogOpen(true)} // Apre il dialog del menu "Altro" anche su mobile
+            onClick={() => setIsMoreMenuDialogOpen(true)}
             className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
           >
             <Menu className="h-5 w-5" />
