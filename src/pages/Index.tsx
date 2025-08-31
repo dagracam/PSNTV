@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"; // Importa Link
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  const recommendedRef = useDragScroll<HTMLDivElement>();
+  // const recommendedRef = useDragScroll<HTMLDivElement>(); // Rimosso il riferimento
 
   // Using the actual programs data for display
   // For demonstration, let's slice the programs array for different sections
@@ -21,7 +21,7 @@ const Index = () => {
   ];
 
   const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
-  const recommendedPrograms = programs; // Display all for recommended
+  // const recommendedPrograms = programs; // Rimosso l'uso dei programmi consigliati
 
   return (
     <Layout>
@@ -68,14 +68,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Consigliati per Te</h2>
-          <div ref={recommendedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {recommendedPrograms.map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
+        {/* Sezione "Consigliati per Te" rimossa */}
       </div>
     </Layout>
   );
