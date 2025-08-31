@@ -108,4 +108,18 @@
   .bg-radial-gradient-dark-edges {
     background-image: radial-gradient(circle at center, var(--dyad-primary-bg) 0%, #17213D 100%);
   }
+
+  .icon-x {
+    background-color: currentColor; /* Il colore di sfondo sarà il colore del testo del genitore */
+    mask-image: url('/x-icon.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url('/x-icon.png'); /* Per browser Webkit */
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    display: inline-block; /* Assicura che rispetti larghezza/altezza */
+    transform: scale(0.9); /* Rendi l'icona il 10% più piccola */
+  }
 }

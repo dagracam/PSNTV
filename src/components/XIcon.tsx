@@ -1,11 +1,10 @@
 import React from 'react';
+import { cn } from '@/lib/utils'; // Importa la utility cn
 
-const XIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <img
-    src="/x-icon.png"
-    alt="X Icon"
-    className={props.className} // Passa le classi Tailwind per dimensioni e colore
-    style={{ filter: 'brightness(0) invert(1)' }} // Applica il filtro per rendere l'immagine bianca
+const XIcon: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props) => (
+  <div
+    className={cn("icon-x", props.className)}
+    // Il colore sarà controllato da currentColor tramite il colore del testo del genitore
   />
 );
 
