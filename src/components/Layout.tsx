@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Bell, User } from "lucide-react";
+import { Home, Search, Menu } from "lucide-react"; // Importa l'icona Menu e rimuovi Bell
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -48,13 +48,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Search className="h-5 w-5" />
             Cerca
           </Link>
-          <Link to="/notifications" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Bell className="h-5 w-5" />
-            Notifiche
-          </Link>
+          {/* Rimosso il link alle notifiche */}
           <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <User className="h-5 w-5" />
-            Profilo
+            <Menu className="h-5 w-5" /> {/* Icona hamburger */}
+            Altro {/* Testo cambiato in Altro */}
           </Link>
         </nav>
       </footer>
