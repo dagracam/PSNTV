@@ -19,12 +19,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Nuove icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/search" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Search className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Cerca</span>
+              <Search className="h-5 w-5" /> {/* Rimosso il testo "Cerca" */}
             </Link>
             <Link to="/profile" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Menu className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Altro</span>
+              <Menu className="h-5 w-5" /> {/* Rimosso il testo "Altro" */}
             </Link>
           </div>
         </div>
