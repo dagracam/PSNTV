@@ -31,12 +31,12 @@ const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px] bg-dyad-bg/95 backdrop-blur-sm border-dyad-border p-6 rounded-lg shadow-lg">
-        <div className="flex items-center space-x-2 mb-6">
+        <div className="flex justify-center items-center space-x-2 mb-6"> {/* Centrato il contenitore */}
           <Search className="h-5 w-5 text-dyad-text/70" />
           <Input
             type="text"
             placeholder="Cerca programmi..."
-            className="flex-grow bg-transparent border-dyad-border text-dyad-text placeholder:text-dyad-text/50 focus-visible:ring-dyad-link-blue focus:border-dyad-link-blue"
+            className="flex-grow max-w-sm rounded-full bg-transparent border-dyad-border text-dyad-text placeholder:text-dyad-text/50 focus-visible:ring-dyad-link-blue focus:border-dyad-link-blue"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
