@@ -32,25 +32,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8 pb-16"> {/* Aggiunto pb-16 per lasciare spazio al footer */}
         {children}
       </main>
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-dyad-card border-t border-dyad-border p-2 flex justify-around items-center md:hidden z-10">
-        <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+        <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text flex-1"> {/* Aggiunto flex-1 */}
           <Home className="h-5 w-5" />
           Home
         </Link>
-        <Link to="/search" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+        <Link to="/search" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text flex-1"> {/* Aggiunto flex-1 */}
           <Search className="h-5 w-5" />
           Cerca
         </Link>
-        <Link to="/live" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+        <Link to="/live" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text flex-1"> {/* Aggiunto flex-1 */}
           <Tv className="h-5 w-5" />
           Live
         </Link>
-        <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+        <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text flex-1"> {/* Aggiunto flex-1 */}
           <Menu className="h-5 w-5" /> {/* Icona Menu ad hamburger */}
           Altro {/* Testo cambiato in "Altro" */}
         </Link>
