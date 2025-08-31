@@ -70,9 +70,9 @@ const Index = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollFeatured('left')}
-              className="absolute left-0 z-10 bg-dyad-bg/70 hover:bg-dyad-bg/90 text-dyad-text hover:text-dyad-link-blue rounded-full h-10 w-10 -ml-5 hidden md:flex items-center justify-center shadow-md"
+              className="absolute left-0 z-10 bg-dyad-bg/50 backdrop-blur-md hover:bg-dyad-bg/70 text-dyad-text hover:text-dyad-link-blue rounded-full h-12 w-12 -ml-6 hidden md:flex items-center justify-center shadow-lg"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </Button>
             <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
               {featuredPrograms.map((program) => (
@@ -99,9 +99,9 @@ const Index = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollFeatured('right')}
-              className="absolute right-0 z-10 bg-dyad-bg/70 hover:bg-dyad-bg/90 text-dyad-text hover:text-dyad-link-blue rounded-full h-10 w-10 -mr-5 hidden md:flex items-center justify-center shadow-md"
+              className="absolute right-0 z-10 bg-dyad-bg/50 backdrop-blur-md hover:bg-dyad-bg/70 text-dyad-text hover:text-dyad-link-blue rounded-full h-12 w-12 -mr-6 hidden md:flex items-center justify-center shadow-lg"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </Button>
           </div>
         </section>
