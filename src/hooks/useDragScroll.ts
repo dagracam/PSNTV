@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 
 /**
  * Custom hook to enable horizontal scrolling by dragging with the mouse.
@@ -8,60 +8,58 @@ import { useRef, useEffect, useState } from 'react';
 const useDragScroll = <T extends HTMLElement>() => {
   const ref = useRef<T>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  // Memoize event handlers to avoid re-creating them on every render
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    const element = ref.current;
+    if (!isDragging || !element) return;
+    e.preventDefault();
+    const x = e.pageX - element.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // Multiplier for faster scroll
+    element.scrollLeft = scrollLeft.current - walk;
+  }, [isDragging]); // Only re-create if isDragging changes
+
+  const handleMouseUp = useCallback(() => {
+    const element = ref.current;
+    setIsDragging(false);
+    if (element) {
+      element.style.cursor = 'grab';
+      element.style.userSelect = 'auto';
+    }
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('mouseup', handleMouseUp);
+  }, [handleMouseMove]); // Depends on handleMouseMove
+
+  const handleMouseDown = useCallback((e: MouseEvent) => {
+    const element = ref.current;
+    if (!element) return;
+
+    setIsDragging(true);
+    startX.current = e.pageX - element.offsetLeft;
+    scrollLeft.current = element.scrollLeft;
+    element.style.cursor = 'grabbing';
+    element.style.userSelect = 'none';
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  }, [handleMouseMove, handleMouseUp]);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
 
-    const handleMouseDown = (e: MouseEvent) => {
-      setIsDragging(true);
-      setStartX(e.pageX - element.offsetLeft);
-      setScrollLeft(element.scrollLeft);
-      element.style.cursor = 'grabbing';
-      element.style.userSelect = 'none';
-    };
-
-    const handleMouseLeave = () => {
-      setIsDragging(false);
-      if (element) {
-        element.style.cursor = 'grab';
-        element.style.userSelect = 'auto';
-      }
-    };
-
-    const handleMouseUp = () => {
-      setIsDragging(false);
-      if (element) {
-        element.style.cursor = 'grab';
-        element.style.userSelect = 'auto';
-      }
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - element.offsetLeft;
-      const walk = (x - startX) * 1.5; // Multiplier for faster scroll
-      element.scrollLeft = scrollLeft - walk;
-    };
-
     element.addEventListener('mousedown', handleMouseDown);
-    element.addEventListener('mouseleave', handleMouseLeave);
-    element.addEventListener('mouseup', handleMouseUp);
-    element.addEventListener('mousemove', handleMouseMove);
-
-    // Set initial cursor style
-    element.style.cursor = 'grab';
+    element.style.cursor = 'grab'; // Set initial cursor style
 
     return () => {
       element.removeEventListener('mousedown', handleMouseDown);
-      element.removeEventListener('mouseleave', handleMouseLeave);
-      element.removeEventListener('mouseup', handleMouseUp);
-      element.removeEventListener('mousemove', handleMouseMove);
+      // Ensure global listeners are cleaned up if component unmounts while dragging
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging, startX, scrollLeft]);
+  }, [handleMouseDown, handleMouseMove, handleMouseUp]); // Dependencies for useEffect
 
   return ref;
 };
