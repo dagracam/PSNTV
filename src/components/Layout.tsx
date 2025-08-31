@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Menu } from "lucide-react"; 
+import { Home, Search, Menu } from "lucide-react"; // Importa l'icona Menu e rimuovi Bell
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -10,23 +10,29 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen text-dyad-text flex flex-col">
+    <div className="min-h-screen text-dyad-text flex flex-col"> {/* Rimosso bg-dyad-bg per mostrare il gradiente del body */}
       <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
-        <div className="container mx-auto h-16 flex items-center justify-end px-4">
+        <div className="container mx-auto h-16 flex items-center justify-between px-4">
+          <Link to="/" className="flex items-center">
+            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
+          </Link>
+          {/* Nuove icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/search" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Search className="h-5 w-5" /> {/* Rimosso il testo "Cerca" */}
+              <Search className="h-5 w-5 mr-2" />
+              <span className="text-sm font-medium">Cerca</span>
             </Link>
             <Link to="/profile" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Menu className="h-5 w-5" /> {/* Rimosso il testo "Altro" */}
+              <Menu className="h-5 w-5 mr-2" />
+              <span className="text-sm font-medium">Altro</span>
             </Link>
           </div>
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main>
+      <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
       
       {/* Nuovo Footer per il contenuto principale */}
-      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block">
+      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
         <div className="container mx-auto flex flex-col items-center space-y-4">
           <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-12" />
           <p className="text-sm">
@@ -52,9 +58,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Search className="h-5 w-5" />
             Cerca
           </Link>
+          {/* Rimosso il link alle notifiche */}
           <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Menu className="h-5 w-5" />
-            Altro
+            <Menu className="h-5 w-5" /> {/* Icona hamburger */}
+            Altro {/* Testo cambiato in Altro */}
           </Link>
         </nav>
       </footer>
