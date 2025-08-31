@@ -36,7 +36,7 @@ const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) => {
           <Input
             type="text"
             placeholder="Cerca programmi..."
-            className="flex-grow bg-dyad-bg/50 border-dyad-border text-dyad-text placeholder:text-dyad-text/50 focus-visible:ring-dyad-link-blue focus:border-dyad-link-blue"
+            className="flex-grow bg-transparent border-dyad-border text-dyad-text placeholder:text-dyad-text/50 focus-visible:ring-dyad-link-blue focus:border-dyad-link-blue"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
