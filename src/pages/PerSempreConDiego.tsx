@@ -22,15 +22,14 @@ const PerSempreConDiego: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8 py-8">
         <h1 className="text-4xl font-bold text-dyad-text">Premio Per Sempre con Diego</h1>
         <p className="text-lg text-dyad-text/80">
-          II Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona.
-          Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.
+          {program.description}
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
             width="100%"
             height="545"
-            src={program.videoUrl} // Usa l'URL del video specifico del programma
+            src={program.videoUrl} // Usa l'URL del video specifico del programma dai dati
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

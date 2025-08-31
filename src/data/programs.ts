@@ -3,24 +3,24 @@ import { Program } from '../types/program'; // Import the Program type
 export const programs: Program[] = [
   {
     id: 'premio-per-sempre-original',
-    title: 'Per Sempre Scugnizzo', // Titolo aggiornato
-    description: 'Un viaggio emozionante attraverso le storie di persone comuni che hanno lasciato un segno indelebile.',
-    imageUrl: '/images/premio-per-sempre-scugnizzo.jpg', // Immagine aggiornata
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi_Video_1', // URL unico di esempio
+    title: 'Per Sempre Scugnizzo',
+    description: 'Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.', // Descrizione aggiornata
+    imageUrl: '/images/premio-per-sempre-scugnizzo.jpg',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi', // URL video aggiornato
   },
   {
     id: 'premio-diego-special',
     title: 'Per Sempre Con Diego',
-    description: 'Un tributo speciale a Diego Armando Maradona, ripercorrendo i momenti indimenticabili della sua carriera e della sua vita.',
+    description: 'II Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.', // Descrizione aggiornata
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego', // URL aggiornato
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
   },
   {
     id: 'doc-nelle-tue-mani',
-    title: 'Days of War', // Titolo aggiornato
-    description: 'Il dottor Andrea Fanti deve ricostruire la sua vita dopo un incidente che gli ha cancellato dodici anni di memoria.',
-    imageUrl: '/images/days-of-war.png', // Immagine aggiornata
-    videoUrl: 'https://www.raiplay.it/video/2024/05/Doc---Nelle-tue-mani---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    title: 'Days of War',
+    description: 'Il dottor Andrea Fanti deve ricostruire la sua vita dopo un incidente che gli ha cancellato dodici anni di memoria.', // Descrizione mantenuta
+    imageUrl: '/images/days-of-war.png',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/daysofwar', // URL video aggiornato
   },
   {
     id: 'il-paradiso-delle-signore',

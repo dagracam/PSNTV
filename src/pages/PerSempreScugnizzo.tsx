@@ -22,14 +22,14 @@ const PerSempreScugnizzo: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8 py-8">
         <h1 className="text-4xl font-bold text-dyad-text">Per Sempre Scugnizzo</h1>
         <p className="text-lg text-dyad-text/80">
-          Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.
+          {program.description}
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
             width="100%"
             height="545"
-            src="https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi"
+            src={program.videoUrl} // Usa l'URL del video specifico del programma dai dati
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
