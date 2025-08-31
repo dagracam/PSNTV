@@ -17,7 +17,8 @@ const Index = () => {
   const featuredPrograms = [
     programs.find(p => p.id === 'premio-diego-special')!,
     programs.find(p => p.id === 'premio-per-sempre-original')!,
-    ...allFeatured.filter(p => p.id !== 'premio-diego-special' && p.id !== 'premio-per-sempre-original')
+    programs.find(p => p.id === 'doc-nelle-tue-mani')!, // Aggiunto Days of War
+    ...allFeatured.filter(p => p.id !== 'premio-diego-special' && p.id !== 'premio-per-sempre-original' && p.id !== 'doc-nelle-tue-mani')
   ];
 
   const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
@@ -49,6 +50,10 @@ const Index = () => {
                   </Link>
                 ) : program.id === 'premio-per-sempre-original' ? (
                   <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
+                    <ProgramCard program={program} disableLink={true} />
+                  </Link>
+                ) : program.id === 'doc-nelle-tue-mani' ? ( // Nuova condizione per Days of War
+                  <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
                     <ProgramCard program={program} disableLink={true} />
                   </Link>
                 ) : (

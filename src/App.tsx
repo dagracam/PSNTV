@@ -7,7 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
 import PerSempreConDiego from "./pages/PerSempreConDiego";
-import PerSempreScugnizzo from "./pages/PerSempreScugnizzo"; // Importa la nuova pagina
+import PerSempreScugnizzo from "./pages/PerSempreScugnizzo";
+import DaysOfWar from "./pages/DaysOfWar"; // Importa la nuova pagina
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/program/:id" element={<ProgramDetail />} />
           <Route path="/persemprecondiego" element={<PerSempreConDiego />} />
-          <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} /> {/* Nuova rotta */}
+          <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} />
+          <Route path="/daysofwar" element={<DaysOfWar />} /> {/* Nuova rotta */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
