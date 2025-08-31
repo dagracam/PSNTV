@@ -1,43 +1,48 @@
-import Layout from "@/components/Layout";
-import React from "react";
-import { programs } from "@/data/programs"; // Importa i dati reali dei programmi
+import React from 'react';
 
 const PerSempreScugnizzo: React.FC = () => {
-  // Trova il programma "Per Sempre Scugnizzo" per ID
-  const program = programs.find((p) => p.id === 'premio-per-sempre-original');
-
-  if (!program) {
-    return (
-      <Layout>
-        <div className="max-w-4xl mx-auto text-center py-10">
-          <h1 className="text-4xl font-bold text-dyad-text mb-4">Programma non trovato</h1>
-          <p className="text-lg text-dyad-text/80">Siamo spiacenti, il programma "Per Sempre Scugnizzo" non esiste.</p>
-        </div>
-      </Layout>
-    );
-  }
-
   return (
-    <Layout>
-      <div className="max-w-4xl mx-auto space-y-8 py-8">
+    <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-dyad-text">Per Sempre Scugnizzo</h1>
         <p className="text-lg text-dyad-text/80">
-          Un viaggio emozionante attraverso le storie di persone comuni che hanno lasciato un segno indelebile.
+          Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.
         </p>
+      </div>
 
-        <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
-          <iframe
-            width="100%"
-            height="545"
-            src="https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full border-0"
-          ></iframe>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Placeholder for award categories or past winners */}
+        <div className="bg-dyad-bg/70 backdrop-blur-sm border border-dyad-border rounded-lg p-6 shadow-lg">
+          <h2 className="text-2xl font-semibold text-dyad-text mb-4">Edizione 2023</h2>
+          <p className="text-dyad-text/70">
+            Scopri i vincitori e le storie ispiratrici dell'edizione 2023 del premio.
+          </p>
+          <button className="mt-4 px-4 py-2 bg-dyad-link-blue text-white rounded-md hover:bg-dyad-link-blue/90 transition-colors">
+            Dettagli
+          </button>
+        </div>
+
+        <div className="bg-dyad-bg/70 backdrop-blur-sm border border-dyad-border rounded-lg p-6 shadow-lg">
+          <h2 className="text-2xl font-semibold text-dyad-text mb-4">Nomination</h2>
+          <p className="text-dyad-text/70">
+            Proponi una personalità che merita di essere riconosciuta per il suo contributo.
+          </p>
+          <button className="mt-4 px-4 py-2 bg-dyad-link-blue text-white rounded-md hover:bg-dyad-link-blue/90 transition-colors">
+            Nomina ora
+          </button>
+        </div>
+
+        <div className="bg-dyad-bg/70 backdrop-blur-sm border border-dyad-border rounded-lg p-6 shadow-lg">
+          <h2 className="text-2xl font-semibold text-dyad-text mb-4">Archivio</h2>
+          <p className="text-dyad-text/70">
+            Esplora le edizioni passate e i premiati che hanno fatto la storia.
+          </p>
+          <button className="mt-4 px-4 py-2 bg-dyad-link-blue text-white rounded-md hover:bg-dyad-link-blue/90 transition-colors">
+            Vedi archivio
+          </button>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 
