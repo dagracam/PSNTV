@@ -1,36 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Menu } from "lucide-react"; // Importa l'icona Menu e rimuovi Bell
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Home, Search, Menu } from "lucide-react";
+import SearchDialog from "./SearchDialog"; // Importa il nuovo componente
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [isSearchDialogOpen, setIsSearchDialogOpen] = useState(false);
+
   return (
-    <div className="min-h-screen text-dyad-text flex flex-col"> {/* Rimosso bg-dyad-bg per mostrare il gradiente del body */}
+    <div className="min-h-screen text-dyad-text flex flex-col">
       <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
             <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
           </Link>
-          {/* Nuove icone per desktop */}
+          {/* Icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/search" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Search className="h-5 w-5" /> {/* Rimosso il testo "Cerca" */}
-            </Link>
+            <button
+              onClick={() => setIsSearchDialogOpen(true)} // Apre il dialog di ricerca
+              className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
+            >
+              <Search className="h-5 w-5" />
+            </button>
             <Link to="/profile" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
-              <Menu className="h-5 w-5" /> {/* Rimosso il testo "Altro" */}
+              <Menu className="h-5 w-5" />
             </Link>
           </div>
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
+      <main className="container mx-auto px-4 flex-grow">{children}</main>
       
       {/* Nuovo Footer per il contenuto principale */}
-      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
+      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block">
         <div className="container mx-auto flex flex-col items-center space-y-4">
           <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-12" />
           <p className="text-sm">
@@ -56,13 +60,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Search className="h-5 w-5" />
             Cerca
           </Link>
-          {/* Rimosso il link alle notifiche */}
           <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Menu className="h-5 w-5" /> {/* Icona hamburger */}
-            Altro {/* Testo cambiato in Altro */}
+            <Menu className="h-5 w-5" />
+            Altro
           </Link>
         </nav>
       </footer>
+
+      <SearchDialog
+        isOpen={isSearchDialogOpen}
+        onClose={() => setIsSearchDialogOpen(false)}
+      />
     </div>
   );
 };
