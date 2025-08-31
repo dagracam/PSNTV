@@ -7,36 +7,43 @@ import { useRef, useEffect, useState, useCallback } from 'react';
  */
 const useDragScroll = <T extends HTMLElement>() => {
   const ref = useRef<T>(null);
-  const [isDragging, setIsDragging] = useState(false);
+  const [isDragging, setIsDragging] = useState(false); // State for rendering and conditional logic
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  // Memoize event handlers to avoid re-creating them on every render
+  // Use a ref to store the latest `isDragging` state for event handlers
+  const isDraggingStateRef = useRef(isDragging);
+  useEffect(() => {
+    isDraggingStateRef.current = isDragging;
+  }, [isDragging]);
+
+  // Define stable callback functions
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const element = ref.current;
-    if (!isDragging || !element) return;
+    // Use the ref for isDragging to avoid re-creating this callback
+    if (!isDraggingStateRef.current || !element) return;
     e.preventDefault();
     const x = e.pageX - element.offsetLeft;
     const walk = (x - startX.current) * 1.5; // Multiplier for faster scroll
     element.scrollLeft = scrollLeft.current - walk;
-  }, [isDragging]); // Only re-create if isDragging changes
+  }, []); // Empty dependency array: this callback is stable
 
   const handleMouseUp = useCallback(() => {
     const element = ref.current;
-    setIsDragging(false);
+    setIsDragging(false); // Update state
     if (element) {
       element.style.cursor = 'grab';
       element.style.userSelect = 'auto';
     }
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-  }, [handleMouseMove]); // Depends on handleMouseMove
+  }, [handleMouseMove]); // Depends on handleMouseMove, which is stable
 
   const handleMouseDown = useCallback((e: MouseEvent) => {
     const element = ref.current;
     if (!element) return;
 
-    setIsDragging(true);
+    setIsDragging(true); // Update state
     startX.current = e.pageX - element.offsetLeft;
     scrollLeft.current = element.scrollLeft;
     element.style.cursor = 'grabbing';
@@ -44,8 +51,9 @@ const useDragScroll = <T extends HTMLElement>() => {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
-  }, [handleMouseMove, handleMouseUp]);
+  }, [handleMouseMove, handleMouseUp]); // Depends on stable handleMouseMove and handleMouseUp
 
+  // This effect runs only once to attach the initial mousedown listener
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -56,10 +64,11 @@ const useDragScroll = <T extends HTMLElement>() => {
     return () => {
       element.removeEventListener('mousedown', handleMouseDown);
       // Ensure global listeners are cleaned up if component unmounts while dragging
+      // This is important for cases where the component unmounts mid-drag
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [handleMouseDown, handleMouseMove, handleMouseUp]); // Dependencies for useEffect
+  }, [handleMouseDown]); // Only depends on handleMouseDown, which is now stable
 
   return ref;
 };
