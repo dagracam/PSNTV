@@ -16,6 +16,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink }) => {
             src={program.imageUrl} // Usa program.imageUrl
             alt={program.title} // Usa program.title per il testo alt
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
+            draggable="false" // Aggiunto per prevenire il trascinamento nativo dell'immagine
           />
         </div>
       </div>
