@@ -70,7 +70,7 @@ const Index = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollFeatured('left')}
-              className="absolute left-0 z-10 bg-dyad-bg/40 backdrop-blur-lg ring-2 ring-dyad-link-blue/50 hover:ring-dyad-link-blue hover:bg-dyad-bg/60 text-dyad-text hover:text-dyad-link-blue rounded-full h-14 w-14 -ml-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200"
+              className="absolute left-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -ml-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200"
             >
               <ChevronLeft className="h-8 w-8" />
             </Button>
@@ -99,7 +99,7 @@ const Index = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollFeatured('right')}
-              className="absolute right-0 z-10 bg-dyad-bg/40 backdrop-blur-lg ring-2 ring-dyad-link-blue/50 hover:ring-dyad-link-blue hover:bg-dyad-bg/60 text-dyad-text hover:text-dyad-link-blue rounded-full h-14 w-14 -mr-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200"
+              className="absolute right-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -mr-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200"
             >
               <ChevronRight className="h-8 w-8" />
             </Button>
