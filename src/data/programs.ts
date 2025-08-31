@@ -1,61 +1,53 @@
-export interface Program {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  videoUrl?: string; // Optional video URL for specific program pages
-}
+import { Program } from '../types/program'; // Import the Program type
 
 export const programs: Program[] = [
   {
-    id: "premio-diego-special",
-    title: "Per Sempre con Diego",
-    description: "II Premio 'Per Sempre con Diego' nasce nel 2021 con lo scopo di dedicare un riconoscimento a chi si è distinto nel mondo dello sport, della cultura e del sociale, portando avanti i valori di lealtà, passione e impegno che hanno contraddistinto la vita di Diego Armando Maradona.",
-    imageUrl: "/images/per-sempre-con-diego.webp",
-    videoUrl: "https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1",
+    id: 'premio-per-sempre-original',
+    title: 'Per Sempre Scugnizzo', // Titolo aggiornato
+    description: 'Un viaggio emozionante attraverso le storie di persone comuni che hanno lasciato un segno indelebile.',
+    imageUrl: '/images/premio-per-sempre-scugnizzo.jpg', // Immagine aggiornata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi_Video_1', // URL unico di esempio
   },
   {
-    id: "premio-per-sempre-original",
-    title: "Per Sempre Scugnizzo",
-    description: "Un viaggio emozionante attraverso la vita e la carriera di Diego Armando Maradona, raccontato da chi lo ha conosciuto e amato. Un tributo al Pibe de Oro, simbolo di riscatto e speranza per milioni di persone.",
-    imageUrl: "/images/per-sempre-scugnizzo.webp",
-    videoUrl: "https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1",
+    id: 'premio-diego-special',
+    title: 'Per Sempre Con Diego',
+    description: 'Un tributo speciale a Diego Armando Maradona, ripercorrendo i momenti indimenticabili della sua carriera e della sua vita.',
+    imageUrl: '/images/premio-per-sempre-con-diego.jpg',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego', // URL aggiornato
   },
   {
-    id: "doc-nelle-tue-mani",
-    title: "Days of War",
-    description: "Un documentario avvincente che esplora le storie di coraggio e resilienza durante i conflitti, offrendo uno sguardo profondo sulle esperienze umane in tempi di guerra.",
-    imageUrl: "/images/days-of-war.webp",
-    videoUrl: "https://web.psntv.eu/embed-playlist/persemprenews/daysofwar",
+    id: 'doc-nelle-tue-mani',
+    title: 'Days of War', // Titolo aggiornato
+    description: 'Il dottor Andrea Fanti deve ricostruire la sua vita dopo un incidente che gli ha cancellato dodici anni di memoria.',
+    imageUrl: '/images/days-of-war.png', // Immagine aggiornata
+    videoUrl: 'https://www.raiplay.it/video/2024/05/Doc---Nelle-tue-mani---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
   {
-    id: "programma-4",
-    title: "Programma 4",
-    description: "Breve descrizione del Programma 4.",
-    imageUrl: "/images/placeholder-program.webp",
+    id: 'il-paradiso-delle-signore',
+    title: 'Il Paradiso delle Signore',
+    description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
+    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-il_paradiso_delle_signore.jpg',
+    videoUrl: 'https://www.raiplay.it/video/2024/05/Il-Paradiso-delle-Signore---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
   {
-    id: "programma-5",
-    title: "Programma 5",
-    description: "Breve descrizione del Programma 5.",
-    imageUrl: "/images/placeholder-program.webp",
+    id: 'un-posto-al-sole',
+    title: 'Un Posto al Sole',
+    description: 'Le storie degli abitanti di Palazzo Palladini a Napoli, tra amori, intrighi e colpi di scena.',
+    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-un_posto_al_sole.jpg',
+    videoUrl: 'https://www.raiplay.it/video/2024/05/Un-Posto-al-Sole---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
   {
-    id: "programma-6",
-    title: "Programma 6",
-    description: "Breve descrizione del Programma 6.",
-    imageUrl: "/images/placeholder-program.webp",
+    id: 'che-dio-ci-aiuti',
+    title: 'Che Dio ci aiuti',
+    description: 'Suor Angela e le sue consorelle aiutano chi è in difficoltà, tra misteri e risate.',
+    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-che_dio_ci_aiuti.jpg',
+    videoUrl: 'https://www.raiplay.it/video/2024/05/Che-Dio-ci-aiuti---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
   {
-    id: "programma-7",
-    title: "Programma 7",
-    description: "Breve descrizione del Programma 7.",
-    imageUrl: "/images/placeholder-program.webp",
-  },
-  {
-    id: "programma-8",
-    title: "Programma 8",
-    description: "Breve descrizione del Programma 8.",
-    imageUrl: "/images/placeholder-program.webp",
+    id: 'don-matteo',
+    title: 'Don Matteo',
+    description: 'Don Matteo, un parroco con un talento speciale per risolvere i crimini, aiuta i Carabinieri di Spoleto.',
+    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-don_matteo.jpg',
+    videoUrl: 'https://www.raiplay.it/video/2024/05/Don-Matteo---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
 ];
