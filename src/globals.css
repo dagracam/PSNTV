@@ -121,5 +121,6 @@
     -webkit-mask-position: center;
     display: inline-block; /* Assicura che rispetti larghezza/altezza */
     transform: scale(0.9); /* Rendi l'icona il 10% più piccola */
+    vertical-align: middle; /* Allinea verticalmente al centro */
   }
 }
