@@ -1,10 +1,12 @@
 import Layout from "@/components/Layout";
 import ProgramCard from "@/components/ProgramCard";
-import React from "react";
+import React, { useRef } from "react"; // Importa useRef
 import useDragScroll from "@/hooks/useDragScroll";
 import { programs } from "@/data/programs"; // Import the actual programs data
 import { Link } from "react-router-dom"; // Importa Link
 import { Program } from "@/types/program"; // Import Program type
+import { Button } from "@/components/ui/button"; // Importa Button
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Importa le icone
 
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
@@ -34,6 +36,18 @@ const Index = () => {
   // I programmi "Nuovi Arrivi" saranno tutti quelli non inclusi in "In Evidenza"
   const newArrivalsPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
 
+  // Funzione per scorrere la sezione "In Evidenza"
+  const scrollFeatured = (direction: 'left' | 'right') => {
+    if (featuredRef.current) {
+      const scrollAmount = 280; // Larghezza approssimativa di una card + spazio
+      if (direction === 'left') {
+        featuredRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        featuredRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <Layout>
       <div className="space-y-10">
@@ -51,26 +65,44 @@ const Index = () => {
 
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
-          <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {featuredPrograms.map((program) => (
-              <React.Fragment key={program.id}>
-                {program.id === 'premio-diego-special' ? (
-                  <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
-                    <ProgramCard program={program} disableLink={true} />
-                  </Link>
-                ) : program.id === 'premio-per-sempre-original' ? (
-                  <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
-                    <ProgramCard program={program} disableLink={true} />
-                  </Link>
-                ) : program.id === 'doc-nelle-tue-mani' ? (
-                  <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
-                    <ProgramCard program={program} disableLink={true} />
-                  </Link>
-                ) : (
-                  <ProgramCard program={program} />
-                )}
-              </React.Fragment>
-            ))}
+          <div className="relative flex items-center"> {/* Contenitore per frecce e scroll */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scrollFeatured('left')}
+              className="absolute left-0 z-10 bg-dyad-bg/70 hover:bg-dyad-bg/90 text-dyad-text hover:text-dyad-link-blue rounded-full h-10 w-10 -ml-5 hidden md:flex items-center justify-center shadow-md"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
+              {featuredPrograms.map((program) => (
+                <React.Fragment key={program.id}>
+                  {program.id === 'premio-diego-special' ? (
+                    <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : program.id === 'premio-per-sempre-original' ? (
+                    <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : program.id === 'doc-nelle-tue-mani' ? (
+                    <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : (
+                    <ProgramCard program={program} />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scrollFeatured('right')}
+              className="absolute right-0 z-10 bg-dyad-bg/70 hover:bg-dyad-bg/90 text-dyad-text hover:text-dyad-link-blue rounded-full h-10 w-10 -mr-5 hidden md:flex items-center justify-center shadow-md"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
           </div>
         </section>
 
