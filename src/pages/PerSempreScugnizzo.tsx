@@ -22,7 +22,7 @@ const PerSempreScugnizzo: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8 py-8">
         <h1 className="text-4xl font-bold text-dyad-text">Per Sempre Scugnizzo</h1>
         <p className="text-lg text-dyad-text/80">
-          Un viaggio emozionante attraverso le storie di persone comuni che hanno lasciato un segno indelebile.
+          Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
