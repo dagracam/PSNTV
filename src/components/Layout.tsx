@@ -16,7 +16,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Link to="/" className="flex items-center">
             <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
           </Link>
-          {/* Qui potresti aggiungere la navigazione principale */}
+          {/* Nuove icone per desktop */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/search" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
+              <Search className="h-5 w-5 mr-2" />
+              <span className="text-sm font-medium">Cerca</span>
+            </Link>
+            <Link to="/profile" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
+              <Menu className="h-5 w-5 mr-2" />
+              <span className="text-sm font-medium">Altro</span>
+            </Link>
+          </div>
         </div>
       </header>
       <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
