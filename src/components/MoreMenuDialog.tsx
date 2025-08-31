@@ -79,7 +79,7 @@ const MoreMenuDialog: React.FC<MoreMenuDialogProps> = ({ isOpen, onClose }) => {
                     className="w-full justify-start text-dyad-text hover:bg-dyad-bg/70 hover:text-dyad-link-blue"
                     onClick={onClose}
                   >
-                    <item.icon className="h-5 w-5 mr-2" />
+                    <item.icon className="h-5 w-5 mr-2 align-middle" />
                     {item.label}
                   </Button>
                 </a>

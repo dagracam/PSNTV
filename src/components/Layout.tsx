@@ -28,13 +28,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <XIcon className="h-5 w-5" /> {/* Usa XIcon */}
             </a>
             <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-              <Facebook className="h-5 w-5" />
+              <Facebook className="h-5 w-5 align-middle" />
             </a>
             <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-              <Youtube className="h-5 w-5" />
+              <Youtube className="h-5 w-5 align-middle" />
             </a>
             <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-              <Instagram className="h-5 w-5" />
+              <Instagram className="h-5 w-5 align-middle" />
             </a>
             <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
               <TikTokIcon className="h-5 w-5" /> {/* Usa TikTokIcon */}
