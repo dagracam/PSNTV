@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Home, Search, Bell, User } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Home, Search, Tv, User, Menu } from "lucide-react"; // Importa l'icona Menu
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,54 +8,53 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen text-dyad-text flex flex-col"> {/* Rimosso bg-dyad-bg per mostrare il gradiente del body */}
-      <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
-        <div className="container mx-auto h-16 flex items-center justify-between px-4">
-          <Link to="/" className="flex items-center">
-            <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
-          </Link>
-          {/* Qui potresti aggiungere la navigazione principale */}
+    <div className="min-h-screen flex flex-col bg-dyad-background text-dyad-text">
+      {/* Header */}
+      <header className="w-full bg-dyad-background border-b border-dyad-border p-4 flex justify-between items-center sticky top-0 z-10">
+        <div className="flex items-center space-x-4">
+          <img src="/logo.png" alt="Logo" className="h-8" />
+          <span className="text-xl font-bold text-dyad-text">PerSempreNews</span>
+        </div>
+        {/* Search Bar (Placeholder) */}
+        <div className="relative w-1/3 max-w-md">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-dyad-text/60" />
+          <input
+            type="text"
+            placeholder="Cerca..."
+            className="w-full pl-10 pr-4 py-2 rounded-full bg-dyad-card border border-dyad-border focus:outline-none focus:ring-2 focus:ring-dyad-primary text-dyad-text placeholder-dyad-text/60"
+          />
+        </div>
+        {/* User Profile (Placeholder) */}
+        <div className="flex items-center space-x-2">
+          <User className="h-6 w-6 text-dyad-text/80" />
+          <span className="text-dyad-text/80">Nome Utente</span>
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main> {/* Aggiunto flex-grow */}
-      
-      {/* Nuovo Footer per il contenuto principale */}
-      <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block"> {/* Visibile solo su desktop */}
-        <div className="container mx-auto flex flex-col items-center space-y-4">
-          <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-12" />
-          <p className="text-sm">
-            <a href="mailto:redazione@persemprenews.it" className="text-dyad-link-blue hover:underline">
-              Contattaci
-            </a>
-          </p>
-          <div className="text-sm text-dyad-text/70 space-y-1">
-            <p>© 2025 - PSN - Tutti i diritti riservati. P.Iva 09786561218</p>
-            <p>La Voce degli Ultimi Cooperativa Giornalistica - Sede legale: Via A. Camillo De Meis, 326 – 80147 – Napoli (NA)</p>
-          </div>
-        </div>
-      </footer>
 
-      {/* Footer di navigazione mobile esistente */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-dyad-bg/80 backdrop-blur-sm border-t border-dyad-border p-4 md:hidden">
-        <nav className="flex justify-around items-center">
-          <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Home className="h-5 w-5" />
-            Home
-          </Link>
-          <Link to="/search" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Search className="h-5 w-5" />
-            Cerca
-          </Link>
-          <Link to="/notifications" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <Bell className="h-5 w-5" />
-            Notifiche
-          </Link>
-          <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
-            <User className="h-5 w-5" />
-            Profilo
-          </Link>
-        </nav>
-      </footer>
+      {/* Main Content */}
+      <main className="flex-grow container mx-auto px-4 py-8">
+        {children}
+      </main>
+
+      {/* Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-dyad-card border-t border-dyad-border p-2 flex justify-around items-center md:hidden z-10">
+        <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <Home className="h-5 w-5" />
+          Home
+        </Link>
+        <Link to="/search" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <Search className="h-5 w-5" />
+          Cerca
+        </Link>
+        <Link to="/live" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <Tv className="h-5 w-5" />
+          Live
+        </Link>
+        <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <Menu className="h-5 w-5" /> {/* Icona Menu ad hamburger */}
+          Altro {/* Testo cambiato in "Altro" */}
+        </Link>
+      </nav>
     </div>
   );
 };
