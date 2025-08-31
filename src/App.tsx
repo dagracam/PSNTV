@@ -8,7 +8,8 @@ import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
 import PerSempreConDiego from "./pages/PerSempreConDiego";
 import PerSempreScugnizzo from "./pages/PerSempreScugnizzo";
-import DaysOfWar from "./pages/DaysOfWar"; // Importa la nuova pagina
+import DaysOfWar from "./pages/DaysOfWar";
+import PlaceholderPage from "./pages/PlaceholderPage"; // Importa la nuova pagina placeholder
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,11 @@ const App = () => (
           <Route path="/program/:id" element={<ProgramDetail />} />
           <Route path="/persemprecondiego" element={<PerSempreConDiego />} />
           <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} />
-          <Route path="/daysofwar" element={<DaysOfWar />} /> {/* Nuova rotta */}
+          <Route path="/daysofwar" element={<DaysOfWar />} />
+          {/* Nuove rotte per il menu "Altro" */}
+          <Route path="/about-us" element={<PlaceholderPage title="Chi siamo" />} />
+          <Route path="/privacy-policy" element={<PlaceholderPage title="Privacy Policy" />} />
+          <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

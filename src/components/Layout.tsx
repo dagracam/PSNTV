@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Home, Search, Menu } from "lucide-react";
-import SearchDialog from "./SearchDialog"; // Importa il nuovo componente
+import SearchDialog from "./SearchDialog";
+import MoreMenuDialog from "./MoreMenuDialog"; // Importa il nuovo componente
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isSearchDialogOpen, setIsSearchDialogOpen] = useState(false);
+  const [isMoreMenuDialogOpen, setIsMoreMenuDialogOpen] = useState(false); // Nuovo stato per il menu "Altro"
 
   return (
     <div className="min-h-screen text-dyad-text flex flex-col">
@@ -20,14 +22,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Icone per desktop */}
           <div className="hidden md:flex items-center space-x-6">
             <button
-              onClick={() => setIsSearchDialogOpen(true)} // Apre il dialog di ricerca
+              onClick={() => setIsSearchDialogOpen(true)}
               className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
             >
               <Search className="h-5 w-5" />
             </button>
-            <Link to="/profile" className="flex items-center text-dyad-text/70 hover:text-dyad-text group">
+            <button
+              onClick={() => setIsMoreMenuDialogOpen(true)} // Apre il dialog del menu "Altro"
+              className="flex items-center text-dyad-text/70 hover:text-dyad-text group"
+            >
               <Menu className="h-5 w-5" />
-            </Link>
+            </button>
           </div>
         </div>
       </header>
@@ -57,22 +62,29 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             Home
           </Link>
           <button
-            onClick={() => setIsSearchDialogOpen(true)} // Apre il dialog di ricerca anche su mobile
+            onClick={() => setIsSearchDialogOpen(true)}
             className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
           >
             <Search className="h-5 w-5" />
             Cerca
           </button>
-          <Link to="/profile" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text">
+          <button
+            onClick={() => setIsMoreMenuDialogOpen(true)} // Apre il dialog del menu "Altro" anche su mobile
+            className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-text"
+          >
             <Menu className="h-5 w-5" />
             Altro
-          </Link>
+          </button>
         </nav>
       </footer>
 
       <SearchDialog
         isOpen={isSearchDialogOpen}
         onClose={() => setIsSearchDialogOpen(false)}
+      />
+      <MoreMenuDialog
+        isOpen={isMoreMenuDialogOpen}
+        onClose={() => setIsMoreMenuDialogOpen(false)}
       />
     </div>
   );
