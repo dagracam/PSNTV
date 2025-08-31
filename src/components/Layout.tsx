@@ -17,44 +17,41 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen text-dyad-text flex flex-col">
       <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
-        <div className="container mx-auto h-16 flex items-center px-4"> {/* Rimosso justify-between */}
+        <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
             <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
           </Link>
-          {/* Wrapper per centrare le icone */}
-          <div className="flex-grow flex justify-center">
-            {/* Icone per desktop */}
-            <div className="hidden md:flex items-center space-x-6">
-              {/* Social Media Icons */}
-              <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-                <XIcon className="h-5 w-5" /> {/* Usa XIcon */}
-              </a>
-              <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
-                <TikTokIcon className="h-5 w-5" /> {/* Usa TikTokIcon */}
-              </a>
+          {/* Icone per desktop */}
+          <div className="hidden md:flex items-center space-x-6">
+            {/* Social Media Icons */}
+            <a href="https://x.com/PerSempre_News" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <XIcon className="h-5 w-5" /> {/* Usa XIcon */}
+            </a>
+            <a href="https://www.facebook.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="https://www.youtube.com/persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <Youtube className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/persemprenews_/" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="https://www.tiktok.com/@persemprenews" target="_blank" rel="noopener noreferrer" className="text-dyad-text/70 hover:text-dyad-link-blue group">
+              <TikTokIcon className="h-5 w-5" /> {/* Usa TikTokIcon */}
+            </a>
 
-              <button
-                onClick={() => setIsSearchDialogOpen(true)}
-                className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => setIsMoreMenuDialogOpen(true)}
-                className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
-              >
-                <Menu className="h-5 w-5" />
-              </button>
-            </div>
+            <button
+              onClick={() => setIsSearchDialogOpen(true)}
+              className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => setIsMoreMenuDialogOpen(true)}
+              className="flex items-center text-dyad-text/70 hover:text-dyad-link-blue group"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </header>
