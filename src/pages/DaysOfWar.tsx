@@ -25,7 +25,7 @@ const DaysOfWar: React.FC = () => {
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
-            width="100%"
+            width="125%"
             height="720"
             src={program.videoUrl} // Usa l'URL del video specifico del programma dai dati
             frameBorder="0"
