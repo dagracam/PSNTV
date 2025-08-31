@@ -4,25 +4,35 @@ import React from "react";
 import useDragScroll from "@/hooks/useDragScroll";
 import { programs } from "@/data/programs"; // Import the actual programs data
 import { Link } from "react-router-dom"; // Importa Link
+import { Program } from "@/types/program"; // Import Program type
 
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  // const recommendedRef = useDragScroll<HTMLDivElement>(); // Rimosso il riferimento
 
-  // Using the actual programs data for display
-  // For demonstration, let's slice the programs array for different sections
-  const allFeatured = programs.slice(0, 4);
-  // Ensure 'premio-diego-special' is first and 'premio-per-sempre-original' is second for specific links
+  // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani'];
+
+  // Recupera i programmi speciali e assicurati che siano validi
+  const specialPrograms = specialProgramIds
+    .map(id => programs.find(p => p.id === id))
+    .filter(Boolean) as Program[];
+
+  // Recupera tutti gli altri programmi, escludendo quelli speciali
+  const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
+
+  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 7
+  // per un totale di 10 programmi in questa sezione.
   const featuredPrograms = [
-    programs.find(p => p.id === 'premio-diego-special')!,
-    programs.find(p => p.id === 'premio-per-sempre-original')!,
-    programs.find(p => p.id === 'doc-nelle-tue-mani')!, // Aggiunto Days of War
-    ...allFeatured.filter(p => p.id !== 'premio-diego-special' && p.id !== 'premio-per-sempre-original' && p.id !== 'doc-nelle-tue-mani')
+    ...specialPrograms,
+    ...otherPrograms.slice(0, 7)
   ];
 
-  const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
-  // const recommendedPrograms = programs; // Rimosso l'uso dei programmi consigliati
+  // Identifica gli ID dei programmi già inclusi in "In Evidenza"
+  const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
+
+  // I programmi "Nuovi Arrivi" saranno tutti quelli non inclusi in "In Evidenza"
+  const newArrivalsPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
 
   return (
     <Layout>
@@ -42,7 +52,7 @@ const Index = () => {
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
           <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {featuredPrograms.map((program, index) => (
+            {featuredPrograms.map((program) => (
               <React.Fragment key={program.id}>
                 {program.id === 'premio-diego-special' ? (
                   <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
@@ -52,7 +62,7 @@ const Index = () => {
                   <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
                     <ProgramCard program={program} disableLink={true} />
                   </Link>
-                ) : program.id === 'doc-nelle-tue-mani' ? ( // Nuova condizione per Days of War
+                ) : program.id === 'doc-nelle-tue-mani' ? (
                   <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
                     <ProgramCard program={program} disableLink={true} />
                   </Link>
@@ -72,8 +82,6 @@ const Index = () => {
             ))}
           </div>
         </section>
-
-        {/* Sezione "Consigliati per Te" rimossa */}
       </div>
     </Layout>
   );
