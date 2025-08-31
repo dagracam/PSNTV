@@ -18,7 +18,7 @@ export const programs: Program[] = [
   {
     id: 'doc-nelle-tue-mani',
     title: 'Days of War',
-    description: 'Il dottor Andrea Fanti deve ricostruire la sua vita dopo un incidente che gli ha cancellato dodici anni di memoria.', // Descrizione mantenuta
+    description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
     imageUrl: '/images/days-of-war.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/daysofwar', // URL video aggiornato
   },
