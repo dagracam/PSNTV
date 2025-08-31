@@ -1,78 +1,62 @@
 import Layout from "@/components/Layout";
+import React, { useRef } from "react";
+import { programs } from "@/data/programs";
 import ProgramCard from "@/components/ProgramCard";
-import React from "react";
-import useDragScroll from "@/hooks/useDragScroll";
-import { programs } from "@/data/programs"; // Import the actual programs data
-import { Link } from "react-router-dom"; // Importa Link
+import { Link } from "react-router-dom";
 
-const Index = () => {
-  const featuredRef = useDragScroll<HTMLDivElement>();
-  const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  const recommendedRef = useDragScroll<HTMLDivElement>();
+const Index: React.FC = () => {
+  const featuredPrograms = programs.filter((program) => program.isFeatured);
+  const mostViewedPrograms = programs.filter((program) => program.mostViewed);
 
-  // Using the actual programs data for display
-  // For demonstration, let's slice the programs array for different sections
-  const allFeatured = programs.slice(0, 4);
-  // Ensure 'premio-diego-special' is first and 'premio-per-sempre-original' is second for specific links
-  const featuredPrograms = [
-    programs.find(p => p.id === 'premio-diego-special')!,
-    programs.find(p => p.id === 'premio-per-sempre-original')!,
-    ...allFeatured.filter(p => p.id !== 'premio-diego-special' && p.id !== 'premio-per-sempre-original')
-  ];
-
-  const newArrivalsPrograms = programs.slice(4, 8); // Adjust slice as needed
-  const recommendedPrograms = programs; // Display all for recommended
+  const featuredRef = useRef<HTMLDivElement>(null);
+  const mostViewedRef = useRef<HTMLDivElement>(null);
 
   return (
     <Layout>
-      <div className="space-y-10">
-        {/* Player iframe */}
-        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
-          <iframe
-            src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
-            title="Live Player"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full border-0"
-            scrolling="no"
-          ></iframe>
-        </div>
+      <div className="py-8">
+        {/* Hero Section */}
+        <section className="relative bg-dyad-bg text-dyad-text rounded-lg overflow-hidden shadow-lg mb-12">
+          <img
+            src="/hero-image.jpg"
+            alt="Hero Background"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="relative z-10 p-8 md:p-16 text-center">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+              Benvenuto su PSN TV
+            </h1>
+            <p className="text-lg md:text-xl text-dyad-text/90 mb-8 max-w-2xl mx-auto">
+              La tua finestra sul mondo dell'informazione e dell'intrattenimento.
+            </p>
+            <Link
+              to="/about"
+              className="inline-block bg-dyad-link-blue hover:bg-dyad-link-blue/90 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+            >
+              Scopri di più
+            </Link>
+          </div>
+        </section>
 
-        <section>
+        {/* Sezione In Evidenza */}
+        <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
           <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {featuredPrograms.map((program, index) => (
-              <React.Fragment key={program.id}>
-                {program.id === 'premio-diego-special' ? (
-                  <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
-                    <ProgramCard program={program} disableLink={true} />
-                  </Link>
-                ) : program.id === 'premio-per-sempre-original' ? (
-                  <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
-                    <ProgramCard program={program} disableLink={true} />
-                  </Link>
-                ) : (
-                  <ProgramCard program={program} />
-                )}
-              </React.Fragment>
+            {featuredPrograms.map((program) => (
+              <div key={program.id} className="flex-none w-64">
+                <ProgramCard program={program} />
+              </div>
             ))}
           </div>
         </section>
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
-          <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {newArrivalsPrograms.map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Consigliati per Te</h2>
-          <div ref={recommendedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {recommendedPrograms.map((program) => (
-              <ProgramCard key={program.id} program={program} />
+        {/* Sezione Più Visti */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Più Visti</h2>
+          <div ref={mostViewedRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+            {mostViewedPrograms.map((program) => (
+              <div key={program.id} className="flex-none w-64">
+                <ProgramCard program={program} />
+              </div>
             ))}
           </div>
         </section>
