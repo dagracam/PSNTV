@@ -39,7 +39,10 @@ const Index = () => {
   // Funzione per scorrere la sezione "In Evidenza"
   const scrollFeatured = (direction: 'left' | 'right') => {
     if (featuredRef.current) {
-      const scrollAmount = 280; // Larghezza approssimativa di una card + spazio
+      // Calcola la larghezza di una card (w-64 = 256px) più lo spazio (space-x-6 = 24px)
+      const cardWidthWithSpacing = 256 + 24; 
+      const scrollAmount = cardWidthWithSpacing * 5; // Scorre di 5 schede alla volta
+
       if (direction === 'left') {
         featuredRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
