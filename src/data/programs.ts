@@ -17,9 +17,9 @@ export const programs: Program[] = [
   },
   {
     id: 'doc-nelle-tue-mani',
-    title: 'Doc - Nelle tue mani',
+    title: 'Days of War', // Titolo aggiornato
     description: 'Il dottor Andrea Fanti deve ricostruire la sua vita dopo un incidente che gli ha cancellato dodici anni di memoria.',
-    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-doc_nelle_tue_mani.jpg',
+    imageUrl: '/images/days-of-war.png', // Immagine aggiornata
     videoUrl: 'https://www.raiplay.it/video/2024/05/Doc---Nelle-tue-mani---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
   },
   {
