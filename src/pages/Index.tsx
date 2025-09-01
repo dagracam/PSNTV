@@ -61,7 +61,7 @@ const Index = () => {
             title="Live Player"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
-            className="w-full h-full border-0"
+            className="w-full h-full border-none"
             scrolling="no"
           ></iframe>
         </div>
