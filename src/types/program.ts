@@ -4,4 +4,5 @@ export interface Program {
   description: string;
   imageUrl: string;
   videoUrl: string;
+  tags?: string[]; // Aggiunto il campo tags opzionale
 }

@@ -22,7 +22,8 @@ const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) => {
       const results = programs.filter(
         (program) =>
           program.title.toLowerCase().includes(lowercasedSearchTerm) ||
-          program.description.toLowerCase().includes(lowercasedSearchTerm)
+          program.description.toLowerCase().includes(lowercasedSearchTerm) ||
+          (program.tags && program.tags.some(tag => tag.toLowerCase().includes(lowercasedSearchTerm))) // Aggiunta la ricerca per tag
       );
       setFilteredPrograms(results);
     }

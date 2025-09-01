@@ -7,6 +7,7 @@ export const programs: Program[] = [
     description: 'Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.', // Descrizione aggiornata
     imageUrl: '/images/premio-per-sempre-scugnizzo.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi', // URL video aggiornato
+    tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
   },
   {
     id: 'premio-diego-special',
@@ -14,6 +15,7 @@ export const programs: Program[] = [
     description: 'II Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.', // Descrizione aggiornata
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
+    tags: ['maradona', 'diego', 'sport', 'premio', 'calcio', 'napoli'], // Aggiunti tag
   },
   {
     id: 'doc-nelle-tue-mani',
@@ -21,6 +23,7 @@ export const programs: Program[] = [
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
     imageUrl: '/images/days-of-war.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/daysofwar', // URL video aggiornato
+    tags: ['geopolitica', 'guerra', 'attualità', 'analisi'], // Aggiunti tag
   },
   {
     id: 'il-paradiso-delle-signore',
@@ -28,6 +31,7 @@ export const programs: Program[] = [
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
     imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-il_paradiso_delle_signore.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Il-Paradiso-delle-Signore---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    tags: ['fiction', 'rai', 'dramma', 'moda'], // Aggiunti tag
   },
   {
     id: 'un-posto-al-sole',
@@ -35,6 +39,7 @@ export const programs: Program[] = [
     description: 'Le storie degli abitanti di Palazzo Palladini a Napoli, tra amori, intrighi e colpi di scena.',
     imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-un_posto_al_sole.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Un-Posto-al-Sole---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    tags: ['soap opera', 'rai', 'napoli', 'dramma'], // Aggiunti tag
   },
   {
     id: 'che-dio-ci-aiuti',
@@ -42,6 +47,7 @@ export const programs: Program[] = [
     description: 'Suor Angela e le sue consorelle aiutano chi è in difficoltà, tra misteri e risate.',
     imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-che_dio_ci_aiuti.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Che-Dio-ci-aiuti---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    tags: ['fiction', 'rai', 'commedia', 'mistero'], // Aggiunti tag
   },
   {
     id: 'don-matteo',
@@ -49,6 +55,7 @@ export const programs: Program[] = [
     description: 'Don Matteo, un parroco con un talento speciale per risolvere i crimini, aiuta i Carabinieri di Spoleto.',
     imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-don_matteo.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Don-Matteo---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
+    tags: ['fiction', 'rai', 'mistero', 'religione'], // Aggiunti tag
   },
   {
     id: 'programma-extra-8',
@@ -56,6 +63,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 8.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+8',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-9',
@@ -63,6 +71,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 9.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+9',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-10',
@@ -70,6 +79,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 10.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+10',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-11',
@@ -77,6 +87,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 11.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+11',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-12',
@@ -84,6 +95,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 12.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+12',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-13',
@@ -91,6 +103,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 13.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+13',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-14',
@@ -98,6 +111,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 14.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+14',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-15',
@@ -105,6 +119,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 15.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+15',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-16',
@@ -112,6 +127,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 16.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+16',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-17',
@@ -119,6 +135,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 17.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+17',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-18',
@@ -126,6 +143,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 18.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+18',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-19',
@@ -133,6 +151,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 19.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+19',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-20',
@@ -140,6 +159,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 20.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+20',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-21',
@@ -147,6 +167,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 21.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+21',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-22',
@@ -154,6 +175,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 22.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+22',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-23',
@@ -161,6 +183,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 23.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+23',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-24',
@@ -168,6 +191,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 24.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+24',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-25',
@@ -175,5 +199,6 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 25.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+25',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    tags: ['extra', 'generico'],
   },
 ];
