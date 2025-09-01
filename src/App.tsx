@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"; // Importa il componente Analytics
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
@@ -10,7 +11,7 @@ import PerSempreConDiego from "./pages/PerSempreConDiego";
 import PerSempreScugnizzo from "./pages/PerSempreScugnizzo";
 import DaysOfWar from "./pages/DaysOfWar";
 import PlaceholderPage from "./pages/PlaceholderPage";
-import AboutUsPage from "./pages/AboutUsPage"; // Importa la nuova pagina ChiSiamo
+import AboutUsPage from "./pages/AboutUsPage";
 
 const queryClient = new QueryClient();
 
@@ -28,12 +29,13 @@ const App = () => (
           <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} />
           <Route path="/daysofwar" element={<DaysOfWar />} />
           {/* Nuove rotte per il menu "Altro" */}
-          <Route path="/about-us" element={<AboutUsPage />} /> {/* Usa la nuova pagina AboutUsPage */}
+          <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/privacy-policy" element={<PlaceholderPage title="Privacy Policy" />} />
           <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics /> {/* Aggiungi il componente Analytics qui */}
     </TooltipProvider>
   </QueryClientProvider>
 );
