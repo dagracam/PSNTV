@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen text-dyad-text flex flex-col">
-      <header className="sticky top-0 z-40 w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-b border-dyad-border">
+      <header className="sticky top-0 z-40 w-full bg-dyad-bg/80 backdrop-blur-sm border-b border-dyad-border">
         <div className="container mx-auto h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center">
             <img src="/logo-psn-2025.png" alt="PSN Logo" className="h-10" />
@@ -74,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </footer>
 
       {/* Footer di navigazione mobile esistente */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-4 md:hidden">
+      <footer className="fixed bottom-0 left-0 right-0 bg-dyad-bg/80 backdrop-blur-sm border-t border-dyad-border p-4 md:hidden">
         <nav className="flex justify-around items-center">
           <Link to="/" className="flex flex-col items-center text-xs text-dyad-text/70 hover:text-dyad-link-blue">
             <Home className="h-5 w-5" />
