@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --dyad-primary-bg: #1A2540; /* Reso più scuro */
+    --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
-    --dyad-footer-bg: #17213D;
-    --dyad-edge-bg: #0A101E; /* Reso più scuro */
+    --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
+    --dyad-edge-bg: #10182c; /* Nuovo colore per i bordi del gradiente */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
@@ -50,10 +50,10 @@
   }
 
   .dark {
-    --dyad-primary-bg: #1A2540; /* Reso più scuro */
+    --dyad-primary-bg: #213058;
     --dyad-primary-text: #d9d9d9;
-    --dyad-footer-bg: #17213D;
-    --dyad-edge-bg: #0A101E; /* Reso più scuro */
+    --dyad-footer-bg: #17213D; /* Nuovo colore più scuro per il footer */
+    --dyad-edge-bg: #10182c; /* Nuovo colore per i bordi del gradiente */
 
     --background: var(--dyad-primary-bg);
     --foreground: var(--dyad-primary-text);
