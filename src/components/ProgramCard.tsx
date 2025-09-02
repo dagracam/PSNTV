@@ -18,7 +18,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink }) => {
           draggable="false" // Aggiunto per prevenire il trascinamento nativo dell'immagine
         />
         {/* Overlay per il gradiente, posizionato sopra l'immagine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/20 to-transparent pointer-events-none"></div>
       </div>
       <div className="p-3 flex-grow flex flex-col justify-between">
         <h3 className="text-lg font-semibold text-dyad-text group-hover:text-dyad-text/90 transition-colors duration-200 truncate">
