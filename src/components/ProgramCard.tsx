@@ -8,9 +8,6 @@ interface ProgramCardProps {
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink }) => {
-  // Aggiungi questo console.log per debuggare l'URL dell'immagine
-  console.log(`ProgramCard: Rendering program "${program.title}" with imageUrl: "${program.imageUrl}"`);
-
   const content = (
     <>
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
