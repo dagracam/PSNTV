@@ -110,7 +110,7 @@ const Index = () => {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
           <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {newArrivalsPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} />
