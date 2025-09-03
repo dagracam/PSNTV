@@ -1,160 +1,124 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
 import ProgramCard from "@/components/ProgramCard";
-import { Program } from '../types/program'; // Import the Program type
+import React, { useRef } from "react"; // Importa useRef
+import useDragScroll from "@/hooks/useDragScroll";
+import { programs } from "@/data/programs"; // Import the actual programs data
+import { Link } from "react-router-dom"; // Importa Link
+import { Program } from "@/types/program"; // Import Program type
+import { Button } from "@/components/ui/button"; // Importa Button
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Importa le icone
 
-const Index: React.FC = () => {
-  // Dati di esempio per i programmi
-  const newArrivalsPrograms: Program[] = [
-    {
-      id: "1",
-      title: "Per Sempre Con Diego",
-      description: "Un viaggio emozionante nella vita e nella carriera del leggendario Diego Armando Maradona.",
-      imageUrl: "/images/premiodiego-low.jpg",
-      category: "Documentario",
-      rating: 4.9,
-      year: 2023,
-      duration: "1h 45m",
-      director: "Paolo Rossi",
-      cast: ["Diego Maradona", "Interviste esclusive"],
-      trailerUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      fullVideoUrl: "/videos/maradona_full.mp4",
-    },
-    {
-      id: "2",
-      title: "Le Cronache di Aethelgard",
-      description: "Un'epica avventura fantasy in un mondo di magia e mistero.",
-      imageUrl: "https://via.placeholder.com/300x168/FF5733/ffffff?text=Aethelgard",
-      category: "Fantasy",
-      rating: 4.7,
-      year: 2022,
-      duration: "2h 10m",
-      director: "Elena Bianchi",
-      cast: ["Marco Gialli", "Sofia Neri"],
-      trailerUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      fullVideoUrl: "/videos/aethelgard_full.mp4",
-    },
-    {
-      id: "3",
-      title: "Il Mistero di Villa Scarlatta",
-      description: "Un thriller avvincente che ti terrà col fiato sospeso fino all'ultima scena.",
-      imageUrl: "https://via.placeholder.com/300x168/33FF57/ffffff?text=Villa+Scarlatta",
-      category: "Thriller",
-      rating: 4.5,
-      year: 2023,
-      duration: "1h 55m",
-      director: "Luca Verdi",
-      cast: ["Giulia Rossi", "Andrea Bruno"],
-      trailerUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      fullVideoUrl: "/videos/villa_scarlatta_full.mp4",
-    },
-    {
-      id: "4",
-      title: "Oltre l'Orizzonte",
-      description: "Un dramma toccante sulla ricerca della speranza e del perdono.",
-      imageUrl: "https://via.placeholder.com/300x168/3357FF/ffffff?text=Orizzonte",
-      category: "Drammatico",
-      rating: 4.8,
-      year: 2021,
-      duration: "2h 05m",
-      director: "Sara Neri",
-      cast: ["Roberto Bianchi", "Laura Gialli"],
-      trailerUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      fullVideoUrl: "/videos/orizzonte_full.mp4",
-    },
-    {
-      id: "5",
-      title: "La Città Silente",
-      description: "Un film di fantascienza che esplora un futuro distopico.",
-      imageUrl: "https://via.placeholder.com/300x168/FF33A1/ffffff?text=Citta+Silente",
-      category: "Fantascienza",
-      rating: 4.6,
-      year: 2024,
-      duration: "1h 50m",
-      director: "Davide Rossi",
-      cast: ["Martina Verdi", "Alessandro Neri"],
-      trailerUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      fullVideoUrl: "/videos/citta_silente_full.mp4",
-    },
+const Index = () => {
+  const featuredRef = useDragScroll<HTMLDivElement>();
+  const newArrivalsRef = useDragScroll<HTMLDivElement>();
+
+  // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani'];
+
+  // Recupera i programmi speciali e assicurati che siano validi
+  const specialPrograms = specialProgramIds
+    .map(id => programs.find(p => p.id === id))
+    .filter(Boolean) as Program[];
+
+  // Recupera tutti gli altri programmi, escludendo quelli speciali
+  const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
+
+  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 7
+  // per un totale di 10 programmi in questa sezione.
+  const featuredPrograms = [
+    ...specialPrograms,
+    ...otherPrograms.slice(0, 7)
   ];
 
-  const newArrivalsRef = useRef<HTMLDivElement>(null);
+  // Identifica gli ID dei programmi già inclusi in "In Evidenza"
+  const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
-  const scrollLeft = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
+  // I programmi "Nuovi Arrivi" saranno tutti quelli non inclusi in "In Evidenza"
+  const newArrivalsPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
 
-  const scrollRight = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: 300, behavior: "smooth" });
+  // Funzione per scorrere la sezione "In Evidenza"
+  const scrollFeatured = (direction: 'left' | 'right') => {
+    if (featuredRef.current) {
+      // Calcola la larghezza di una card (w-64 = 256px) più lo spazio (space-x-6 = 24px)
+      const cardWidthWithSpacing = 256 + 24; 
+      const scrollAmount = cardWidthWithSpacing * 5; // Scorre di 5 schede alla volta
+
+      if (direction === 'left') {
+        featuredRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        featuredRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <section className="relative h-[500px] bg-cover bg-center rounded-lg overflow-hidden mb-12" style={{ backgroundImage: "url('https://via.placeholder.com/1200x500/000000/ffffff?text=Hero+Image')" }}>
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/90 to-transparent flex items-end p-8">
-          <div className="text-white max-w-2xl">
-            <h1 className="text-5xl font-bold mb-4">Titolo del Programma in Evidenza</h1>
-            <p className="text-lg mb-6">
-              Breve descrizione accattivante del programma in evidenza. Invita gli utenti a scoprire di più.
-            </p>
-            <Button size="lg" className="bg-dyad-primary hover:bg-dyad-primary/90 text-dyad-text-foreground">
-              Guarda Ora
+    <Layout>
+      <div className="space-y-10">
+        {/* Player iframe */}
+        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
+          <iframe
+            src="https://rst2.saiuzwebnetwork.it:2020/VideoPlayer/persemprenews?autoplay=1&mute=1"
+            title="Live Player"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-none"
+            scrolling="no"
+          ></iframe>
+        </div>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">In Evidenza</h2>
+          <div className="relative flex items-center"> {/* Contenitore per frecce e scroll */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scrollFeatured('left')}
+              className="absolute left-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -ml-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </Button>
+            <div ref={featuredRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
+              {featuredPrograms.map((program) => (
+                <React.Fragment key={program.id}>
+                  {program.id === 'premio-diego-special' ? (
+                    <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : program.id === 'premio-per-sempre-original' ? (
+                    <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : program.id === 'doc-nelle-tue-mani' ? (
+                    <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : (
+                    <ProgramCard program={program} />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scrollFeatured('right')}
+              className="absolute right-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -mr-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
+            >
+              <ChevronRight className="h-8 w-8" />
             </Button>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* New Arrivals Section */}
-      <section>
-        <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
-        <div className="relative">
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Nuovi Arrivi</h2>
           <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
             {newArrivalsPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
           </div>
-          <button
-            onClick={() => scrollLeft(newArrivalsRef)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-dyad-bg/70 hover:bg-dyad-bg rounded-full p-2 shadow-lg z-10"
-            aria-label="Scroll left"
-          >
-            &lt;
-          </button>
-          <button
-            onClick={() => scrollRight(newArrivalsRef)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-dyad-bg/70 hover:bg-dyad-bg rounded-full p-2 shadow-lg z-10"
-            aria-label="Scroll right"
-          >
-            &gt;
-          </button>
-        </div>
-      </section>
-
-      {/* Categories Section (Example) */}
-      <section className="mt-12">
-        <h2 className="text-3xl font-bold mb-6 text-dyad-text">Esplora per Categoria</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <Link to="/category/documentary" className="block p-6 bg-dyad-card rounded-lg shadow hover:shadow-md transition-shadow duration-200 text-center text-dyad-text font-semibold">
-            Documentari
-          </Link>
-          <Link to="/category/fantasy" className="block p-6 bg-dyad-card rounded-lg shadow hover:shadow-md transition-shadow duration-200 text-center text-dyad-text font-semibold">
-            Fantasy
-          </Link>
-          <Link to="/category/thriller" className="block p-6 bg-dyad-card rounded-lg shadow hover:shadow-md transition-shadow duration-200 text-center text-dyad-text font-semibold">
-            Thriller
-          </Link>
-          <Link to="/category/drama" className="block p-6 bg-dyad-card rounded-lg shadow hover:shadow-md transition-shadow duration-200 text-center text-dyad-text font-semibold">
-            Drammatico
-          </Link>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 
