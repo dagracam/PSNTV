@@ -26,6 +26,14 @@ export const programs: Program[] = [
     tags: ['geopolitica', 'guerra', 'attualità', 'analisi'], // Aggiunti tag
   },
   {
+    id: 'psn-sport-club',
+    title: 'PSN Sport Club',
+    description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
+    imageUrl: 'https://via.placeholder.com/320x180?text=PSN+Sport+Club', // Placeholder image
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
+    tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
