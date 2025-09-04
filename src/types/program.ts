@@ -3,7 +3,6 @@ export interface Program {
   title: string;
   description: string;
   imageUrl: string;
-  category: string;
-  videoUrl: string; // Aggiunto il campo videoUrl
-  tags: string[];    // Aggiunto il campo tags
+  videoUrl: string;
+  tags?: string[]; // Aggiunto il campo tags opzionale
 }
