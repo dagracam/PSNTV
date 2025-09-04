@@ -29,7 +29,7 @@ export const programs: Program[] = [
     id: 'psn-sport-club',
     title: 'PSN Sport Club',
     description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
-    imageUrl: 'https://via.placeholder.com/320x180?text=PSN+Sport+Club', // Placeholder image
+    imageUrl: '/images/psn-sport-club.png', // Immagine aggiornata
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
     tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
   },
