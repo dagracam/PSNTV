@@ -11,7 +11,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  const altroRef = useDragScroll<HTMLDivElement>(); // Nuovo ref per la sezione "Altro"
+  // Rimosso altroRef e la funzione scrollAltro in quanto la sezione "Altro" non sarà più uno slider.
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
   const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani'];
@@ -34,8 +34,8 @@ const Index = () => {
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
-  // I programmi "Nuovi Arrivi" saranno tutti quelli non inclusi in "In Evidenza"
-  const newArrivalsPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
+  // I programmi "Tutti i nostri programmi" saranno tutti quelli non inclusi in "In Evidenza"
+  const allOurPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
 
   // Funzione per scorrere la sezione "In Evidenza"
   const scrollFeatured = (direction: 'left' | 'right') => {
@@ -52,15 +52,15 @@ const Index = () => {
     }
   };
 
-  // Funzione per scorrere la sezione "Altro"
-  const scrollAltro = (direction: 'left' | 'right') => {
-    if (altroRef.current) {
+  // Funzione per scorrere la sezione "Tutti i nostri programmi"
+  const scrollNewArrivals = (direction: 'left' | 'right') => {
+    if (newArrivalsRef.current) {
       const cardWidthWithSpacing = 256 + 24;
       const scrollAmount = cardWidthWithSpacing * 5; // Scorre di 5 schede alla volta
       if (direction === 'left') {
-        altroRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        newArrivalsRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
-        altroRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        newArrivalsRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }
     }
   };
@@ -125,42 +125,44 @@ const Index = () => {
 
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
-          <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
-            {newArrivalsPrograms.map((program) => (
-              <ProgramCard key={program.id} program={program} />
-            ))}
-          </div>
-        </section>
-
-        {/* Nuova sezione "Altro" */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Altro</h2>
           <div className="relative flex items-center">
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => scrollAltro('left')}
+              onClick={() => scrollNewArrivals('left')}
               className="absolute left-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -ml-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
             >
               <ChevronLeft className="h-8 w-8" />
             </Button>
-            <div ref={altroRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
-              {/* Utilizziamo gli stessi programmi di newArrivalsPrograms per popolare questa sezione,
-                  poiché non ci sono altri programmi unici disponibili nel dataset attuale
-                  dopo aver popolato le sezioni "In Evidenza" e "Tutti i nostri programmi".
-                  Mostrerà 15 programmi invece dei 16 richiesti a causa della limitazione dei dati. */}
-              {newArrivalsPrograms.map((program) => (
+            <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
+              {allOurPrograms.map((program) => (
                 <ProgramCard key={program.id} program={program} />
               ))}
             </div>
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => scrollAltro('right')}
+              onClick={() => scrollNewArrivals('right')}
               className="absolute right-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -mr-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
             >
               <ChevronRight className="h-8 w-8" />
             </Button>
+          </div>
+        </section>
+
+        {/* Nuova sezione "Altro" - Ora una griglia fissa */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Altro</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {/* Utilizziamo i programmi rimanenti per popolare questa sezione.
+                Attualmente, il dataset ha 25 programmi.
+                10 in "In Evidenza", 15 in "Tutti i nostri programmi".
+                Quindi, per "Altro" useremo gli stessi 15 programmi di "Tutti i nostri programmi"
+                o potremmo aggiungere più programmi al file src/data/programs.ts se necessario.
+                Per ora, mostrerà i primi 15 programmi disponibili dopo la sezione "In Evidenza". */}
+            {allOurPrograms.map((program) => (
+              <ProgramCard key={program.id} program={program} isGridItem={true} />
+            ))}
           </div>
         </section>
       </div>
