@@ -11,14 +11,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink }) => {
   const content = (
     <>
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
-        <img
-          src={program.imageUrl} // Usa program.imageUrl
-          alt={program.title} // Usa program.title per il testo alt
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
-          draggable="false" // Aggiunto per prevenire il trascinamento nativo dell'immagine
-        />
-        {/* Overlay per il gradiente, posizionato sopra l'immagine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/20 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/80 to-transparent flex items-center justify-center">
+          <img
+            src={program.imageUrl} // Usa program.imageUrl
+            alt={program.title} // Usa program.title per il testo alt
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
+            draggable="false" // Aggiunto per prevenire il trascinamento nativo dell'immagine
+          />
+        </div>
       </div>
       <div className="p-3 flex-grow flex flex-col justify-between">
         <h3 className="text-lg font-semibold text-dyad-text group-hover:text-dyad-text/90 transition-colors duration-200 truncate">
