@@ -5,7 +5,7 @@ export const programs: Program[] = [
     id: 'premio-per-sempre-original',
     title: 'Per Sempre Scugnizzo',
     description: 'Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.', // Descrizione aggiornata
-    imageUrl: '/images/premio-per-sempre-scugnizzo.jpg',
+    imageUrl: '/images/premio-per-sempre-scugnizzo.jpg', // Aggiornato all'immagine ottimizzata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi', // URL video aggiornato
     tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
   },
@@ -13,7 +13,7 @@ export const programs: Program[] = [
     id: 'premio-diego-special',
     title: 'Per Sempre Con Diego',
     description: 'II Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.', // Descrizione aggiornata
-    imageUrl: '/images/premio-per-sempre-con-diego.jpg', // Aggiornato all'immagine ottimizzata
+    imageUrl: '/images/premio-per-sempre-con-diego.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
     tags: ['maradona', 'diego', 'sport', 'premio', 'calcio', 'napoli'], // Aggiunti tag
   },
@@ -29,7 +29,7 @@ export const programs: Program[] = [
     id: 'psn-sport-club',
     title: 'PSN Sport Club',
     description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
-    imageUrl: '/images/psn-sport-club.png', // Immagine aggiornata
+    imageUrl: '/images/psn-sport-club.png',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
     tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
   },
