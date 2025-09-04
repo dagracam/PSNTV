@@ -26,8 +26,8 @@ const PsnSportClub: React.FC = () => {
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
             width="100%"
-            height="720"
-            src={program.videoUrl} // Usa l'URL del video specifico del programma dai dati
+            height="545"
+            src="https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
