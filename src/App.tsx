@@ -10,7 +10,7 @@ import ProgramDetail from "./pages/ProgramDetail";
 import PerSempreConDiego from "./pages/PerSempreConDiego";
 import PerSempreScugnizzo from "./pages/PerSempreScugnizzo";
 import DaysOfWar from "./pages/DaysOfWar";
-import PsnSportClub from "./pages/PsnSportClub"; // Importa la nuova pagina
+import PsnSportclub from "./pages/PsnSportclub"; // Importa la nuova pagina (senza trattini)
 import PlaceholderPage from "./pages/PlaceholderPage";
 import AboutUsPage from "./pages/AboutUsPage";
 
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/persemprecondiego" element={<PerSempreConDiego />} />
           <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} />
           <Route path="/daysofwar" element={<DaysOfWar />} />
-          <Route path="/psnsportclub" element={<PsnSportClub />} /> {/* Nuova rotta per PSN Sport Club */}
+          <Route path="/psnsportclub" element={<PsnSportclub />} /> {/* Nuova rotta per PSN Sport Club */}
           {/* Nuove rotte per il menu "Altro" */}
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/privacy-policy" element={<PlaceholderPage title="Privacy Policy" />} />

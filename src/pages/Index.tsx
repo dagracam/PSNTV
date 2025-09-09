@@ -14,7 +14,7 @@ const Index = () => {
   // Rimosso altroRef e la funzione scrollAltro in quanto la sezione "Altro" non sarà più uno slider.
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani'];
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club']; // Aggiunto psn-sport-club
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -24,11 +24,11 @@ const Index = () => {
   // Recupera tutti gli altri programmi, escludendo quelli speciali
   const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
 
-  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 7
+  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 6
   // per un totale di 10 programmi in questa sezione.
   const featuredPrograms = [
     ...specialPrograms,
-    ...otherPrograms.slice(0, 7)
+    ...otherPrograms.slice(0, 6) // Ridotto a 6 per mantenere 10 programmi totali in evidenza
   ];
 
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
@@ -104,6 +104,10 @@ const Index = () => {
                     </Link>
                   ) : program.id === 'doc-nelle-tue-mani' ? (
                     <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
+                      <ProgramCard program={program} disableLink={true} />
+                    </Link>
+                  ) : program.id === 'psn-sport-club' ? ( // Aggiunta la condizione per PSN Sport Club
+                    <Link to="/psnsportclub" className="group block w-64 flex-shrink-0">
                       <ProgramCard program={program} disableLink={true} />
                     </Link>
                   ) : (

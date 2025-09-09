@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import React from "react";
 import { programs } from "@/data/programs"; // Importa i dati reali dei programmi
 
-const PsnSportClub: React.FC = () => {
+const PsnSportclub: React.FC = () => {
   // Trova il programma "PSN Sport Club" per ID
   const program = programs.find((p) => p.id === 'psn-sport-club');
 
@@ -27,7 +27,7 @@ const PsnSportClub: React.FC = () => {
           <iframe
             width="100%"
             height="545"
-            src="https://web.psntv.eu/embed-playlist/persemprenews/flashnews"
+            src="https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -39,4 +39,4 @@ const PsnSportClub: React.FC = () => {
   );
 };
 
-export default PsnSportClub;
+export default PsnSportclub;
