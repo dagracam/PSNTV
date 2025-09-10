@@ -14,7 +14,7 @@ const Index = () => {
   // Rimosso altroRef e la funzione scrollAltro in quanto la sezione "Altro" non sarà più uno slider.
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club']; // Aggiunto psn-sport-club
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club'];
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -24,11 +24,11 @@ const Index = () => {
   // Recupera tutti gli altri programmi, escludendo quelli speciali
   const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
 
-  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 6
-  // per un totale di 10 programmi in questa sezione.
+  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 8
+  // per un totale di 12 programmi in questa sezione (4 speciali + 8 altri).
   const featuredPrograms = [
     ...specialPrograms,
-    ...otherPrograms.slice(0, 6) // Ridotto a 6 per mantenere 10 programmi totali in evidenza
+    ...otherPrograms.slice(0, 8) 
   ];
 
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
@@ -106,7 +106,7 @@ const Index = () => {
                     <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
                       <ProgramCard program={program} disableLink={true} />
                     </Link>
-                  ) : program.id === 'psn-sport-club' ? ( // Aggiunta la condizione per PSN Sport Club
+                  ) : program.id === 'psn-sport-club' ? (
                     <Link to="/psnsportclub" className="group block w-64 flex-shrink-0">
                       <ProgramCard program={program} disableLink={true} />
                     </Link>
@@ -158,12 +158,7 @@ const Index = () => {
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Altro</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {/* Utilizziamo i programmi rimanenti per popolare questa sezione.
-                Attualmente, il dataset ha 25 programmi.
-                10 in "In Evidenza", 15 in "Tutti i nostri programmi".
-                Quindi, per "Altro" useremo gli stessi 15 programmi di "Tutti i nostri programmi"
-                o potremmo aggiungere più programmi al file src/data/programs.ts se necessario.
-                Per ora, mostrerà i primi 15 programmi disponibili dopo la sezione "In Evidenza". */}
+            {/* Utilizziamo i programmi rimanenti per popolare questa sezione. */}
             {allOurPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} isGridItem={true} />
             ))}
