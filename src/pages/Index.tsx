@@ -42,7 +42,7 @@ const Index = () => {
     if (featuredRef.current) {
       // Calcola la larghezza di una card (w-64 = 256px) più lo spazio (space-x-6 = 24px)
       const cardWidthWithSpacing = 256 + 24; 
-      const scrollAmount = cardWidthWithSpacing * 5; // Scorre di 5 schede alla volta
+      const scrollAmount = cardWidthWithSpacing * 6; // Scorre di 6 schede alla volta
 
       if (direction === 'left') {
         featuredRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
