@@ -11,10 +11,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
-  // Rimosso altroRef e la funzione scrollAltro in quanto la sezione "Altro" non sarà più uno slider.
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club'];
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby']; // Added 'tutto-rugby'
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -108,6 +107,10 @@ const Index = () => {
                     </Link>
                   ) : program.id === 'psn-sport-club' ? (
                     <Link to="/psnsportclub" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'tutto-rugby' ? ( // New conditional for Tutto Rugby
+                    <Link to="/tuttorugby" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (

@@ -42,6 +42,14 @@ export const programs: Program[] = [
     tags: ['cultura', 'approfondimento', 'società', 'filosofia'],
   },
   {
+    id: 'tutto-rugby',
+    title: 'Tutto Rugby',
+    description: 'Tutte le ultime notizie e gli approfondimenti dal mondo del rugby.',
+    imageUrl: '/images/TUTTO RUGBY.jpg', // Nuova immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby', // URL dell'iframe
+    tags: ['rugby', 'sport', 'notizie', 'approfondimenti'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
