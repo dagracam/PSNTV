@@ -6,6 +6,9 @@ const TuttoRugby = () => {
     <Layout>
       <div className="container mx-auto p-4">
         <h1 className="text-4xl font-bold mb-8 text-dyad-text">Tutto Rugby</h1>
+        <p className="mb-8 text-lg text-dyad-text/80">
+          Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.
+        </p>
         <div className="aspect-video w-full max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
             width="100%"
@@ -17,9 +20,6 @@ const TuttoRugby = () => {
             className="w-full h-full border-none"
           ></iframe>
         </div>
-        <p className="mt-8 text-lg text-dyad-text/80">
-          Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.
-        </p>
       </div>
     </Layout>
   );
