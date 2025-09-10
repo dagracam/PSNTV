@@ -44,7 +44,7 @@ export const programs: Program[] = [
   {
     id: 'tutto-rugby',
     title: 'Tutto Rugby',
-    description: 'Tutte le ultime notizie e gli approfondimenti dal mondo del rugby.',
+    description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata
     imageUrl: '/images/TUTTO RUGBY.jpg', // Nuova immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby', // URL dell'iframe
     tags: ['rugby', 'sport', 'notizie', 'approfondimenti'],
