@@ -40,8 +40,8 @@ const Index = () => {
   // Funzione per scorrere la sezione "In Evidenza"
   const scrollFeatured = (direction: 'left' | 'right') => {
     if (featuredRef.current) {
-      // Calcola la larghezza di una card (w-64 = 256px) più lo spazio (space-x-6 = 24px)
-      const cardWidthWithSpacing = 256 + 24; 
+      // Calcola la larghezza di una card (w-48 = 192px) più lo spazio (space-x-6 = 24px)
+      const cardWidthWithSpacing = 192 + 24; 
       const scrollAmount = cardWidthWithSpacing * 6; // Scorre di 6 schede alla volta
 
       if (direction === 'left') {
@@ -55,7 +55,7 @@ const Index = () => {
   // Funzione per scorrere la sezione "Tutti i nostri programmi"
   const scrollNewArrivals = (direction: 'left' | 'right') => {
     if (newArrivalsRef.current) {
-      const cardWidthWithSpacing = 256 + 24;
+      const cardWidthWithSpacing = 256 + 24; // Queste schede rimangono w-64
       const scrollAmount = cardWidthWithSpacing * 5; // Scorre di 5 schede alla volta
       if (direction === 'left') {
         newArrivalsRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
@@ -95,23 +95,23 @@ const Index = () => {
               {featuredPrograms.map((program) => (
                 <React.Fragment key={program.id}>
                   {program.id === 'premio-diego-special' ? (
-                    <Link to="/persemprecondiego" className="group block w-64 flex-shrink-0">
-                      <ProgramCard program={program} disableLink={true} />
+                    <Link to="/persemprecondiego" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : program.id === 'premio-per-sempre-original' ? (
-                    <Link to="/persempre-scugnizzo" className="group block w-64 flex-shrink-0">
-                      <ProgramCard program={program} disableLink={true} />
+                    <Link to="/persempre-scugnizzo" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : program.id === 'doc-nelle-tue-mani' ? (
-                    <Link to="/daysofwar" className="group block w-64 flex-shrink-0">
-                      <ProgramCard program={program} disableLink={true} />
+                    <Link to="/daysofwar" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : program.id === 'psn-sport-club' ? (
-                    <Link to="/psnsportclub" className="group block w-64 flex-shrink-0">
-                      <ProgramCard program={program} disableLink={true} />
+                    <Link to="/psnsportclub" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
-                    <ProgramCard program={program} />
+                    <ProgramCard program={program} cardWidthClass="w-48" />
                   )}
                 </React.Fragment>
               ))}
@@ -158,7 +158,6 @@ const Index = () => {
         <section>
           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Altro</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {/* Utilizziamo i programmi rimanenti per popolare questa sezione. */}
             {allOurPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} isGridItem={true} />
             ))}

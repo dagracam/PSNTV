@@ -7,9 +7,10 @@ interface ProgramCardProps {
   program: Program; // Use the imported Program type
   disableLink?: boolean; // Nuova prop per disabilitare il link interno
   isGridItem?: boolean; // Nuova prop per indicare se è un elemento di una griglia
+  cardWidthClass?: string; // Nuova prop per specificare la larghezza della card
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink, isGridItem }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink, isGridItem, cardWidthClass }) => {
   const content = (
     <>
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
@@ -33,9 +34,10 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink, isGridI
     </>
   );
 
+  const defaultWidthClass = isGridItem ? "" : "w-64"; // Default a w-64 se non è un elemento di griglia
   const wrapperClasses = cn(
-    "group block",
-    !isGridItem && "w-64 flex-shrink-0" // Applica w-64 e flex-shrink-0 solo se non è un elemento di griglia
+    "group block flex-shrink-0", // Sempre flex-shrink-0 per le sezioni scorrevoli
+    cardWidthClass || defaultWidthClass // Usa la larghezza personalizzata o quella di default
   );
 
   if (disableLink) {
