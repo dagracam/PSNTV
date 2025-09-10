@@ -37,7 +37,7 @@ export const programs: Program[] = [
     id: 'schole',
     title: 'Scholé',
     description: 'Un programma dedicato all\'approfondimento culturale e alla riflessione su temi attuali.',
-    imageUrl: 'https://via.placeholder.com/320x180?text=Schole', // Placeholder image
+    imageUrl: '/images/SCHOLé.png', // Aggiornato con l'immagine caricata
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
     tags: ['cultura', 'approfondimento', 'società', 'filosofia'],
   },
