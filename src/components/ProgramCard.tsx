@@ -1,51 +1,69 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Program } from '../types/program'; // Import the Program type
-import { cn } from '@/lib/utils'; // Import cn utility for conditional classes
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Program } from '@/types/program';
 
 interface ProgramCardProps {
-  program: Program; // Use the imported Program type
-  disableLink?: boolean; // Nuova prop per disabilitare il link interno
-  isGridItem?: boolean; // Nuova prop per indicare se è un elemento di una griglia
-  cardWidthClass?: string; // Nuova prop per specificare la larghezza della card
+  program: Program;
+  disableLink?: boolean;
+  cardWidthClass?: string; // Aggiunto per permettere larghezze diverse
+  isGridItem?: boolean; // Nuovo prop per gestire lo stile in griglia
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink, isGridItem, cardWidthClass }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink = false, cardWidthClass = 'w-64', isGridItem = false }) => {
   const content = (
-    <>
+    <div className={`group relative flex flex-col h-full bg-dyad-card-background rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 ${cardWidthClass} ${isGridItem ? 'w-full' : ''}`}>
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         <img
-          src={program.imageUrl} // Usa program.imageUrl
-          alt={program.title} // Usa program.title per il testo alt
+          src={program.imageUrl}
+          alt={program.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
-          draggable="false" // Aggiunto per prevenire il trascinamento nativo dell'immagine
         />
-        {/* Overlay per il gradiente, posizionato sopra l'immagine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dyad-bg/20 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <span className="text-white text-lg font-semibold">{program.title}</span>
+        </div>
       </div>
-      <div className="p-3 flex-grow flex flex-col justify-between">
-        <h3 className="text-lg font-semibold text-dyad-text group-hover:text-dyad-text/90 transition-colors duration-200 truncate">
+      <div className="p-4 flex-grow flex flex-col">
+        <h3 className="text-lg font-semibold text-dyad-text mb-2">
           {program.title}
         </h3>
-        <p className="text-sm text-dyad-text/70 mb-2 line-clamp-2">
+        <p className="text-sm text-dyad-text/70 mb-2">
           {program.description}
         </p>
+        {program.tags && program.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-auto pt-2">
+            {program.tags.map((tag, index) => (
+              <span key={index} className="px-2 py-1 bg-dyad-accent text-dyad-accent-foreground text-xs rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-    </>
-  );
-
-  const defaultWidthClass = isGridItem ? "" : "w-64"; // Default a w-64 se non è un elemento di griglia
-  const wrapperClasses = cn(
-    "group block flex-shrink-0", // Sempre flex-shrink-0 per le sezioni scorrevoli
-    cardWidthClass || defaultWidthClass // Usa la larghezza personalizzata o quella di default
+    </div>
   );
 
   if (disableLink) {
-    return <div className={wrapperClasses}>{content}</div>;
+    return content;
+  }
+
+  // Determina il percorso corretto in base all'ID del programma
+  let programPath = `/program/${program.id}`;
+  if (program.id === 'premio-diego-special') {
+    programPath = '/persemprecondiego';
+  } else if (program.id === 'premio-per-sempre-original') {
+    programPath = '/persempre-scugnizzo';
+  } else if (program.id === 'doc-nelle-tue-mani') {
+    programPath = '/daysofwar';
+  } else if (program.id === 'psn-sport-club') {
+    programPath = '/psnsportclub';
+  } else if (program.id === 'tutto-rugby') {
+    programPath = '/tuttorugby';
+  } else if (program.id === 'urban-talk') {
+    programPath = '/urbantalk';
   }
 
   return (
-    <Link to={`/program/${program.id}`} className={wrapperClasses}>
+    <Link to={programPath} className="block h-full">
       {content}
     </Link>
   );
