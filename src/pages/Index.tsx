@@ -130,33 +130,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
-          <div className="relative flex items-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => scrollNewArrivals('left')}
-              className="absolute left-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -ml-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </Button>
-            <div ref={newArrivalsRef} className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide flex-grow px-5">
-              {allOurPrograms.map((program) => (
-                <ProgramCard key={program.id} program={program} />
-              ))}
-            </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => scrollNewArrivals('right')}
-              className="absolute right-0 z-10 bg-white/10 backdrop-blur-lg text-white hover:bg-white/20 hover:text-dyad-link-blue rounded-full h-14 w-14 -mr-7 hidden md:flex items-center justify-center shadow-xl transition-all duration-200 border border-white/20"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </Button>
-          </div>
-        </section>
-
+        
         {/* Nuova sezione "Altro" - Ora una griglia fissa */}
         <section>
            <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
