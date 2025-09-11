@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import React from "react";
 import { programs } from "@/data/programs"; // Importa i dati reali dei programmi
 
-const PsnSportclub: React.FC = () => {
+const PsnSportClub: React.FC = () => {
   // Trova il programma "PSN Sport Club" per ID
   const program = programs.find((p) => p.id === 'psn-sport-club');
 
@@ -39,4 +39,4 @@ const PsnSportclub: React.FC = () => {
   );
 };
 
-export default PsnSportclub;
+export default PsnSportClub;

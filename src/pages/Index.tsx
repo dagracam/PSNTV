@@ -13,7 +13,7 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby']; // Added 'tutto-rugby'
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk']; // Added 'urban-talk'
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -24,10 +24,10 @@ const Index = () => {
   const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
 
   // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 8
-  // per un totale di 12 programmi in questa sezione (4 speciali + 8 altri).
+  // per un totale di 12 programmi in questa sezione (6 speciali + 6 altri).
   const featuredPrograms = [
     ...specialPrograms,
-    ...otherPrograms.slice(0, 8) 
+    ...otherPrograms.slice(0, 6) 
   ];
 
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
@@ -109,8 +109,12 @@ const Index = () => {
                     <Link to="/psnsportclub" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'tutto-rugby' ? ( // New conditional for Tutto Rugby
+                  ) : program.id === 'tutto-rugby' ? (
                     <Link to="/tuttorugby" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'urban-talk' ? ( // New conditional for Urban Talk
+                    <Link to="/urbantalk" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
