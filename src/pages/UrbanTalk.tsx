@@ -21,7 +21,7 @@ const UrbanTalk = () => {
       <div className="container mx-auto p-4">
         <h1 className="text-4xl font-bold mb-8 text-dyad-text">{program.title}</h1>
         <p className="mb-8 text-lg text-dyad-text/80">
-          {program.description}
+          {Urban Talk è il programma che esplora le voci e le storie della strada, con interviste e approfondimenti alla gente.}
         </p>
         <div className="aspect-video w-full max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
