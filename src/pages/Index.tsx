@@ -159,7 +159,7 @@ const Index = () => {
 
         {/* Nuova sezione "Altro" - Ora una griglia fissa */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-dyad-text">Altro</h2>
+           <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {allOurPrograms.map((program) => (
               <ProgramCard key={program.id} program={program} isGridItem={true} />
