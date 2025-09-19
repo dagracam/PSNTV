@@ -13,7 +13,7 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole']; // Added 'schole'
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk']; // Added 'urban-talk'
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -113,12 +113,8 @@ const Index = () => {
                     <Link to="/tuttorugby" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'urban-talk' ? (
+                  ) : program.id === 'urban-talk' ? ( // New conditional for Urban Talk
                     <Link to="/urbantalk" className="group block flex-shrink-0 w-48">
-                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
-                    </Link>
-                  ) : program.id === 'schole' ? ( // New conditional for Schole
-                    <Link to="/schole" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (

@@ -60,8 +60,6 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, disableLink = false,
     programPath = '/tuttorugby';
   } else if (program.id === 'urban-talk') {
     programPath = '/urbantalk';
-  } else if (program.id === 'schole') { // New conditional for Schole
-    programPath = '/schole';
   }
 
   return (
