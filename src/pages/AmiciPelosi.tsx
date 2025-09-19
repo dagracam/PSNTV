@@ -25,7 +25,15 @@ const AmiciPelosi: React.FC = () => {
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
-       <iframe width="100%" height="545" src="https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          <iframe
+            width="100%"
+            height="100%"
+            src={program.videoUrl} // Ora usa l'URL dal programma
+            frameBorder="0" // Corretto da frameborder a frameBorder
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+          ></iframe>
         </div>
       </div>
     </Layout>
