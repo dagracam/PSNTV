@@ -58,6 +58,14 @@ export const programs: Program[] = [
     tags: ['cultura', 'urbana', 'interviste', 'società'],
   },
   {
+    id: 'amici-pelosi',
+    title: 'Amici Pelosi',
+    description: 'Con il dottor Luciano Ubaldo, la rubrica di approfondimento sui nostri amici a 4 zampe.',
+    imageUrl: '/images/AMICI PELOSI.jpg',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
+    tags: ['animali', 'veterinario', 'approfondimento', 'benessere'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
@@ -88,14 +96,6 @@ export const programs: Program[] = [
     imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-don_matteo.jpg',
     videoUrl: 'https://www.raiplay.it/video/2024/05/Don-Matteo---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
     tags: ['fiction', 'rai', 'mistero', 'religione'], // Aggiunti tag
-  },
-  {
-    id: 'programma-extra-9',
-    title: 'Programma Extra 9',
-    description: 'Una descrizione generica per il programma extra numero 9.',
-    imageUrl: 'https://via.placeholder.com/320x180?text=Programma+9',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    tags: ['extra', 'generico'],
   },
   {
     id: 'programma-extra-10',
