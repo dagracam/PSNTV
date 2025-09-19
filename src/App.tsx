@@ -4,11 +4,12 @@ import Index from './pages/Index';
 import ProgramDetail from './pages/ProgramDetail';
 import TuttoRugby from './pages/TuttoRugby';
 import UrbanTalk from './pages/UrbanTalk';
-import PerSempreConDiego from './pages/PerSempreConDiego'; // Import the specific page
-import PerSempreScugnizzo from './pages/PerSempreScugnizzo'; // Import the specific page
-import DaysOfWar from './pages/DaysOfWar'; // Import the specific page
-import PsnSportClub from './pages/PsnSportClub'; // Import the specific page with corrected casing
-import NotFound from './pages/NotFound'; // Import the NotFound page
+import PerSempreConDiego from './pages/PerSempreConDiego';
+import PerSempreScugnizzo from './pages/PerSempreScugnizzo';
+import DaysOfWar from './pages/DaysOfWar';
+import PsnSportClub from './pages/PsnSportClub';
+import Schole from './pages/Schole'; // Import the new Schole page
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
         <Route path="/persemprecondiego" element={<PerSempreConDiego />} />
         <Route path="/persempre-scugnizzo" element={<PerSempreScugnizzo />} />
         <Route path="/daysofwar" element={<DaysOfWar />} />
-        <Route path="/psnsportclub" element={<PsnSportClub />} /> {/* Updated route path */}
+        <Route path="/psnsportclub" element={<PsnSportClub />} />
         <Route path="/tuttorugby" element={<TuttoRugby />} />
         <Route path="/urbantalk" element={<UrbanTalk />} />
+        <Route path="/schole" element={<Schole />} /> {/* New route for Schole */}
         {/* Rotta generica per i dettagli dei programmi */}
         <Route path="/program/:id" element={<ProgramDetail />} />
         {/* Rotta per la pagina 404 - Not Found */}
