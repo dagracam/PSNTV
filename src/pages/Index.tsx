@@ -13,7 +13,7 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk']; // Added 'urban-talk'
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole']; // Added 'schole'
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -113,8 +113,12 @@ const Index = () => {
                     <Link to="/tuttorugby" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'urban-talk' ? ( // New conditional for Urban Talk
+                  ) : program.id === 'urban-talk' ? (
                     <Link to="/urbantalk" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'schole' ? ( // New conditional for Schole
+                    <Link to="/schole" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
@@ -135,7 +139,7 @@ const Index = () => {
         </section>
 
         
-        {/* Nuova sezione "Altro" - Ora una griglia fissa */}
+        {/* Nuova sezione "Tutti i nostri programmi" */}
         <section>
            <h2 className="text-3xl font-bold mb-6 text-dyad-text">Tutti i nostri programmi</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">

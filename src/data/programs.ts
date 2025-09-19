@@ -30,16 +30,16 @@ export const programs: Program[] = [
     title: 'PSN Sport Club',
     description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
     imageUrl: '/images/psn-sport-club.png',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub', // URL video aggiornato
     tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
   },
   {
     id: 'schole',
     title: 'Scholé',
-    description: 'Un programma dedicato all\'approfondimento culturale e alla riflessione su temi attuali.',
+    description: 'L\'unico podcast che parla di scuola a 360°. Dalle aule alle relazioni, dall\'apprendimento alle difficoltà quotidiane fino ai temi della salute fisica e psicologica.',
     imageUrl: '/images/SCHOLé.png', // Aggiornato con l'immagine caricata
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
-    tags: ['cultura', 'approfondimento', 'società', 'filosofia'],
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/schole', // URL iframe corretto
+    tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast'],
   },
   {
     id: 'tutto-rugby',
@@ -52,7 +52,7 @@ export const programs: Program[] = [
   {
     id: 'urban-talk',
     title: 'Urban Talk',
-    description: 'Urban Talk è il programma che esplora le voci e le storie della strada, con interviste e approfondimenti sulla cultura urbana.',
+    description: 'Urban Talk è il programma che esplora le voci e le storie della strada, con interviste e approfondimenti che danno voce alla gente.',
     imageUrl: '/images/URBAN TALK.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/urbantalk',
     tags: ['cultura', 'urbana', 'interviste', 'società'],
