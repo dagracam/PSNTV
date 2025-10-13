@@ -19,7 +19,7 @@ const ParlamiDAmore: React.FC = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8 py-8">
-        <h1 className="text-4xl font-bold text-dyad-text">Premio Per Sempre con Diego</h1>
+        <h1 className="text-4xl font-bold text-dyad-text">Parlami d'amore</h1>
         <p className="text-lg text-dyad-text/80">
           {program.description}
         </p>
