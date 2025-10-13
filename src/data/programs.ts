@@ -10,6 +10,14 @@ export const programs: Program[] = [
     tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
   },
   {
+    id: 'parlamidamore', // Nuovo ID per il programma
+    title: 'Parlami d\'amore',
+    description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
+    imageUrl: '/images/PARLAMI D\'AMORE.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato
+    tags: ['amore', 'relazioni', 'sentimenti', 'storie'], // Tag per il nuovo programma
+  },
+  {
     id: 'doc-nelle-tue-mani',
     title: 'Days of War',
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta

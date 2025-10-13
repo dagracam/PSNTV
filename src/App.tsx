@@ -7,6 +7,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import ProgramDetail from './pages/ProgramDetail';
 import AmiciPelosi from './pages/AmiciPelosi';
+import ParlamiDAmore from './pages/ParlamiDAmore'; // Import the new page
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/program/:id" element={<ProgramDetail />} />
         <Route path="/amicipelosi" element={<AmiciPelosi />} />
+        <Route path="/parlamidamore" element={<ParlamiDAmore />} /> {/* Add the new route */}
       </Routes>
     </Router>
   );
