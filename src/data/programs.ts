@@ -10,12 +10,12 @@ export const programs: Program[] = [
     tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
   },
   {
-    id: 'premio-diego-special',
-    title: 'Per Sempre Con Diego',
-    description: 'II Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.', // Descrizione aggiornata
-    imageUrl: '/images/premio-per-sempre-con-diego.jpg',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
-    tags: ['maradona', 'diego', 'sport', 'premio', 'calcio', 'napoli'], // Aggiunti tag
+    id: 'parlami-d-amore', // Nuovo ID per il programma
+    title: 'Parlami d\'amore',
+    description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
+    imageUrl: '/images/PARLAMI D\'AMORE.jpg', // Immagine caricata
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // URL video segnaposto, da aggiornare se hai un link specifico
+    tags: ['amore', 'relazioni', 'sentimenti', 'storie'], // Tag per il nuovo programma
   },
   {
     id: 'doc-nelle-tue-mani',
@@ -62,7 +62,7 @@ export const programs: Program[] = [
     title: 'Amici Pelosi',
     description: 'Con il dottor Luciano Ubaldo, la rubrica di approfondimento sui nostri amici a 4 zampe.',
     imageUrl: '/images/AMICI PELOSI.jpg',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video URL
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi', // Aggiornato con il nuovo URL
     tags: ['animali', 'veterinario', 'approfondimento', 'benessere'],
   },
   {
