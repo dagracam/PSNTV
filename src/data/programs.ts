@@ -14,7 +14,7 @@ export const programs: Program[] = [
     title: 'Parlami d\'amore',
     description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D\'AMORE.jpg', // Immagine caricata
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // URL video segnaposto, da aggiornare se hai un link specifico
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato
     tags: ['amore', 'relazioni', 'sentimenti', 'storie'], // Tag per il nuovo programma
   },
   {
