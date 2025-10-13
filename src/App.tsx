@@ -8,7 +8,8 @@ import TermsOfService from './pages/TermsOfService';
 import ProgramDetail from './pages/ProgramDetail';
 import AmiciPelosi from './pages/AmiciPelosi';
 import ParlamiDAmore from './pages/ParlamiDAmore';
-import LaSaluteInUnClick from './pages/LaSaluteInUnClick'; // Import the new page
+import LaSaluteInUnClick from './pages/LaSaluteInUnClick';
+import LaVitaQuestoPalcoscenico from './pages/LaVitaQuestoPalcoscenico'; // Import the new page
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/program/:id" element={<ProgramDetail />} />
         <Route path="/amicipelosi" element={<AmiciPelosi />} />
         <Route path="/parlamidamore" element={<ParlamiDAmore />} />
-        <Route path="/lasaluteinunclick" element={<LaSaluteInUnClick />} /> {/* Add the new route */}
+        <Route path="/lasaluteinunclick" element={<LaSaluteInUnClick />} />
+        <Route path="/lavitaquestopalcoscenico" element={<LaVitaQuestoPalcoscenico />} /> {/* Add the new route */}
       </Routes>
     </Router>
   );

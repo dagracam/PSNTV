@@ -26,6 +26,14 @@ export const programs: Program[] = [
     tags: ['salute', 'benessere', 'medicina', 'consigli'], // Tag per il nuovo programma
   },
   {
+    id: 'la-vita-questo-palcoscenico', // Nuovo ID per il programma
+    title: 'La Vita questo Palcoscenico',
+    description: 'Un viaggio attraverso le storie di vita, le sfide e i trionfi, come in un grande palcoscenico.', // Descrizione per il nuovo programma
+    imageUrl: '/images/LA VITA QUESTO PALCOSCENICO.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaVitaquestoPalcoscenico', // URL video aggiornato
+    tags: ['vita', 'storie', 'palcoscenico', 'emozioni'], // Tag per il nuovo programma
+  },
+  {
     id: 'doc-nelle-tue-mani',
     title: 'Days of War',
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
