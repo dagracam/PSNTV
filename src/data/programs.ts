@@ -4,7 +4,7 @@ export const programs: Program[] = [
   {
     id: 'premio-diego-special', // Aggiunto il programma "Premio per Sempre con Diego"
     title: 'Premio per Sempre con Diego',
-    description: 'Un tributo speciale a Diego Armando Maradona, con interviste e ricordi indimenticabili.',
+    description: 'Il Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.',
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
     tags: ['maradona', 'calcio', 'napoli', 'premio', 'speciale'],
