@@ -2,6 +2,14 @@ import { Program } from '../types/program'; // Import the Program type
 
 export const programs: Program[] = [
   {
+    id: 'premio-diego-special', // Aggiunto il programma "Premio per Sempre con Diego"
+    title: 'Premio per Sempre con Diego',
+    description: 'Un tributo speciale a Diego Armando Maradona, con interviste e ricordi indimenticabili.',
+    imageUrl: '/images/premio-per-sempre-con-diego.jpg',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
+    tags: ['maradona', 'calcio', 'napoli', 'premio', 'speciale'],
+  },
+  {
     id: 'premio-per-sempre-original',
     title: 'Per Sempre Scugnizzo',
     description: 'Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.', // Descrizione aggiornata
