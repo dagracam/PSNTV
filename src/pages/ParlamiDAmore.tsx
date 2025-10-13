@@ -19,22 +19,12 @@ const ParlamiDAmore: React.FC = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8 py-8">
-        <h1 className="text-4xl font-bold text-dyad-text">Parlami d'amore</h1>
+        <h1 className="text-4xl font-bold text-dyad-text">{program.title}</h1>
         <p className="text-lg text-dyad-text/80">
           {program.description}
         </p>
 
-        <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
-          <iframe
-            width="100%"
-            height="545"
-            src={'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore'}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full border-0"
-          ></iframe>
-        </div>
+        {/* L'iframe è stato rimosso come richiesto */}
       </div>
     </Layout>
   );
