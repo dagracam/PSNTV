@@ -18,6 +18,14 @@ export const programs: Program[] = [
     tags: ['amore', 'relazioni', 'sentimenti', 'storie'], // Tag per il nuovo programma
   },
   {
+    id: 'la-salute-in-un-click', // Nuovo ID per il programma
+    title: 'La Salute in un Click',
+    description: 'Approfondimenti e consigli per il benessere e la salute, a portata di click.', // Descrizione per il nuovo programma
+    imageUrl: '/images/LA SALUTE IN UN CLICK.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaSaluteinUnClick', // URL video aggiornato
+    tags: ['salute', 'benessere', 'medicina', 'consigli'], // Tag per il nuovo programma
+  },
+  {
     id: 'doc-nelle-tue-mani',
     title: 'Days of War',
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta

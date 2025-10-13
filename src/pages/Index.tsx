@@ -13,7 +13,7 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore']; // Added 'parlamidamore'
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click']; // Added 'la-salute-in-un-click'
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -125,8 +125,12 @@ const Index = () => {
                     <Link to="/amicipelosi" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'parlamidamore' ? ( // New conditional for Parlami d'Amore
+                  ) : program.id === 'parlamidamore' ? (
                     <Link to="/parlamidamore" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'la-salute-in-un-click' ? ( // New conditional for La Salute in un Click
+                    <Link to="/lasaluteinunclick" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
