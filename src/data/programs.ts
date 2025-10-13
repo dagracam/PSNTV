@@ -2,6 +2,14 @@ import { Program } from '../types/program'; // Import the Program type
 
 export const programs: Program[] = [
   {
+    id: 'in-sicurezza', // Nuovo ID per il programma "In Sicurezza"
+    title: 'In Sicurezza',
+    description: 'Un programma dedicato alla sicurezza, con consigli pratici e approfondimenti su come proteggere se stessi e i propri cari.',
+    imageUrl: '/images/IN SICUREZZA.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/insicurezza', // URL video specificato
+    tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità'], // Tag per il nuovo programma
+  },
+  {
     id: 'premio-diego-special', // Aggiunto il programma "Premio per Sempre con Diego"
     title: 'Premio per Sempre con Diego',
     description: 'Il Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.',

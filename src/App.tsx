@@ -9,7 +9,8 @@ import ProgramDetail from './pages/ProgramDetail';
 import AmiciPelosi from './pages/AmiciPelosi';
 import ParlamiDAmore from './pages/ParlamiDAmore';
 import LaSaluteInUnClick from './pages/LaSaluteInUnClick';
-import LaVitaQuestoPalcoscenico from './pages/LaVitaQuestoPalcoscenico'; // Import the new page
+import LaVitaQuestoPalcoscenico from './pages/LaVitaQuestoPalcoscenico';
+import InSicurezza from './pages/InSicurezza'; // Import the new page
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         <Route path="/amicipelosi" element={<AmiciPelosi />} />
         <Route path="/parlamidamore" element={<ParlamiDAmore />} />
         <Route path="/lasaluteinunclick" element={<LaSaluteInUnClick />} />
-        <Route path="/lavitaquestopalcoscenico" element={<LaVitaQuestoPalcoscenico />} /> {/* Add the new route */}
+        <Route path="/lavitaquestopalcoscenico" element={<LaVitaQuestoPalcoscenico />} />
+        <Route path="/insicurezza" element={<InSicurezza />} /> {/* Add the new route */}
       </Routes>
     </Router>
   );
