@@ -23,7 +23,7 @@ const InSicurezza: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8 py-8">
         <h1 className="text-4xl font-bold text-dyad-text">{program.title}</h1>
         <p className="text-lg text-dyad-text/80">
-          {program.description}
+          L'unico programma dedicato alla sicurezza sul lavoro, con consigli e approfondimenti con esperti del settore.
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
