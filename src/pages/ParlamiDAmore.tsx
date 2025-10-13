@@ -24,7 +24,15 @@ const ParlamiDAmore: React.FC = () => {
           {program.description}
         </p>
 
-        {/* L'iframe è stato rimosso come richiesto */}
+        <iframe
+            width="100%"
+            height="545"
+            src={'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore'}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+          ></iframe>
       </div>
     </Layout>
   );
