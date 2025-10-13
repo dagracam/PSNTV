@@ -7,7 +7,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import ProgramDetail from './pages/ProgramDetail';
 import AmiciPelosi from './pages/AmiciPelosi';
-import ParlamiDAmore from './pages/ParlamiDAmore'; // Importa la nuova pagina
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/program/:id" element={<ProgramDetail />} />
         <Route path="/amicipelosi" element={<AmiciPelosi />} />
-        <Route path="/parlamidamore" element={<ParlamiDAmore />} /> {/* Nuova rotta */}
       </Routes>
     </Router>
   );
