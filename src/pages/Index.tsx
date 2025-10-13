@@ -20,15 +20,8 @@ const Index = () => {
     .map(id => programs.find(p => p.id === id))
     .filter(Boolean) as Program[];
 
-  // Recupera tutti gli altri programmi, escludendo quelli speciali
-  const otherPrograms = programs.filter(p => !specialProgramIds.includes(p.id));
-
-  // Costruisci la lista dei programmi "In Evidenza": prima i programmi speciali, poi i successivi 8
-  // per un totale di 12 programmi in questa sezione (6 speciali + 6 altri).
-  const featuredPrograms = [
-    ...specialPrograms,
-    ...otherPrograms.slice(0, 6) 
-  ];
+  // I programmi "In Evidenza" saranno ora solo i programmi speciali esplicitamente definiti.
+  const featuredPrograms = specialPrograms;
 
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
@@ -137,7 +130,7 @@ const Index = () => {
                     <Link to="/lavitaquestopalcoscenico" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'in-sicurezza' ? ( // Nuovo link per In Sicurezza
+                  ) : program.id === 'in-sicurezza' ? (
                     <Link to="/insicurezza" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
