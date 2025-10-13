@@ -10,7 +10,7 @@ export const programs: Program[] = [
     tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
   },
   {
-    id: 'parlami-d-amore', // Nuovo ID per il programma
+    id: 'parlamidamore', // Nuovo ID per il programma
     title: 'Parlami d\'amore',
     description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D\'AMORE.jpg', // Immagine caricata
