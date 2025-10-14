@@ -71,7 +71,7 @@ export const programs: Program[] = [
     description: 'L\'unico podcast che parla di scuola a 360°. Dalle aule alle relazioni, dall\'apprendimento alle difficoltà quotidiane fino ai temi della salute fisica e psicologica.',
     imageUrl: '/images/SCHOLé.png', // Aggiornato con l'immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/schole', // URL iframe corretto
-    tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast'],
+    tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast', 'vincenzo cautiero', ],
   },
   {
     id: 'tutto-rugby',
@@ -95,7 +95,7 @@ export const programs: Program[] = [
     description: 'Con il dottor Luciano Ubaldo, la rubrica di approfondimento sui nostri amici a 4 zampe.',
     imageUrl: '/images/AMICI PELOSI.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi', // Aggiornato con il nuovo URL
-    tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali',],
+    tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano'],
   },
   {
     id: 'il-paradiso-delle-signore',
