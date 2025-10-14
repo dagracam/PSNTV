@@ -7,7 +7,7 @@ export const programs: Program[] = [
     description: 'Un programma dedicato alla sicurezza, con consigli pratici e approfondimenti su come proteggere se stessi e i propri cari.',
     imageUrl: '/images/IN SICUREZZA.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/insicurezza', // URL video specificato
-    tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità', 'luigi carfora'], // Tag per il nuovo programma
+    tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità', 'luigi carfora', 'francesca corizza'], // Tag per il nuovo programma
   },
   {
     id: 'premio-diego-special', // Aggiunto il programma "Premio per Sempre con Diego"
