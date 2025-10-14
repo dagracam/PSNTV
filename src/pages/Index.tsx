@@ -14,7 +14,6 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>(); // Questo ref non è più usato per lo scroll dei "nuovi arrivi" ma lo lascio per coerenza se volessi riutilizzarlo
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  // Ho rimosso 'flash-news' da qui per spostarlo in "Tutti i nostri programmi"
   const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza'];
 
   // Recupera i programmi speciali e assicurati che siano validi
@@ -28,21 +27,29 @@ const Index = () => {
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
-  // Trova il programma "Amici Pelosi"
+  // Trova Amici Pelosi e Flash News specificamente
   const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
+  const flashNewsProgram = programs.find(p => p.id === 'flash-news');
 
-  // I programmi "Tutti i nostri programmi" saranno tutti quelli non inclusi in "In Evidenza"
-  // e non "Amici Pelosi" (per evitare duplicati se fosse già stato filtrato, ma lo aggiungiamo esplicitamente)
-  const allOurPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) // Esclude tutti i programmi in evidenza
+  // Inizializza la lista per "Tutti i nostri programmi"
+  let allOurPrograms: Program[] = [];
+
+  // Aggiungi Amici Pelosi per primo, se esiste
+  if (amiciPelosiProgram) {
+    allOurPrograms.push(amiciPelosiProgram);
+  }
+
+  // Aggiungi Flash News subito dopo, se esiste e non è già nella lista
+  if (flashNewsProgram && !allOurPrograms.some(p => p.id === flashNewsProgram.id)) {
+    allOurPrograms.push(flashNewsProgram);
+  }
+
+  // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono Amici Pelosi o Flash News (per evitare duplicati)
+  const otherNonFeaturedPrograms = programs.filter(p => 
+    !featuredProgramIds.has(p.id) && p.id !== 'amici-pelosi' && p.id !== 'flash-news'
   );
 
-  // Costruisci l'array "Tutti i nostri programmi" con "Amici Pelosi" per primo,
-  // se non è già presente nella lista `otherPrograms` (che non dovrebbe esserlo se è in featured)
-  // Nota: 'amici-pelosi' è già incluso in specialProgramIds, quindi non verrà aggiunto due volte.
-  // Se volessi che apparisse per primo in "Tutti i nostri programmi" *anche se* è in "In Evidenza",
-  // dovresti modificare la logica di `allOurPrograms` per includerlo esplicitamente e poi rimuoverlo da `otherPrograms` se presente.
-  // Per ora, segue la logica di non duplicare i programmi già in evidenza.
+  allOurPrograms = [...allOurPrograms, ...otherNonFeaturedPrograms];
 
 
   // Funzione per scorrere la sezione "In Evidenza"
