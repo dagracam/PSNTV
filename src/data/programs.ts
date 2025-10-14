@@ -29,7 +29,7 @@ export const programs: Program[] = [
     id: 'parlamidamore', // Nuovo ID per il programma
     title: 'Parlami d\'amore',
     description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
-    imageUrl: '/images/FLASH NEWS.png', // Immagine aggiornata come richiesto
+    imageUrl: '/images/PARLAMI D'AMORE.jpg', // Immagine aggiornata come richiesto
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL video aggiornato come richiesto
     tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
   },
