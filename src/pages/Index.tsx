@@ -11,9 +11,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
-  const newArrivalsRef = useDragScroll<HTMLDivElement>();
+  const newArrivalsRef = useDragScroll<HTMLDivElement>(); // Questo ref non è più usato per lo scroll dei "nuovi arrivi" ma lo lascio per coerenza se volessi riutilizzarlo
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
+  // Ho reinserito 'amici-pelosi' qui
   const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza'];
 
   // Recupera i programmi speciali e assicurati che siano validi
@@ -27,8 +28,19 @@ const Index = () => {
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
+  // Trova il programma "Amici Pelosi"
+  const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
+
   // I programmi "Tutti i nostri programmi" saranno tutti quelli non inclusi in "In Evidenza"
-  const allOurPrograms = programs.filter(p => !featuredProgramIds.has(p.id));
+  // e non "Amici Pelosi" (per evitare duplicati se fosse già stato filtrato, ma lo aggiungiamo esplicitamente)
+  const otherPrograms = programs.filter(p => 
+    !featuredProgramIds.has(p.id) // Esclude tutti i programmi in evidenza
+  );
+
+  // Costruisci l'array "Tutti i nostri programmi" con "Amici Pelosi" per primo,
+  // se non è già presente nella lista `otherPrograms` (che non dovrebbe esserlo se è in featured)
+  const allOurPrograms = amiciPelosiProgram ? [amiciPelosiProgram, ...otherPrograms] : otherPrograms;
+
 
   // Funzione per scorrere la sezione "In Evidenza"
   const scrollFeatured = (direction: 'left' | 'right') => {
