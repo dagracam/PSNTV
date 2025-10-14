@@ -30,7 +30,7 @@ export const programs: Program[] = [
     title: 'Parlami d\'amore',
     description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D AMORE.jpg', // Immagine aggiornata come richiesto
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL video aggiornato come richiesto
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato come richiesto
     tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
   },
   {
@@ -38,7 +38,7 @@ export const programs: Program[] = [
     title: 'Flash News',
     description: 'Le ultime notizie in tempo reale, aggiornamenti rapidi e approfondimenti sui fatti del giorno.',
     imageUrl: '/images/FLASH NEWS.png', // Immagine di copertina specificata
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL iframe specificato
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL iframe corretto per Flash News
     tags: ['notizie', 'attualità', 'breaking news', 'informazione'],
   },
   {
