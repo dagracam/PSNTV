@@ -27,6 +27,7 @@ import IlMondoInTasca from './pages/IlMondoInTasca'; // Import aggiunto per Il m
 import InThePaint from './pages/InThePaint'; // Import aggiunto per In the Paint
 import Libridine from './pages/Libridine'; // Import aggiunto per Libridine
 import PalazzoCivico from './pages/PalazzoCivico'; // Import aggiunto per Palazzo Civico
+import PerSempreChef from './pages/PerSempreChef'; // Import aggiunto per Per Sempre Chef
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         <Route path="/inthepaint" element={<InThePaint />} /> {/* Rotta aggiunta per In the Paint */}
         <Route path="/libridine" element={<Libridine />} /> {/* Rotta aggiunta per Libridine */}
         <Route path="/palazzocivico" element={<PalazzoCivico />} /> {/* Rotta aggiunta per Palazzo Civico */}
+        <Route path="/persemprechef" element={<PerSempreChef />} /> {/* Rotta aggiunta per Per Sempre Chef */}
         {/* Rotte per le pagine placeholder dal MoreMenuDialog */}
         <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
       </Routes>

@@ -34,6 +34,14 @@ export const programs: Program[] = [
     tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
   },
   {
+    id: 'per-sempre-chef', // Nuovo programma "Per Sempre Chef"
+    title: 'Per Sempre Chef',
+    description: 'Ricette, consigli e segreti per diventare un vero chef, con ospiti e degustazioni.',
+    imageUrl: '/images/PER SEMPRE CHEF.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Per_Sempre_Chef', // URL iframe specificato
+    tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food'],
+  },
+  {
     id: 'flash-news', // Nuovo programma Flash News
     title: 'Flash News',
     description: 'Le ultime notizie in tempo reale, aggiornamenti rapidi e approfondimenti sui fatti del giorno.',
