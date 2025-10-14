@@ -41,7 +41,8 @@ const Index = () => {
   const libridineProgram = programs.find(p => p.id === 'libridine');
   const palazzoCivicoProgram = programs.find(p => p.id === 'palazzo-civico');
   const parlamiDAmoreProgram = programs.find(p => p.id === 'parlamidamore');
-  const perSempreChefProgram = programs.find(p => p.id === 'per-sempre-chef'); // Trova Per Sempre Chef
+  const perSempreChefProgram = programs.find(p => p.id === 'per-sempre-chef');
+  const premioDiegoSpecialProgram = programs.find(p => p.id === 'premio-diego-special'); // Trova Premio per Sempre con Diego
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -129,6 +130,12 @@ const Index = () => {
   if (perSempreChefProgram && !addedProgramIds.has(perSempreChefProgram.id)) {
     allOurPrograms.push(perSempreChefProgram);
     addedProgramIds.add(perSempreChefProgram.id);
+  }
+
+  // Aggiungi Premio per Sempre con Diego dopo Per Sempre Chef, se esiste e non è già nella lista
+  if (premioDiegoSpecialProgram && !addedProgramIds.has(premioDiegoSpecialProgram.id)) {
+    allOurPrograms.push(premioDiegoSpecialProgram);
+    addedProgramIds.add(premioDiegoSpecialProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
