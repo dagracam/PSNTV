@@ -43,7 +43,8 @@ const Index = () => {
   const parlamiDAmoreProgram = programs.find(p => p.id === 'parlamidamore');
   const perSempreChefProgram = programs.find(p => p.id === 'per-sempre-chef');
   const premioDiegoSpecialProgram = programs.find(p => p.id === 'premio-diego-special');
-  const premioPerSempreOriginalProgram = programs.find(p => p.id === 'premio-per-sempre-original'); // Trova Premio per Sempre Scugnizzo
+  const premioPerSempreOriginalProgram = programs.find(p => p.id === 'premio-per-sempre-original');
+  const psnSportClubProgram = programs.find(p => p.id === 'psn-sport-club'); // Trova PSN Sport Club
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -143,6 +144,12 @@ const Index = () => {
   if (premioPerSempreOriginalProgram && !addedProgramIds.has(premioPerSempreOriginalProgram.id)) {
     allOurPrograms.push(premioPerSempreOriginalProgram);
     addedProgramIds.add(premioPerSempreOriginalProgram.id);
+  }
+
+  // Aggiungi PSN Sport Club dopo Premio per Sempre Scugnizzo, se esiste e non è già nella lista
+  if (psnSportClubProgram && !addedProgramIds.has(psnSportClubProgram.id)) {
+    allOurPrograms.push(psnSportClubProgram);
+    addedProgramIds.add(psnSportClubProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
