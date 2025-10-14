@@ -11,7 +11,6 @@ import ParlamiDAmore from './pages/ParlamiDAmore';
 import LaSaluteInUnClick from './pages/LaSaluteInUnClick';
 import LaVitaQuestoPalcoscenico from './pages/LaVitaQuestoPalcoscenico';
 import InSicurezza from './pages/InSicurezza';
-import FlashNews from './pages/FlashNews'; // Import the new page
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
         <Route path="/lasaluteinunclick" element={<LaSaluteInUnClick />} />
         <Route path="/lavitaquestopalcoscenico" element={<LaVitaQuestoPalcoscenico />} />
         <Route path="/insicurezza" element={<InSicurezza />} />
-        <Route path="/flashnews" element={<FlashNews />} /> {/* Add the new route */}
       </Routes>
     </Router>
   );

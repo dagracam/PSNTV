@@ -98,14 +98,6 @@ export const programs: Program[] = [
     tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano'],
   },
   {
-    id: 'flash-news', // Nuovo programma Flash News
-    title: 'Flash News',
-    description: 'Tutte le ultime notizie in tempo reale, per rimanere sempre aggiornati sugli eventi più importanti.',
-    imageUrl: '/images/FLASH NEWS.png',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // Aggiornato con il nuovo URL
-    tags: ['notizie', 'attualità', 'breaking news', 'informazione', 'flash news'],
-  },
-  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
