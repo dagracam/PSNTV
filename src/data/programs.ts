@@ -103,7 +103,7 @@ export const programs: Program[] = [
     description: 'Tutte le ultime notizie in tempo reale, per rimanere sempre aggiornati sugli eventi più importanti.',
     imageUrl: '/images/FLASH NEWS.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // Aggiornato con il nuovo URL
-    tags: ['notizie', 'attualità', 'breaking news', 'informazione'],
+    tags: ['notizie', 'attualità', 'breaking news', 'informazione', 'flash news'],
   },
   {
     id: 'il-paradiso-delle-signore',
