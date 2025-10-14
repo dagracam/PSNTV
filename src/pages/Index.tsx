@@ -36,8 +36,9 @@ const Index = () => {
   const inThePaintProgram = programs.find(p => p.id === 'in-the-paint');
   const frescoDiStampaProgram = programs.find(p => p.id === 'fresco-di-stampa');
   const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click');
-  const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu'); // Trova Intervistalo Tu
-  const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico'); // Trova La Vita questo Palcoscenico
+  const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu');
+  const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico');
+  const libridineProgram = programs.find(p => p.id === 'libridine'); // Trova Libridine
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -101,6 +102,12 @@ const Index = () => {
   if (laVitaQuestoPalcoscenicoProgram && !addedProgramIds.has(laVitaQuestoPalcoscenicoProgram.id)) {
     allOurPrograms.push(laVitaQuestoPalcoscenicoProgram);
     addedProgramIds.add(laVitaQuestoPalcoscenicoProgram.id);
+  }
+
+  // Aggiungi Libridine dopo La Vita questo Palcoscenico, se esiste e non è già nella lista
+  if (libridineProgram && !addedProgramIds.has(libridineProgram.id)) {
+    allOurPrograms.push(libridineProgram);
+    addedProgramIds.add(libridineProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente

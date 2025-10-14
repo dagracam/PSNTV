@@ -58,6 +58,14 @@ export const programs: Program[] = [
     tags: ['vita', 'storie', 'palcoscenico', 'emozioni', 'federica avallone', 'mimmo annunziata', 'domenico annunziata', 'teatro', 'chicca avallone'], // Tag per il nuovo programma
   },
   {
+    id: 'libridine', // Nuovo programma "Libridine"
+    title: 'Libridine',
+    description: 'Un viaggio affascinante nel mondo dei libri, tra recensioni, interviste agli autori e consigli di lettura.',
+    imageUrl: '/images/LIBRIDINE.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Libridine', // URL iframe specificato
+    tags: ['libri', 'lettura', 'cultura', 'recensioni', 'autori'],
+  },
+  {
     id: 'daysofwar', // ID cambiato da 'doc-nelle-tue-mani'
     title: 'Days of War',
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
