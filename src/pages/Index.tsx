@@ -34,8 +34,10 @@ const Index = () => {
   const ilMondoInTascaProgram = programs.find(p => p.id === 'il-mondo-in-tasca');
   const daysOfWarProgram = programs.find(p => p.id === 'daysofwar');
   const inThePaintProgram = programs.find(p => p.id === 'in-the-paint');
-  const frescoDiStampaProgram = programs.find(p => p.id === 'fresco-di-stampa'); // Trova Fresco di Stampa
-  const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click'); // Trova La Salute in un Click
+  const frescoDiStampaProgram = programs.find(p => p.id === 'fresco-di-stampa');
+  const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click');
+  const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu'); // Trova Intervistalo Tu
+  const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico'); // Trova La Vita questo Palcoscenico
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -87,6 +89,18 @@ const Index = () => {
   if (laSaluteInUnClickProgram && !addedProgramIds.has(laSaluteInUnClickProgram.id)) {
     allOurPrograms.push(laSaluteInUnClickProgram);
     addedProgramIds.add(laSaluteInUnClickProgram.id);
+  }
+
+  // Aggiungi Intervistalo Tu dopo La Salute in un Click, se esiste e non è già nella lista
+  if (intervistaloTuProgram && !addedProgramIds.has(intervistaloTuProgram.id)) {
+    allOurPrograms.push(intervistaloTuProgram);
+    addedProgramIds.add(intervistaloTuProgram.id);
+  }
+
+  // Aggiungi La Vita questo Palcoscenico dopo Intervistalo Tu, se esiste e non è già nella lista
+  if (laVitaQuestoPalcoscenicoProgram && !addedProgramIds.has(laVitaQuestoPalcoscenicoProgram.id)) {
+    allOurPrograms.push(laVitaQuestoPalcoscenicoProgram);
+    addedProgramIds.add(laVitaQuestoPalcoscenicoProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
