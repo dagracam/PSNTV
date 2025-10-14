@@ -26,6 +26,7 @@ import FrescoDiStampa from './pages/FrescoDiStampa'; // Import aggiunto per Fres
 import IlMondoInTasca from './pages/IlMondoInTasca'; // Import aggiunto per Il mondo in Tasca
 import InThePaint from './pages/InThePaint'; // Import aggiunto per In the Paint
 import Libridine from './pages/Libridine'; // Import aggiunto per Libridine
+import PalazzoCivico from './pages/PalazzoCivico'; // Import aggiunto per Palazzo Civico
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/ilmondointasca" element={<IlMondoInTasca />} /> {/* Rotta aggiunta per Il mondo in Tasca */}
         <Route path="/inthepaint" element={<InThePaint />} /> {/* Rotta aggiunta per In the Paint */}
         <Route path="/libridine" element={<Libridine />} /> {/* Rotta aggiunta per Libridine */}
+        <Route path="/palazzocivico" element={<PalazzoCivico />} /> {/* Rotta aggiunta per Palazzo Civico */}
         {/* Rotte per le pagine placeholder dal MoreMenuDialog */}
         <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
       </Routes>

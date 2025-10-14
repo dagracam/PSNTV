@@ -66,6 +66,14 @@ export const programs: Program[] = [
     tags: ['libri', 'lettura', 'cultura', 'recensioni', 'autori'],
   },
   {
+    id: 'palazzo-civico', // Nuovo programma "Palazzo Civico"
+    title: 'Palazzo Civico',
+    description: 'Un programma che esplora le dinamiche della politica locale, le decisioni che influenzano la comunità e le voci dei cittadini.',
+    imageUrl: '/images/palazzo civico.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Palazzo_Civico', // URL iframe specificato
+    tags: ['politica', 'comunità', 'cittadini', 'attualità', 'locale'],
+  },
+  {
     id: 'daysofwar', // ID cambiato da 'doc-nelle-tue-mani'
     title: 'Days of War',
     description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
@@ -78,7 +86,7 @@ export const programs: Program[] = [
     title: 'PSN Sport Club',
     description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
     imageUrl: '/images/psn-sport-club.png',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub', // URL video aggiornato
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub',
     tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
   },
   {

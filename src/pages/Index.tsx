@@ -38,7 +38,8 @@ const Index = () => {
   const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click');
   const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu');
   const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico');
-  const libridineProgram = programs.find(p => p.id === 'libridine'); // Trova Libridine
+  const libridineProgram = programs.find(p => p.id === 'libridine');
+  const palazzoCivicoProgram = programs.find(p => p.id === 'palazzo-civico'); // Trova Palazzo Civico
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -108,6 +109,12 @@ const Index = () => {
   if (libridineProgram && !addedProgramIds.has(libridineProgram.id)) {
     allOurPrograms.push(libridineProgram);
     addedProgramIds.add(libridineProgram.id);
+  }
+
+  // Aggiungi Palazzo Civico dopo Libridine, se esiste e non è già nella lista
+  if (palazzoCivicoProgram && !addedProgramIds.has(palazzoCivicoProgram.id)) {
+    allOurPrograms.push(palazzoCivicoProgram);
+    addedProgramIds.add(palazzoCivicoProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
