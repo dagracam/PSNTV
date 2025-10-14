@@ -102,7 +102,7 @@ export const programs: Program[] = [
     title: 'Flash News',
     description: 'Tutte le ultime notizie in tempo reale, per rimanere sempre aggiornati sugli eventi più importanti.',
     imageUrl: '/images/FLASH NEWS.png',
-    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // Aggiornato con il nuovo URL
     tags: ['notizie', 'attualità', 'breaking news', 'informazione'],
   },
   {
