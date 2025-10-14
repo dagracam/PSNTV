@@ -14,8 +14,8 @@ const Index = () => {
   const newArrivalsRef = useDragScroll<HTMLDivElement>(); // Questo ref non è più usato per lo scroll dei "nuovi arrivi" ma lo lascio per coerenza se volessi riutilizzarlo
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  // Ho reinserito 'amici-pelosi' qui
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza', 'flash-news']; // ID cambiato qui
+  // Ho rimosso 'flash-news' da qui per spostarlo in "Tutti i nostri programmi"
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza'];
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -110,7 +110,7 @@ const Index = () => {
                     <Link to="/persempre-scugnizzo" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'daysofwar' ? ( // ID cambiato qui
+                  ) : program.id === 'daysofwar' ? (
                     <Link to="/daysofwar" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
@@ -148,10 +148,6 @@ const Index = () => {
                     </Link>
                   ) : program.id === 'in-sicurezza' ? (
                     <Link to="/insicurezza" className="group block flex-shrink-0 w-48">
-                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
-                    </Link>
-                  ) : program.id === 'flash-news' ? (
-                    <Link to="/flashnews" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
