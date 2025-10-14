@@ -122,6 +122,14 @@ export const programs: Program[] = [
     tags: ['libri', 'cultura', 'editoria', 'rosario lavorgna', 'stampa'],
   },
   {
+    id: 'il-mondo-in-tasca', // Nuovo programma "Il mondo in Tasca"
+    title: 'Il mondo in Tasca',
+    description: 'Un programma che esplora il mondo, le sue culture e le sue storie, a portata di mano.',
+    imageUrl: '/images/mondo in tasca.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/IlMondoinTasca', // URL iframe specificato
+    tags: ['viaggi', 'cultura', 'mondo', 'storie', 'geografia'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
