@@ -39,7 +39,8 @@ const Index = () => {
   const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu');
   const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico');
   const libridineProgram = programs.find(p => p.id === 'libridine');
-  const palazzoCivicoProgram = programs.find(p => p.id === 'palazzo-civico'); // Trova Palazzo Civico
+  const palazzoCivicoProgram = programs.find(p => p.id === 'palazzo-civico');
+  const parlamiDAmoreProgram = programs.find(p => p.id === 'parlamidamore'); // Trova Parlami d'amore
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -115,6 +116,12 @@ const Index = () => {
   if (palazzoCivicoProgram && !addedProgramIds.has(palazzoCivicoProgram.id)) {
     allOurPrograms.push(palazzoCivicoProgram);
     addedProgramIds.add(palazzoCivicoProgram.id);
+  }
+
+  // Aggiungi Parlami d'amore dopo Palazzo Civico, se esiste e non è già nella lista
+  if (parlamiDAmoreProgram && !addedProgramIds.has(parlamiDAmoreProgram.id)) {
+    allOurPrograms.push(parlamiDAmoreProgram);
+    addedProgramIds.add(parlamiDAmoreProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
