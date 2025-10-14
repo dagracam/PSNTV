@@ -27,10 +27,12 @@ const Index = () => {
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
-  // Trova Amici Pelosi, Flash News e In Sicurezza specificamente
+  // Trova i programmi specifici per la sezione "Tutti i nostri programmi"
   const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
   const flashNewsProgram = programs.find(p => p.id === 'flash-news');
-  const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza'); // Trova il programma "In Sicurezza"
+  const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza');
+  const ilMondoInTascaProgram = programs.find(p => p.id === 'il-mondo-in-tasca');
+  const daysOfWarProgram = programs.find(p => p.id === 'daysofwar'); // Programma Days of War
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -52,6 +54,18 @@ const Index = () => {
   if (inSicurezzaProgram && !addedProgramIds.has(inSicurezzaProgram.id)) {
     allOurPrograms.push(inSicurezzaProgram);
     addedProgramIds.add(inSicurezzaProgram.id);
+  }
+
+  // Aggiungi Il mondo in Tasca subito dopo, se esiste e non è già nella lista
+  if (ilMondoInTascaProgram && !addedProgramIds.has(ilMondoInTascaProgram.id)) {
+    allOurPrograms.push(ilMondoInTascaProgram);
+    addedProgramIds.add(ilMondoInTascaProgram.id);
+  }
+
+  // Aggiungi Days of War subito dopo Il mondo in Tasca, se esiste e non è già nella lista
+  if (daysOfWarProgram && !addedProgramIds.has(daysOfWarProgram.id)) {
+    allOurPrograms.push(daysOfWarProgram);
+    addedProgramIds.add(daysOfWarProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
