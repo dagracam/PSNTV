@@ -15,7 +15,7 @@ const Index = () => {
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
   // Ho reinserito 'amici-pelosi' qui
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'doc-nelle-tue-mani', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza'];
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza', 'flash-news']; // ID cambiato qui
 
   // Recupera i programmi speciali e assicurati che siano validi
   const specialPrograms = specialProgramIds
@@ -33,13 +33,16 @@ const Index = () => {
 
   // I programmi "Tutti i nostri programmi" saranno tutti quelli non inclusi in "In Evidenza"
   // e non "Amici Pelosi" (per evitare duplicati se fosse già stato filtrato, ma lo aggiungiamo esplicitamente)
-  const otherPrograms = programs.filter(p => 
+  const allOurPrograms = programs.filter(p => 
     !featuredProgramIds.has(p.id) // Esclude tutti i programmi in evidenza
   );
 
   // Costruisci l'array "Tutti i nostri programmi" con "Amici Pelosi" per primo,
   // se non è già presente nella lista `otherPrograms` (che non dovrebbe esserlo se è in featured)
-  const allOurPrograms = amiciPelosiProgram ? [amiciPelosiProgram, ...otherPrograms] : otherPrograms;
+  // Nota: 'amici-pelosi' è già incluso in specialProgramIds, quindi non verrà aggiunto due volte.
+  // Se volessi che apparisse per primo in "Tutti i nostri programmi" *anche se* è in "In Evidenza",
+  // dovresti modificare la logica di `allOurPrograms` per includerlo esplicitamente e poi rimuoverlo da `otherPrograms` se presente.
+  // Per ora, segue la logica di non duplicare i programmi già in evidenza.
 
 
   // Funzione per scorrere la sezione "In Evidenza"
@@ -107,7 +110,7 @@ const Index = () => {
                     <Link to="/persempre-scugnizzo" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
-                  ) : program.id === 'doc-nelle-tue-mani' ? (
+                  ) : program.id === 'daysofwar' ? ( // ID cambiato qui
                     <Link to="/daysofwar" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
@@ -145,6 +148,10 @@ const Index = () => {
                     </Link>
                   ) : program.id === 'in-sicurezza' ? (
                     <Link to="/insicurezza" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'flash-news' ? (
+                    <Link to="/flashnews" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (

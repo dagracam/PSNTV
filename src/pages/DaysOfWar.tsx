@@ -4,7 +4,7 @@ import { programs } from "@/data/programs"; // Importa i dati reali dei programm
 
 const DaysOfWar: React.FC = () => {
   // Trova il programma "Days of War" per ID
-  const program = programs.find((p) => p.id === 'doc-nelle-tue-mani');
+  const program = programs.find((p) => p.id === 'daysofwar'); // ID cambiato
 
   if (!program) {
     return (
