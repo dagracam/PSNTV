@@ -33,6 +33,7 @@ const Index = () => {
   const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza');
   const ilMondoInTascaProgram = programs.find(p => p.id === 'il-mondo-in-tasca');
   const daysOfWarProgram = programs.find(p => p.id === 'daysofwar'); // Programma Days of War
+  const inThePaintProgram = programs.find(p => p.id === 'in-the-paint'); // Nuovo programma In the Paint
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -66,6 +67,12 @@ const Index = () => {
   if (daysOfWarProgram && !addedProgramIds.has(daysOfWarProgram.id)) {
     allOurPrograms.push(daysOfWarProgram);
     addedProgramIds.add(daysOfWarProgram.id);
+  }
+
+  // Aggiungi In the Paint subito dopo Days of War, se esiste e non è già nella lista
+  if (inThePaintProgram && !addedProgramIds.has(inThePaintProgram.id)) {
+    allOurPrograms.push(inThePaintProgram);
+    addedProgramIds.add(inThePaintProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente

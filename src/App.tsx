@@ -24,6 +24,7 @@ import FlashNews from './pages/FlashNews'; // Import aggiunto per Flash News
 import IntervistaloTu from './pages/IntervistaloTu'; // Import aggiunto per Intervistalo Tu
 import FrescoDiStampa from './pages/FrescoDiStampa'; // Import aggiunto per Fresco di Stampa
 import IlMondoInTasca from './pages/IlMondoInTasca'; // Import aggiunto per Il mondo in Tasca
+import InThePaint from './pages/InThePaint'; // Import aggiunto per In the Paint
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/intervistalotu" element={<IntervistaloTu />} /> {/* Rotta aggiunta per Intervistalo Tu */}
         <Route path="/frescodistampa" element={<FrescoDiStampa />} /> {/* Rotta aggiunta per Fresco di Stampa */}
         <Route path="/ilmondointasca" element={<IlMondoInTasca />} /> {/* Rotta aggiunta per Il mondo in Tasca */}
+        <Route path="/inthepaint" element={<InThePaint />} /> {/* Rotta aggiunta per In the Paint */}
         {/* Rotte per le pagine placeholder dal MoreMenuDialog */}
         <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
       </Routes>

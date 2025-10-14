@@ -130,6 +130,14 @@ export const programs: Program[] = [
     tags: ['viaggi', 'cultura', 'mondo', 'storie', 'geografia'],
   },
   {
+    id: 'in-the-paint', // Nuovo programma "In the Paint"
+    title: 'In the Paint',
+    description: 'Tutto il basket americano e non solo, con approfondimenti, analisi e interviste.',
+    imageUrl: '/images/in the paint.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/In_The_Paint', // URL iframe specificato
+    tags: ['basket', 'nba', 'sport', 'approfondimenti', 'pallacanestro'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
