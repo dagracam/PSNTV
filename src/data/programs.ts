@@ -106,6 +106,14 @@ export const programs: Program[] = [
     tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast', 'vincenzo cautiero', ],
   },
   {
+    id: 'psn-speciale', // Nuovo programma PSN Speciale
+    title: 'PSN Speciale',
+    description: 'Approfondimenti e speciali su eventi e tematiche di rilievo.',
+    imageUrl: '/images/SPECIALE.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/psnspeciale', // URL iframe specificato
+    tags: ['speciale', 'approfondimento', 'eventi', 'attualità'],
+  },
+  {
     id: 'tutto-rugby',
     title: 'Tutto Rugby',
     description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata

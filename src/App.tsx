@@ -28,6 +28,7 @@ import InThePaint from './pages/InThePaint'; // Import aggiunto per In the Paint
 import Libridine from './pages/Libridine'; // Import aggiunto per Libridine
 import PalazzoCivico from './pages/PalazzoCivico'; // Import aggiunto per Palazzo Civico
 import PerSempreChef from './pages/PerSempreChef'; // Import aggiunto per Per Sempre Chef
+import PsnSpeciale from './pages/PsnSpeciale'; // Import aggiunto per PSN Speciale
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/tuttorugby" element={<TuttoRugby />} /> {/* Rotta aggiunta */}
         <Route path="/urbantalk" element={<UrbanTalk />} /> {/* Rotta aggiunta */}
         <Route path="/schole" element={<Schole />} /> {/* Rotta aggiunta */}
+        <Route path="/psnspeciale" element={<PsnSpeciale />} /> {/* Rotta aggiunta per PSN Speciale */}
         <Route path="/flashnews" element={<FlashNews />} /> {/* Rotta aggiunta per Flash News */}
         <Route path="/intervistalotu" element={<IntervistaloTu />} /> {/* Rotta aggiunta per Intervistalo Tu */}
         <Route path="/frescodistampa" element={<FrescoDiStampa />} /> {/* Rotta aggiunta per Fresco di Stampa */}
