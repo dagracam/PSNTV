@@ -98,6 +98,14 @@ export const programs: Program[] = [
     tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano'],
   },
   {
+    id: 'flash-news', // Nuovo programma Flash News
+    title: 'Flash News',
+    description: 'Tutte le ultime notizie in tempo reale, per rimanere sempre aggiornati sugli eventi più importanti.',
+    imageUrl: '/images/FLASH NEWS.png',
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews',
+    tags: ['notizie', 'attualità', 'breaking news', 'informazione'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
@@ -135,7 +143,7 @@ export const programs: Program[] = [
     description: 'Una descrizione generica per il programma extra numero 10.',
     imageUrl: 'https://via.placeholder.com/320x180?text=Programma+10',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    tags: ['extra', 'generico'],
+    tags: ['extra', 'generico', 'documentario'],
   },
   {
     id: 'programma-extra-11',
