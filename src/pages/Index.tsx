@@ -8,6 +8,27 @@ import { Program } from "@/types/program";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+<!-- HTML Meta Tags -->
+<title>PSN TV</title>
+<meta name="description" content="">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://psntv.it">
+<meta property="og:type" content="website">
+<meta property="og:title" content="index">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="psntv.it">
+<meta property="twitter:url" content="https://psntv.it">
+<meta name="twitter:title" content="index">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
   const newArrivalsRef = useDragScroll<HTMLDivElement>();
