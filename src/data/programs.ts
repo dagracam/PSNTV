@@ -114,6 +114,14 @@ export const programs: Program[] = [
     tags: ['interviste', 'francesca corizza', 'attualità', 'persone'],
   },
   {
+    id: 'fresco-di-stampa', // Nuovo programma "Fresco di Stampa"
+    title: 'Fresco di Stampa',
+    description: 'Le ultime novità editoriali e approfondimenti sul mondo dei libri e della cultura, con Rosario Lavorgna.',
+    imageUrl: '/images/FRESCO DI STAMPA.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/frescodistampa', // URL iframe specificato
+    tags: ['libri', 'cultura', 'editoria', 'rosario lavorgna', 'stampa'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',

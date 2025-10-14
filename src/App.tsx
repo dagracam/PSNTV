@@ -22,6 +22,7 @@ import AboutUsPage from './pages/AboutUsPage'; // Import aggiunto per la pagina 
 import PlaceholderPage from './pages/PlaceholderPage'; // Import aggiunto per le pagine placeholder
 import FlashNews from './pages/FlashNews'; // Import aggiunto per Flash News
 import IntervistaloTu from './pages/IntervistaloTu'; // Import aggiunto per Intervistalo Tu
+import FrescoDiStampa from './pages/FrescoDiStampa'; // Import aggiunto per Fresco di Stampa
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/schole" element={<Schole />} /> {/* Rotta aggiunta */}
         <Route path="/flashnews" element={<FlashNews />} /> {/* Rotta aggiunta per Flash News */}
         <Route path="/intervistalotu" element={<IntervistaloTu />} /> {/* Rotta aggiunta per Intervistalo Tu */}
+        <Route path="/frescodistampa" element={<FrescoDiStampa />} /> {/* Rotta aggiunta per Fresco di Stampa */}
         {/* Rotte per le pagine placeholder dal MoreMenuDialog */}
         <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
       </Routes>
