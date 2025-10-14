@@ -32,8 +32,10 @@ const Index = () => {
   const flashNewsProgram = programs.find(p => p.id === 'flash-news');
   const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza');
   const ilMondoInTascaProgram = programs.find(p => p.id === 'il-mondo-in-tasca');
-  const daysOfWarProgram = programs.find(p => p.id === 'daysofwar'); // Programma Days of War
-  const inThePaintProgram = programs.find(p => p.id === 'in-the-paint'); // Nuovo programma In the Paint
+  const daysOfWarProgram = programs.find(p => p.id === 'daysofwar');
+  const inThePaintProgram = programs.find(p => p.id === 'in-the-paint');
+  const frescoDiStampaProgram = programs.find(p => p.id === 'fresco-di-stampa'); // Trova Fresco di Stampa
+  const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click'); // Trova La Salute in un Click
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -73,6 +75,18 @@ const Index = () => {
   if (inThePaintProgram && !addedProgramIds.has(inThePaintProgram.id)) {
     allOurPrograms.push(inThePaintProgram);
     addedProgramIds.add(inThePaintProgram.id);
+  }
+
+  // Aggiungi Fresco di Stampa dopo In the Paint, se esiste e non è già nella lista
+  if (frescoDiStampaProgram && !addedProgramIds.has(frescoDiStampaProgram.id)) {
+    allOurPrograms.push(frescoDiStampaProgram);
+    addedProgramIds.add(frescoDiStampaProgram.id);
+  }
+
+  // Aggiungi La Salute in un Click dopo Fresco di Stampa, se esiste e non è già nella lista
+  if (laSaluteInUnClickProgram && !addedProgramIds.has(laSaluteInUnClickProgram.id)) {
+    allOurPrograms.push(laSaluteInUnClickProgram);
+    addedProgramIds.add(laSaluteInUnClickProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
