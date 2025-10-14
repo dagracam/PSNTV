@@ -106,6 +106,14 @@ export const programs: Program[] = [
     tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano'],
   },
   {
+    id: 'intervistalo-tu', // Nuovo programma "Intervistalo Tu"
+    title: 'Intervistalo Tu',
+    description: 'Un programma ideato da Francesca Corizza.',
+    imageUrl: '/images/intervistalo tu.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Intervistalo_Tu', // URL iframe specificato
+    tags: ['interviste', 'francesca corizza', 'attualità', 'persone'],
+  },
+  {
     id: 'il-paradiso-delle-signore',
     title: 'Il Paradiso delle Signore',
     description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
