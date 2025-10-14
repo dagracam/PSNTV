@@ -28,7 +28,7 @@ const FlashNews: React.FC = () => {
           <iframe
             width="100%"
             height="415"
-            src=https://web.psntv.eu/embed-playlist/persemprenews/FlashNews
+            src="https://web.psntv.eu/embed-playlist/persemprenews/FlashNews"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
