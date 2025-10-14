@@ -24,32 +24,40 @@ const Index = () => {
   // I programmi "In Evidenza" saranno ora solo i programmi speciali esplicitamente definiti.
   const featuredPrograms = specialPrograms;
 
-  // Identifica gli ID dei programmi già inclusi in "In Evidenza"
-  const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
-
-  // Trova Amici Pelosi e Flash News specificamente
+  // Trova Amici Pelosi, Flash News e In Sicurezza specificamente
   const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
   const flashNewsProgram = programs.find(p => p.id === 'flash-news');
+  const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza'); // Trova il programma In Sicurezza
 
   // Inizializza la lista per "Tutti i nostri programmi"
-  let allOurPrograms: Program[] = [];
+  const allOurPrograms: Program[] = [];
+  const addedToAllOurPrograms = new Set<string>(); // Per tenere traccia dei programmi già aggiunti
 
   // Aggiungi Amici Pelosi per primo, se esiste
   if (amiciPelosiProgram) {
     allOurPrograms.push(amiciPelosiProgram);
+    addedToAllOurPrograms.add(amiciPelosiProgram.id);
   }
 
   // Aggiungi Flash News subito dopo, se esiste e non è già nella lista
-  if (flashNewsProgram && !allOurPrograms.some(p => p.id === flashNewsProgram.id)) {
+  if (flashNewsProgram && !addedToAllOurPrograms.has(flashNewsProgram.id)) {
     allOurPrograms.push(flashNewsProgram);
+    addedToAllOurPrograms.add(flashNewsProgram.id);
   }
 
-  // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono Amici Pelosi o Flash News (per evitare duplicati)
-  const otherNonFeaturedPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) && p.id !== 'amici-pelosi' && p.id !== 'flash-news'
-  );
+  // Aggiungi In Sicurezza subito dopo, se esiste e non è già nella lista
+  if (inSicurezzaProgram && !addedToAllOurPrograms.has(inSicurezzaProgram.id)) {
+    allOurPrograms.push(inSicurezzaProgram);
+    addedToAllOurPrograms.add(inSicurezzaProgram.id);
+  }
 
-  allOurPrograms = [...allOurPrograms, ...otherNonFeaturedPrograms];
+  // Aggiungi tutti gli altri programmi che non sono stati ancora aggiunti
+  programs.forEach(program => {
+    if (!addedToAllOurPrograms.has(program.id)) {
+      allOurPrograms.push(program);
+      addedToAllOurPrograms.add(program.id);
+    }
+  });
 
 
   // Funzione per scorrere la sezione "In Evidenza"
