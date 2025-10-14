@@ -27,7 +27,15 @@ const FlashNews: React.FC = () => {
         </p>
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
-          <iframe width="50%" height="415" src="https://web.psntv.eu/embed-playlist/persemprenews/FlashNews" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <iframe
+            width="100%"
+            height="545"
+            src={program.videoUrl} // Usa l'URL del video specifico del programma dai dati
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+          ></iframe>
         </div>
       </div>
     </Layout>
