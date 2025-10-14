@@ -31,7 +31,7 @@ export const programs: Program[] = [
     description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D\'AMORE.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato
-    tags: ['amore', 'relazioni', 'sentimenti', 'storie'], // Tag per il nuovo programma
+    tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
   },
   {
     id: 'la-salute-in-un-click', // Nuovo ID per il programma
@@ -39,7 +39,7 @@ export const programs: Program[] = [
     description: 'Approfondimenti e consigli per il benessere e la salute, a portata di click.', // Descrizione per il nuovo programma
     imageUrl: '/images/LA SALUTE IN UN CLICK.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaSaluteinUnClick', // URL video aggiornato
-    tags: ['salute', 'benessere', 'medicina', 'consigli'], // Tag per il nuovo programma
+    tags: ['salute', 'benessere', 'medicina', 'consigli', 'la salute in un click', 'rosario lavorgna', 'lavorgna', 'dottor saverio annunziata', 'saverio annunziata', 'annunziata', 'salute','medici',], // Tag per il nuovo programma
   },
   {
     id: 'la-vita-questo-palcoscenico', // Nuovo ID per il programma
@@ -47,7 +47,7 @@ export const programs: Program[] = [
     description: 'Un viaggio attraverso le storie di vita, le sfide e i trionfi, come in un grande palcoscenico.', // Descrizione per il nuovo programma
     imageUrl: '/images/LA VITA QUESTO PALCOSCENICO.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaVitaquestoPalcoscenico', // URL video aggiornato
-    tags: ['vita', 'storie', 'palcoscenico', 'emozioni'], // Tag per il nuovo programma
+    tags: ['vita', 'storie', 'palcoscenico', 'emozioni', 'federica avallone', 'mimmo annunziata', 'domenico annunziata', 'teatro', 'chicca avallone'], // Tag per il nuovo programma
   },
   {
     id: 'doc-nelle-tue-mani',
@@ -79,7 +79,7 @@ export const programs: Program[] = [
     description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata
     imageUrl: '/images/TUTTO RUGBY.jpg', // Nuova immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby', // URL dell'iframe
-    tags: ['rugby', 'sport', 'notizie', 'approfondimenti'],
+    tags: ['rugby', 'sport', 'notizie', 'approfondimenti', 'max de falco', 'massimiliano de falco', 'de falco', 'rugby', 'fir', 'italrugby', 'sei nazioni', 'six nations'],
   },
   {
     id: 'urban-talk',
@@ -87,7 +87,7 @@ export const programs: Program[] = [
     description: 'Urban Talk è il programma che esplora le voci e le storie della strada, con interviste e approfondimenti che danno voce alla gente.',
     imageUrl: '/images/URBAN TALK.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/urbantalk',
-    tags: ['cultura', 'urbana', 'interviste', 'società'],
+    tags: ['cultura', 'urbana', 'interviste', 'società', 'tiziana castaldo', 'tiziana', 'urban talk',],
   },
   {
     id: 'amici-pelosi',
@@ -95,7 +95,7 @@ export const programs: Program[] = [
     description: 'Con il dottor Luciano Ubaldo, la rubrica di approfondimento sui nostri amici a 4 zampe.',
     imageUrl: '/images/AMICI PELOSI.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi', // Aggiornato con il nuovo URL
-    tags: ['animali', 'veterinario', 'approfondimento', 'benessere'],
+    tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali',],
   },
   {
     id: 'il-paradiso-delle-signore',
