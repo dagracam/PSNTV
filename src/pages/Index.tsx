@@ -11,45 +11,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Index = () => {
   const featuredRef = useDragScroll<HTMLDivElement>();
-  const newArrivalsRef = useDragScroll<HTMLDivElement>(); // Questo ref non è più usato per lo scroll dei "nuovi arrivi" ma lo lascio per coerenza se volessi riutilizzarlo
+  const newArrivalsRef = useRef<HTMLDivElement>(null); // Questo ref non è più usato per lo scroll dei "nuovi arrivi" ma lo lascio per coerenza se volessi riutilizzarlo
 
   // Definisci gli ID dei programmi speciali che devono apparire per primi in "In Evidenza"
-  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza'];
+  const specialProgramIds = ['premio-diego-special', 'premio-per-sempre-original', 'daysofwar', 'psn-sport-club', 'tutto-rugby', 'urban-talk', 'schole', 'amici-pelosi', 'parlamidamore', 'la-salute-in-un-click', 'la-vita-questo-palcoscenico', 'in-sicurezza', 'intervistalo-tu', 'fresco-di-stampa', 'il-mondo-in-tasca'];
 
   // Recupera i programmi speciali e assicurati che siano validi
-  const specialPrograms = specialProgramIds
+  const featuredPrograms = specialProgramIds
     .map(id => programs.find(p => p.id === id))
     .filter(Boolean) as Program[];
 
-  // I programmi "In Evidenza" saranno ora solo i programmi speciali esplicitamente definiti.
-  const featuredPrograms = specialPrograms;
-
-  // Identifica gli ID dei programmi già inclusi in "In Evidenza"
-  const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
-
-  // Trova Amici Pelosi e Flash News specificamente
-  const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
-  const flashNewsProgram = programs.find(p => p.id === 'flash-news');
-
-  // Inizializza la lista per "Tutti i nostri programmi"
-  let allOurPrograms: Program[] = [];
-
-  // Aggiungi Amici Pelosi per primo, se esiste
-  if (amiciPelosiProgram) {
-    allOurPrograms.push(amiciPelosiProgram);
-  }
-
-  // Aggiungi Flash News subito dopo, se esiste e non è già nella lista
-  if (flashNewsProgram && !allOurPrograms.some(p => p.id === flashNewsProgram.id)) {
-    allOurPrograms.push(flashNewsProgram);
-  }
-
-  // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono Amici Pelosi o Flash News (per evitare duplicati)
-  const otherNonFeaturedPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) && p.id !== 'amici-pelosi' && p.id !== 'flash-news'
-  );
-
-  allOurPrograms = [...allOurPrograms, ...otherNonFeaturedPrograms];
+  // Per la sezione "Tutti i nostri programmi", includiamo semplicemente tutti i programmi.
+  // La logica di ordinamento specifico per Amici Pelosi e Flash News non è più necessaria qui
+  // se vogliamo che tutti i programmi appaiano in un ordine generale (es. quello definito in programs.ts).
+  // Se fosse necessario un ordinamento specifico, andrebbe implementato qui.
+  const allOurPrograms = programs;
 
 
   // Funzione per scorrere la sezione "In Evidenza"
@@ -155,6 +131,18 @@ const Index = () => {
                     </Link>
                   ) : program.id === 'in-sicurezza' ? (
                     <Link to="/insicurezza" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'intervistalo-tu' ? (
+                    <Link to="/intervistalotu" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'fresco-di-stampa' ? (
+                    <Link to="/frescodistampa" className="group block flex-shrink-0 w-48">
+                      <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
+                    </Link>
+                  ) : program.id === 'il-mondo-in-tasca' ? (
+                    <Link to="/ilmondointasca" className="group block flex-shrink-0 w-48">
                       <ProgramCard program={program} disableLink={true} cardWidthClass="w-48" />
                     </Link>
                   ) : (
