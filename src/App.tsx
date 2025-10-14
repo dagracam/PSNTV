@@ -20,6 +20,7 @@ import UrbanTalk from './pages/UrbanTalk'; // Import aggiunto
 import Schole from './pages/Schole'; // Import aggiunto
 import AboutUsPage from './pages/AboutUsPage'; // Import aggiunto per la pagina "Chi siamo"
 import PlaceholderPage from './pages/PlaceholderPage'; // Import aggiunto per le pagine placeholder
+import FlashNews from './pages/FlashNews'; // Import aggiunto per Flash News
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/tuttorugby" element={<TuttoRugby />} /> {/* Rotta aggiunta */}
         <Route path="/urbantalk" element={<UrbanTalk />} /> {/* Rotta aggiunta */}
         <Route path="/schole" element={<Schole />} /> {/* Rotta aggiunta */}
+        <Route path="/flashnews" element={<FlashNews />} /> {/* Rotta aggiunta per Flash News */}
         {/* Rotte per le pagine placeholder dal MoreMenuDialog */}
         <Route path="/cookie-preferences" element={<PlaceholderPage title="Preferenze dei cookie" />} />
       </Routes>
