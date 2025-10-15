@@ -29,7 +29,8 @@ export const programs: Program[] = [
   {
     id: 'parlamidamore', // Nuovo ID per il programma
     title: 'Parlami d\'amore',
-    description: 'Un programma dedicato alle storie d\'amore, alle relazioni e ai sentimenti che uniscono le persone.', // Descrizione per il nuovo programma
+    description: 'Tiziana Castaldo esplora il mondo dell’amore tra emozioni, sfide e riflessioni sul sentimento più complesso di tutti.
+', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D AMORE.jpg', // Immagine aggiornata come richiesto
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato come richiesto
     tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
@@ -37,7 +38,7 @@ export const programs: Program[] = [
   {
     id: 'per-sempre-chef', // Nuovo programma "Per Sempre Chef"
     title: 'Per Sempre Chef',
-    description: 'Ricette, consigli e segreti per diventare un vero chef, con ospiti e degustazioni.',
+    description: 'Ricette, consigli e segreti spiegati dagli chef dell'APCI.',
     imageUrl: '/images/PER SEMPRE CHEF.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Per_Sempre_Chef', // URL iframe specificato
     tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food'],
