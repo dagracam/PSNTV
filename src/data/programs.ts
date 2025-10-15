@@ -133,7 +133,7 @@ export const programs: Program[] = [
   {
     id: 'turn-up-the-music', // Nuovo programma Turn up the Music
     title: 'Turn up the Music',
-    description: 'Tutto il meglio della musica, con interviste, classifiche e speciali sui tuoi artisti preferiti.',
+    description: 'Tutto il meglio della musica, con interviste e speciali sui tuoi artisti preferiti.',
     imageUrl: '/images/TURN UP THE MUSIC.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/turnupthemusic', // URL iframe specificato
     tags: ['musica', 'interviste', 'classifiche', 'artisti', 'intrattenimento'],
@@ -141,7 +141,7 @@ export const programs: Program[] = [
   {
     id: 'tutto-rugby',
     title: 'Tutto Rugby',
-    description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata
+    description: 'Massimiliano De Falco esplora il mondo del Rugby con notizie, approfondimenti e interviste esclusive.', // Descrizione aggiornata
     imageUrl: '/images/TUTTO RUGBY.jpg', // Nuova immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby', // URL dell'iframe
     tags: ['rugby', 'sport', 'notizie', 'approfondimenti', 'max de falco', 'massimiliano de falco', 'de falco', 'rugby', 'fir', 'italrugby', 'sei nazioni', 'six nations'],
