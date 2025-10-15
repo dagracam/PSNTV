@@ -37,7 +37,7 @@ export const programs: Program[] = [
   {
     id: 'per-sempre-chef', // Nuovo programma "Per Sempre Chef"
     title: 'Per Sempre Chef',
-    description: 'Ricette, consigli e segreti spiegati dagli chef dell'APCI.',
+    description: 'Ricette, consigli e segreti spiegati dagli chef dell\'APCI.',
     imageUrl: '/images/PER SEMPRE CHEF.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Per_Sempre_Chef', // URL iframe specificato
     tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food', 'apci', 'antonio sorrentino'],
