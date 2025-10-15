@@ -128,7 +128,7 @@ export const programs: Program[] = [
     description: 'L\'appuntamento quotidiano con lo sport.',
     imageUrl: '/images/sport selection ok.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Sport_Selection', // URL iframe specificato
-    tags: ['sport', 'highlights', 'analisi', 'calcio', 'basket', 'tennis', 'notizie', 'filippo idone', 'pippo idone'],
+    tags: ['sport', 'highlights', 'analisi', 'calcio', 'basket', 'tennis', 'notizie', 'filippo idone', 'pippo idone', 'calcio', 'basket', 'sinner', 'italia'],
   },
   {
     id: 'turn-up-the-music', // Nuovo programma Turn up the Music
