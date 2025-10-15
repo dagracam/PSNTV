@@ -47,6 +47,7 @@ const Index = () => {
   const psnSportClubProgram = programs.find(p => p.id === 'psn-sport-club');
   const scholeProgram = programs.find(p => p.id === 'schole');
   const psnSpecialeProgram = programs.find(p => p.id === 'psn-speciale');
+  const webgiornaleProgram = programs.find(p => p.id === 'webgiornale'); // Trova Webgiornale
   const sportSelectionProgram = programs.find(p => p.id === 'sport-selection');
   const turnUpTheMusicProgram = programs.find(p => p.id === 'turn-up-the-music');
   const tuttoRugbyProgram = programs.find(p => p.id === 'tutto-rugby'); // Trova Tutto Rugby
@@ -192,6 +193,12 @@ const Index = () => {
   if (urbanTalkProgram && !addedProgramIds.has(urbanTalkProgram.id)) {
     allOurPrograms.push(urbanTalkProgram);
     addedProgramIds.add(urbanTalkProgram.id);
+  }
+
+  // Aggiungi Webgiornale dopo Urban Talk, se esiste e non è già nella lista
+  if (webgiornaleProgram && !addedProgramIds.has(webgiornaleProgram.id)) {
+    allOurPrograms.push(webgiornaleProgram);
+    addedProgramIds.add(webgiornaleProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
