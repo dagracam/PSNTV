@@ -152,7 +152,7 @@ export const programs: Program[] = [
     description: 'Tiziana Castaldo gira Napoli ponendo ogni settimana una nuova domanda ai cittadini: voce alla città.',
     imageUrl: '/images/URBAN TALK.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/urbantalk',
-    tags: ['cultura', 'urbana', 'interviste', 'società', 'tiziana castaldo', 'tiziana', 'urban talk',],
+    tags: ['cultura', 'urbana', 'interviste', 'società', 'tiziana castaldo', 'tiziana', 'urban talk', 'napoli'],
   },
   {
     id: 'zoom-sul-campionato', // Nuovo programma Zoom sul Campionato
@@ -160,7 +160,7 @@ export const programs: Program[] = [
     description: 'Analisi approfondite e commenti sulle partite e i protagonisti del campionato di calcio con Sergio Curcio.',
     imageUrl: '/images/ZOOM SUL CAPIONATO.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/ZoomSulCampionato', // URL iframe specificato
-    tags: ['calcio', 'campionato', 'sport', 'analisi', 'commenti'],
+    tags: ['calcio', 'campionato', 'sport', 'analisi', 'commenti', 'serie a', 'sergio curcio'],
   },
   {
     id: 'amici-pelosi',
