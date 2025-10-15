@@ -117,7 +117,7 @@ export const programs: Program[] = [
     id: 'webgiornale', // Nuovo programma Webgiornale
     title: 'Webgiornale',
     description: 'Il tuo notiziario quotidiano online, con le ultime notizie e approfondimenti dal mondo.',
-    imageUrl: '/images/Webgiornale.png', // Immagine caricata
+    imageUrl: '/images/Webgiornale.png', // Immagine aggiornata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/webgiornale', // URL iframe specificato
     tags: ['notizie', 'attualità', 'informazione', 'online', 'giornale'],
   },
