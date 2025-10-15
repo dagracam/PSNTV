@@ -33,7 +33,6 @@ const Index = () => {
     'flash-news',
     'in-sicurezza',
     'il-mondo-in-tasca',
-    'days-of-war',
     'in-the-paint',
     'fresco-di-stampa',
     'la-salute-in-un-click',
@@ -54,6 +53,7 @@ const Index = () => {
     'tutto-rugby',
     'urban-talk',
     'zoom-sul-campionato', // Questo è l'ultimo programma da mantenere
+    'daysofwar', // Spostato qui dopo 'zoom-sul-campionato'
   ];
 
   // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito
