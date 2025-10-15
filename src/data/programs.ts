@@ -173,7 +173,7 @@ export const programs: Program[] = [
   {
     id: 'intervistalo-tu', // Nuovo programma "Intervistalo Tu"
     title: 'Intervistalo Tu',
-    description: 'Un programma ideato da Francesca Corizza.',
+    description: 'Tutte le interviste della redazione di Per Sempre News raccolte in un unico format diretto e coinvolgente.',
     imageUrl: '/images/intervistalo tu.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Intervistalo_Tu', // URL iframe specificato
     tags: ['interviste', 'francesca corizza', 'attualità', 'persone'],
