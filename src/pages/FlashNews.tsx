@@ -26,8 +26,6 @@ const FlashNews: React.FC = () => {
 
         <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
-            width="100%"
-            height="415"
             // Ora usa il videoUrl dal programma
             src={program.videoUrl} 
             frameBorder="0"

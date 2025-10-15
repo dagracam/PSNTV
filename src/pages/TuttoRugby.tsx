@@ -11,8 +11,6 @@ const TuttoRugby = () => {
         </p>
         <div className="aspect-video w-full max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-xl">
           <iframe
-            width="100%"
-            height="100%"
             src="https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
