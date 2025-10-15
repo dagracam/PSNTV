@@ -31,7 +31,7 @@ const FlashNews: React.FC = () => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full h-full border-0"
+            className="w-full height=545 border-0"
           ></iframe>
         </div>
       </div>
