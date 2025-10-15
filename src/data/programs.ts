@@ -125,7 +125,9 @@ export const programs: Program[] = [
   {
     id: 'sport-selection', // Nuovo programma Sport Selection
     title: 'Sport Selection',
-    description: 'Il meglio dello sport, con highlights, interviste e analisi approfondite.',
+    description: '
+    
+    .',
     imageUrl: '/images/sport selection ok.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Sport_Selection', // URL iframe specificato
     tags: ['sport', 'highlights', 'interviste', 'analisi', 'calcio', 'basket', 'tennis'],
