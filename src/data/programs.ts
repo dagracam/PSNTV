@@ -165,10 +165,10 @@ export const programs: Program[] = [
   {
     id: 'amici-pelosi',
     title: 'Amici Pelosi',
-    description: 'Con il dottor Luciano Ubaldo, la rubrica di approfondimento sui nostri amici a 4 zampe.',
+    description: 'Il Dott. Ubaldo Luciano racconta il mondo degli animali con storie, consigli e curiosità dedicate agli amici a quattro zampe',
     imageUrl: '/images/AMICI PELOSI.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/amicipelosi', // Aggiornato con il nuovo URL
-    tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano'],
+    tags: ['animali', 'veterinario', 'approfondimento', 'benessere', 'animali', 'ubaldo luciano', 'ubaldo luciano'],
   },
   {
     id: 'intervistalo-tu', // Nuovo programma "Intervistalo Tu"
