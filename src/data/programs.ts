@@ -4,10 +4,11 @@ export const programs: Program[] = [
   {
     id: 'in-sicurezza', // Nuovo ID per il programma "In Sicurezza"
     title: 'In Sicurezza',
-    description: 'Un programma dedicato alla sicurezza, con consigli pratici e approfondimenti su come proteggere se stessi e i propri cari.',
+    description: 'Francesca Corizza e Luigi Carfora parlano di sicurezza sul lavoro con imprenditori e professionisti del settore.
+',
     imageUrl: '/images/IN SICUREZZA.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/insicurezza', // URL video specificato
-    tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità', 'luigi carfora', 'francesca corizza'], // Tag per il nuovo programma
+    tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità', 'luigi carfora', 'francesca corizza', 'lavoro'], // Tag per il nuovo programma
   },
   {
     id: 'premio-diego-special', // Aggiunto il programma "Premio per Sempre con Diego"
