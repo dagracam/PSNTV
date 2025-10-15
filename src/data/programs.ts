@@ -122,6 +122,14 @@ export const programs: Program[] = [
     tags: ['sport', 'highlights', 'interviste', 'analisi', 'calcio', 'basket', 'tennis'],
   },
   {
+    id: 'turn-up-the-music', // Nuovo programma Turn up the Music
+    title: 'Turn up the Music',
+    description: 'Tutto il meglio della musica, con interviste, classifiche e speciali sui tuoi artisti preferiti.',
+    imageUrl: '/images/TURN UP THE MUSIC.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/turnupthemusic', // URL iframe specificato
+    tags: ['musica', 'interviste', 'classifiche', 'artisti', 'intrattenimento'],
+  },
+  {
     id: 'tutto-rugby',
     title: 'Tutto Rugby',
     description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata

@@ -30,6 +30,7 @@ import PalazzoCivico from './pages/PalazzoCivico'; // Import aggiunto per Palazz
 import PerSempreChef from './pages/PerSempreChef'; // Import aggiunto per Per Sempre Chef
 import PsnSpeciale from './pages/PsnSpeciale'; // Import aggiunto per PSN Speciale
 import SportSelection from './pages/SportSelection'; // Import aggiunto per Sport Selection
+import TurnUpTheMusic from './pages/TurnUpTheMusic'; // Import aggiunto per Turn up the Music
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/schole" element={<Schole />} /> {/* Rotta aggiunta */}
         <Route path="/psnspeciale" element={<PsnSpeciale />} /> {/* Rotta aggiunta per PSN Speciale */}
         <Route path="/sportselection" element={<SportSelection />} /> {/* Rotta aggiunta per Sport Selection */}
+        <Route path="/turnupthemusic" element={<TurnUpTheMusic />} /> {/* Rotta aggiunta per Turn up the Music */}
         <Route path="/flashnews" element={<FlashNews />} /> {/* Rotta aggiunta per Flash News */}
         <Route path="/intervistalotu" element={<IntervistaloTu />} /> {/* Rotta aggiunta per Intervistalo Tu */}
         <Route path="/frescodistampa" element={<FrescoDiStampa />} /> {/* Rotta aggiunta per Fresco di Stampa */}
