@@ -135,7 +135,7 @@ export const programs: Program[] = [
     description: 'Tutto il meglio della musica, con interviste e speciali sui tuoi artisti preferiti.',
     imageUrl: '/images/TURN UP THE MUSIC.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/turnupthemusic', // URL iframe specificato
-    tags: ['musica', 'interviste', 'classifiche', 'artisti', 'intrattenimento'],
+    tags: ['musica', 'interviste', 'classifiche', 'artisti', 'intrattenimento', 'enzo campagnoli'],
   },
   {
     id: 'tutto-rugby',
