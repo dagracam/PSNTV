@@ -93,7 +93,7 @@ export const programs: Program[] = [
   {
     id: 'psn-sport-club',
     title: 'PSN Sport Club',
-    description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con PSN Sport Club.',
+    description: 'Tutte le ultime notizie e gli approfondimenti dal mondo dello sport con Vincenzo Torino e Claudia Veneziano raccontano lo sport.',
     imageUrl: '/images/psn-sport-club.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/psnsportclub',
     tags: ['sport', 'calcio', 'notizie', 'approfondimenti'],
