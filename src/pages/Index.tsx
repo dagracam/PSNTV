@@ -53,21 +53,14 @@ const Index = () => {
     'turn-up-the-music',
     'tutto-rugby',
     'urban-talk',
-    'zoom-sul-campionato', // Inserito qui come richiesto, dopo Urban Talk
+    'zoom-sul-campionato', // Questo è l'ultimo programma da mantenere
   ];
 
   // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito
-  let allOurPrograms: Program[] = allOurProgramIdsOrder
+  // Rimuoviamo la logica per aggiungere i 'remainingPrograms' per mostrare solo quelli esplicitamente elencati.
+  const allOurPrograms: Program[] = allOurProgramIdsOrder
     .map(id => programs.find(p => p.id === id))
     .filter(Boolean) as Program[];
-
-  // Aggiungi eventuali programmi rimanenti che non sono stati esplicitamente elencati in allOurProgramIdsOrder
-  // e che non sono già presenti in featuredPrograms. Questo assicura che tutti i programmi siano mostrati.
-  const remainingPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) && !allOurProgramIdsOrder.includes(p.id)
-  );
-
-  allOurPrograms = [...allOurPrograms, ...remainingPrograms];
 
 
   // Funzione per scorrere la sezione "In Evidenza"
