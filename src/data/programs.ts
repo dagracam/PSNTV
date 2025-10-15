@@ -85,7 +85,7 @@ export const programs: Program[] = [
   {
     id: 'daysofwar', // ID cambiato da 'doc-nelle-tue-mani'
     title: 'Days of War',
-    description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sulla geopolitica.', // Descrizione mantenuta
+    description: 'Con il Gen. (ris.) Giuseppe Esposito tutti gli aggiornamenti sui conflitti attuali in uno sguardo lucido sulle guerre in corso', // Descrizione mantenuta
     imageUrl: '/images/days-of-war.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/daysofwar', // URL video aggiornato
     tags: ['geopolitica', 'guerra', 'attualità', 'analisi'], // Aggiunti tag
