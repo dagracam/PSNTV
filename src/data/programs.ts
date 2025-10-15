@@ -144,12 +144,12 @@ export const programs: Program[] = [
     description: 'Massimiliano De Falco esplora il mondo del Rugby con notizie, approfondimenti e interviste esclusive.', // Descrizione aggiornata
     imageUrl: '/images/TUTTO RUGBY.jpg', // Nuova immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Tutto_Rugby', // URL dell'iframe
-    tags: ['rugby', 'sport', 'notizie', 'approfondimenti', 'max de falco', 'massimiliano de falco', 'de falco', 'rugby', 'fir', 'italrugby', 'sei nazioni', 'six nations'],
+    tags: ['rugby', 'sport', 'notizie', 'approfondimenti', 'max de falco', 'massimiliano de falco', 'de falco', 'rugby', 'fir', 'italrugby', 'sei nazioni', 'six nations', 'campania ovale'],
   },
   {
     id: 'urban-talk',
     title: 'Urban Talk',
-    description: 'Urban Talk è il programma che esplora le voci e le storie della strada, con interviste e approfondimenti che danno voce alla gente.',
+    description: 'Tiziana Castaldo gira Napoli ponendo ogni settimana una nuova domanda ai cittadini: voce alla città.',
     imageUrl: '/images/URBAN TALK.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/urbantalk',
     tags: ['cultura', 'urbana', 'interviste', 'società', 'tiziana castaldo', 'tiziana', 'urban talk',],
@@ -157,7 +157,7 @@ export const programs: Program[] = [
   {
     id: 'zoom-sul-campionato', // Nuovo programma Zoom sul Campionato
     title: 'Zoom sul Campionato',
-    description: 'Analisi approfondite e commenti sulle partite e i protagonisti del campionato di calcio.',
+    description: 'Analisi approfondite e commenti sulle partite e i protagonisti del campionato di calcio con Sergio Curcio.',
     imageUrl: '/images/ZOOM SUL CAPIONATO.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/ZoomSulCampionato', // URL iframe specificato
     tags: ['calcio', 'campionato', 'sport', 'analisi', 'commenti'],
