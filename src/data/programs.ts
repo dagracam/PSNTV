@@ -101,10 +101,10 @@ export const programs: Program[] = [
   {
     id: 'schole',
     title: 'Scholé',
-    description: 'L\'unico podcast che parla di scuola a 360°. Dalle aule alle relazioni, dall\'apprendimento alle difficoltà quotidiane fino ai temi della salute fisica e psicologica.',
+    description: 'Vincenzo Cautiero e Laura Cascio parlano di scuola a 360°, tra innovazione didattica, educazione e attualità.',
     imageUrl: '/images/SCHOLé.png', // Aggiornato con l'immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/schole', // URL iframe corretto
-    tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast', 'vincenzo cautiero', ],
+    tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast', 'vincenzo cautiero', 'laura cascio', 'scuola'],
   },
   {
     id: 'psn-speciale', // Nuovo programma PSN Speciale
