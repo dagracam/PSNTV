@@ -114,6 +114,14 @@ export const programs: Program[] = [
     tags: ['speciale', 'approfondimento', 'eventi', 'attualità'],
   },
   {
+    id: 'webgiornale', // Nuovo programma Webgiornale
+    title: 'Webgiornale',
+    description: 'Il tuo notiziario quotidiano online, con le ultime notizie e approfondimenti dal mondo.',
+    imageUrl: '/images/Webgiornale.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/webgiornale', // URL iframe specificato
+    tags: ['notizie', 'attualità', 'informazione', 'online', 'giornale'],
+  },
+  {
     id: 'sport-selection', // Nuovo programma Sport Selection
     title: 'Sport Selection',
     description: 'Il meglio dello sport, con highlights, interviste e analisi approfondite.',
@@ -144,6 +152,14 @@ export const programs: Program[] = [
     imageUrl: '/images/URBAN TALK.png',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/urbantalk',
     tags: ['cultura', 'urbana', 'interviste', 'società', 'tiziana castaldo', 'tiziana', 'urban talk',],
+  },
+  {
+    id: 'zoom-sul-campionato', // Nuovo programma Zoom sul Campionato
+    title: 'Zoom sul Campionato',
+    description: 'Analisi approfondite e commenti sulle partite e i protagonisti del campionato di calcio.',
+    imageUrl: '/images/ZOOM SUL CAPIONATO.png', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/ZoomSulCampionato', // URL iframe specificato
+    tags: ['calcio', 'campionato', 'sport', 'analisi', 'commenti'],
   },
   {
     id: 'amici-pelosi',

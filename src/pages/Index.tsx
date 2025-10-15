@@ -48,11 +48,12 @@ const Index = () => {
     'psn-sport-club',
     'schole',
     'psn-speciale',
+    'webgiornale',
     'sport-selection',
     'turn-up-the-music',
     'tutto-rugby',
     'urban-talk',
-    'webgiornale', // Inserito qui come richiesto, dopo Urban Talk
+    'zoom-sul-campionato', // Inserito qui come richiesto, dopo Urban Talk
   ];
 
   // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito
