@@ -24,10 +24,8 @@ const Index = () => {
   // I programmi "In Evidenza" saranno ora solo i programmi speciali esplicitamente definiti.
   const featuredPrograms = specialPrograms;
 
-  // Identifica gli ID dei programmi già inclusi in "In Evidenza"
-  const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
-
   // Definisci l'ordine desiderato degli ID dei programmi per la sezione "Tutti i nostri programmi"
+  // Escludendo i programmi placeholder e quelli già presenti in "In Evidenza"
   const allOurProgramIdsOrder = [
     'amici-pelosi',
     'flash-news',
@@ -43,32 +41,24 @@ const Index = () => {
     'palazzo-civico',
     'parlamidamore',
     'per-sempre-chef',
-    'premio-diego-special',
-    'premio-per-sempre-original',
-    'psn-sport-club',
-    'schole',
     'psn-speciale',
     'webgiornale',
     'sport-selection',
     'turn-up-the-music',
     'tutto-rugby',
     'urban-talk',
-    'zoom-sul-campionato', // Inserito qui come richiesto, dopo Urban Talk
+    'zoom-sul-campionato',
+    'schole',
+    'psn-sport-club',
+    'premio-diego-special',
+    'premio-per-sempre-original',
   ];
 
-  // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito
-  let allOurPrograms: Program[] = allOurProgramIdsOrder
+  // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito e rimuovendo i duplicati con featuredPrograms
+  const allOurPrograms: Program[] = allOurProgramIdsOrder
     .map(id => programs.find(p => p.id === id))
-    .filter(Boolean) as Program[];
-
-  // Aggiungi eventuali programmi rimanenti che non sono stati esplicitamente elencati in allOurProgramIdsOrder
-  // e che non sono già presenti in featuredPrograms. Questo assicura che tutti i programmi siano mostrati.
-  const remainingPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) && !allOurProgramIdsOrder.includes(p.id)
-  );
-
-  allOurPrograms = [...allOurPrograms, ...remainingPrograms];
-
+    .filter(Boolean) // Rimuove eventuali undefined se un ID non corrisponde
+    .filter(program => !specialProgramIds.includes(program.id)) as Program[]; // Rimuove i programmi già in evidenza
 
   // Funzione per scorrere la sezione "In Evidenza"
   const scrollFeatured = (direction: 'left' | 'right') => {
