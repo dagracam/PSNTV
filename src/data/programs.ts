@@ -77,7 +77,7 @@ export const programs: Program[] = [
   {
     id: 'palazzo-civico', // Nuovo programma "Palazzo Civico"
     title: 'Palazzo Civico',
-    description: 'Un programma che esplora le dinamiche della politica locale, le decisioni che influenzano la comunità e le voci dei cittadini.',
+    description: 'Rosa Criscuolo incontra protagonisti della politica per raccontare idee, progetti e attualità istituzionale.',
     imageUrl: '/images/palazzo civico.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Palazzo_Civico', // URL iframe specificato
     tags: ['politica', 'comunità', 'cittadini', 'attualità', 'locale'],
