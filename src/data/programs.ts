@@ -41,7 +41,7 @@ export const programs: Program[] = [
     description: 'Ricette, consigli e segreti spiegati dagli chef dell'APCI.',
     imageUrl: '/images/PER SEMPRE CHEF.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Per_Sempre_Chef', // URL iframe specificato
-    tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food'],
+    tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food', 'apci', 'antonio sorrentino'],
   },
   {
     id: 'flash-news', // Nuovo programma Flash News
@@ -49,7 +49,7 @@ export const programs: Program[] = [
     description: 'Le ultime notizie in tempo reale, aggiornamenti rapidi e approfondimenti sui fatti del giorno.',
     imageUrl: '/images/FLASH NEWS.png', // Immagine di copertina specificata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL iframe corretto per Flash News
-    tags: ['notizie', 'attualità', 'breaking news', 'informazione'],
+    tags: ['notizie', 'attualità', 'breaking news', 'informazione', 'flash news'],
   },
   {
     id: 'la-salute-in-un-click', // Nuovo ID per il programma
