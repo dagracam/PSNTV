@@ -48,7 +48,8 @@ const Index = () => {
   const scholeProgram = programs.find(p => p.id === 'schole');
   const psnSpecialeProgram = programs.find(p => p.id === 'psn-speciale');
   const sportSelectionProgram = programs.find(p => p.id === 'sport-selection');
-  const turnUpTheMusicProgram = programs.find(p => p.id === 'turn-up-the-music'); // Trova Turn up the Music
+  const turnUpTheMusicProgram = programs.find(p => p.id === 'turn-up-the-music');
+  const tuttoRugbyProgram = programs.find(p => p.id === 'tutto-rugby'); // Trova Tutto Rugby
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -178,6 +179,12 @@ const Index = () => {
   if (turnUpTheMusicProgram && !addedProgramIds.has(turnUpTheMusicProgram.id)) {
     allOurPrograms.push(turnUpTheMusicProgram);
     addedProgramIds.add(turnUpTheMusicProgram.id);
+  }
+
+  // Aggiungi Tutto Rugby dopo Turn up the Music, se esiste e non è già nella lista
+  if (tuttoRugbyProgram && !addedProgramIds.has(tuttoRugbyProgram.id)) {
+    allOurPrograms.push(tuttoRugbyProgram);
+    addedProgramIds.add(tuttoRugbyProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
