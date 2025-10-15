@@ -27,186 +27,46 @@ const Index = () => {
   // Identifica gli ID dei programmi già inclusi in "In Evidenza"
   const featuredProgramIds = new Set(featuredPrograms.map(p => p.id));
 
-  // Trova i programmi specifici per la sezione "Tutti i nostri programmi"
-  const amiciPelosiProgram = programs.find(p => p.id === 'amici-pelosi');
-  const flashNewsProgram = programs.find(p => p.id === 'flash-news');
-  const inSicurezzaProgram = programs.find(p => p.id === 'in-sicurezza');
-  const ilMondoInTascaProgram = programs.find(p => p.id === 'il-mondo-in-tasca');
-  const daysOfWarProgram = programs.find(p => p.id === 'daysofwar');
-  const inThePaintProgram = programs.find(p => p.id === 'in-the-paint');
-  const frescoDiStampaProgram = programs.find(p => p.id === 'fresco-di-stampa');
-  const laSaluteInUnClickProgram = programs.find(p => p.id === 'la-salute-in-un-click');
-  const intervistaloTuProgram = programs.find(p => p.id === 'intervistalo-tu');
-  const laVitaQuestoPalcoscenicoProgram = programs.find(p => p.id === 'la-vita-questo-palcoscenico');
-  const libridineProgram = programs.find(p => p.id === 'libridine');
-  const palazzoCivicoProgram = programs.find(p => p.id === 'palazzo-civico');
-  const parlamiDAmoreProgram = programs.find(p => p.id === 'parlamidamore');
-  const perSempreChefProgram = programs.find(p => p.id === 'per-sempre-chef');
-  const premioDiegoSpecialProgram = programs.find(p => p.id === 'premio-diego-special');
-  const premioPerSempreOriginalProgram = programs.find(p => p.id === 'premio-per-sempre-original');
-  const psnSportClubProgram = programs.find(p => p.id === 'psn-sport-club');
-  const scholeProgram = programs.find(p => p.id === 'schole');
-  const psnSpecialeProgram = programs.find(p => p.id === 'psn-speciale');
-  const webgiornaleProgram = programs.find(p => p.id === 'webgiornale'); // Trova Webgiornale
-  const sportSelectionProgram = programs.find(p => p.id === 'sport-selection');
-  const turnUpTheMusicProgram = programs.find(p => p.id === 'turn-up-the-music');
-  const tuttoRugbyProgram = programs.find(p => p.id === 'tutto-rugby'); // Trova Tutto Rugby
-  const urbanTalkProgram = programs.find(p => p.id === 'urban-talk'); // Trova Urban Talk
+  // Definisci l'ordine desiderato degli ID dei programmi per la sezione "Tutti i nostri programmi"
+  const allOurProgramIdsOrder = [
+    'amici-pelosi',
+    'flash-news',
+    'in-sicurezza',
+    'il-mondo-in-tasca',
+    'days-of-war',
+    'in-the-paint',
+    'fresco-di-stampa',
+    'la-salute-in-un-click',
+    'intervistalo-tu',
+    'la-vita-questo-palcoscenico',
+    'libridine',
+    'palazzo-civico',
+    'parlamidamore',
+    'per-sempre-chef',
+    'premio-diego-special',
+    'premio-per-sempre-original',
+    'psn-sport-club',
+    'schole',
+    'psn-speciale',
+    'sport-selection',
+    'turn-up-the-music',
+    'tutto-rugby',
+    'urban-talk',
+    'webgiornale', // Inserito qui come richiesto, dopo Urban Talk
+  ];
 
-  // Inizializza la lista per "Tutti i nostri programmi"
-  let allOurPrograms: Program[] = [];
-  const addedProgramIds = new Set<string>(); // Per tenere traccia dei programmi già aggiunti
+  // Costruisci l'array allOurPrograms basandoti sull'ordine esplicito
+  let allOurPrograms: Program[] = allOurProgramIdsOrder
+    .map(id => programs.find(p => p.id === id))
+    .filter(Boolean) as Program[];
 
-  // Aggiungi Amici Pelosi per primo, se esiste
-  if (amiciPelosiProgram) {
-    allOurPrograms.push(amiciPelosiProgram);
-    addedProgramIds.add(amiciPelosiProgram.id);
-  }
-
-  // Aggiungi Flash News subito dopo, se esiste e non è già nella lista
-  if (flashNewsProgram && !addedProgramIds.has(flashNewsProgram.id)) {
-    allOurPrograms.push(flashNewsProgram);
-    addedProgramIds.add(flashNewsProgram.id);
-  }
-
-  // Aggiungi In Sicurezza subito dopo, se esiste e non è già nella lista
-  if (inSicurezzaProgram && !addedProgramIds.has(inSicurezzaProgram.id)) {
-    allOurPrograms.push(inSicurezzaProgram);
-    addedProgramIds.add(inSicurezzaProgram.id);
-  }
-
-  // Aggiungi Il mondo in Tasca subito dopo, se esiste e non è già nella lista
-  if (ilMondoInTascaProgram && !addedProgramIds.has(ilMondoInTascaProgram.id)) {
-    allOurPrograms.push(ilMondoInTascaProgram);
-    addedProgramIds.add(ilMondoInTascaProgram.id);
-  }
-
-  // Aggiungi Days of War subito dopo Il mondo in Tasca, se esiste e non è già nella lista
-  if (daysOfWarProgram && !addedProgramIds.has(daysOfWarProgram.id)) {
-    allOurPrograms.push(daysOfWarProgram);
-    addedProgramIds.add(daysOfWarProgram.id);
-  }
-
-  // Aggiungi In the Paint subito dopo Days of War, se esiste e non è già nella lista
-  if (inThePaintProgram && !addedProgramIds.has(inThePaintProgram.id)) {
-    allOurPrograms.push(inThePaintProgram);
-    addedProgramIds.add(inThePaintProgram.id);
-  }
-
-  // Aggiungi Fresco di Stampa dopo In the Paint, se esiste e non è già nella lista
-  if (frescoDiStampaProgram && !addedProgramIds.has(frescoDiStampaProgram.id)) {
-    allOurPrograms.push(frescoDiStampaProgram);
-    addedProgramIds.add(frescoDiStampaProgram.id);
-  }
-
-  // Aggiungi La Salute in un Click dopo Fresco di Stampa, se esiste e non è già nella lista
-  if (laSaluteInUnClickProgram && !addedProgramIds.has(laSaluteInUnClickProgram.id)) {
-    allOurPrograms.push(laSaluteInUnClickProgram);
-    addedProgramIds.add(laSaluteInUnClickProgram.id);
-  }
-
-  // Aggiungi Intervistalo Tu dopo La Salute in un Click, se esiste e non è già nella lista
-  if (intervistaloTuProgram && !addedProgramIds.has(intervistaloTuProgram.id)) {
-    allOurPrograms.push(intervistaloTuProgram);
-    addedProgramIds.add(intervistaloTuProgram.id);
-  }
-
-  // Aggiungi La Vita questo Palcoscenico dopo Intervistalo Tu, se esiste e non è già nella lista
-  if (laVitaQuestoPalcoscenicoProgram && !addedProgramIds.has(laVitaQuestoPalcoscenicoProgram.id)) {
-    allOurPrograms.push(laVitaQuestoPalcoscenicoProgram);
-    addedProgramIds.add(laVitaQuestoPalcoscenicoProgram.id);
-  }
-
-  // Aggiungi Libridine dopo La Vita questo Palcoscenico, se esiste e non è già nella lista
-  if (libridineProgram && !addedProgramIds.has(libridineProgram.id)) {
-    allOurPrograms.push(libridineProgram);
-    addedProgramIds.add(libridineProgram.id);
-  }
-
-  // Aggiungi Palazzo Civico dopo Libridine, se esiste e non è già nella lista
-  if (palazzoCivicoProgram && !addedProgramIds.has(palazzoCivicoProgram.id)) {
-    allOurPrograms.push(palazzoCivicoProgram);
-    addedProgramIds.add(palazzoCivicoProgram.id);
-  }
-
-  // Aggiungi Parlami d'amore dopo Palazzo Civico, se esiste e non è già nella lista
-  if (parlamiDAmoreProgram && !addedProgramIds.has(parlamiDAmoreProgram.id)) {
-    allOurPrograms.push(parlamiDAmoreProgram);
-    addedProgramIds.add(parlamiDAmoreProgram.id);
-  }
-
-  // Aggiungi Per Sempre Chef dopo Parlami d'amore, se esiste e non è già nella lista
-  if (perSempreChefProgram && !addedProgramIds.has(perSempreChefProgram.id)) {
-    allOurPrograms.push(perSempreChefProgram);
-    addedProgramIds.add(perSempreChefProgram.id);
-  }
-
-  // Aggiungi Premio per Sempre con Diego dopo Per Sempre Chef, se esiste e non è già nella lista
-  if (premioDiegoSpecialProgram && !addedProgramIds.has(premioDiegoSpecialProgram.id)) {
-    allOurPrograms.push(premioDiegoSpecialProgram);
-    addedProgramIds.add(premioDiegoSpecialProgram.id);
-  }
-
-  // Aggiungi Premio per Sempre Scugnizzo dopo Premio per Sempre con Diego, se esiste e non è già nella lista
-  if (premioPerSempreOriginalProgram && !addedProgramIds.has(premioPerSempreOriginalProgram.id)) {
-    allOurPrograms.push(premioPerSempreOriginalProgram);
-    addedProgramIds.add(premioPerSempreOriginalProgram.id);
-  }
-
-  // Aggiungi PSN Sport Club dopo Premio per Sempre Scugnizzo, se esiste e non è già nella lista
-  if (psnSportClubProgram && !addedProgramIds.has(psnSportClubProgram.id)) {
-    allOurPrograms.push(psnSportClubProgram);
-    addedProgramIds.add(psnSportClubProgram.id);
-  }
-
-  // Aggiungi Scholé dopo PSN Sport Club, se esiste e non è già nella lista
-  if (scholeProgram && !addedProgramIds.has(scholeProgram.id)) {
-    allOurPrograms.push(scholeProgram);
-    addedProgramIds.add(scholeProgram.id);
-  }
-
-  // Aggiungi PSN Speciale dopo Scholé, se esiste e non è già nella lista
-  if (psnSpecialeProgram && !addedProgramIds.has(psnSpecialeProgram.id)) {
-    allOurPrograms.push(psnSpecialeProgram);
-    addedProgramIds.add(psnSpecialeProgram.id);
-  }
-
-  // Aggiungi Sport Selection dopo PSN Speciale, se esiste e non è già nella lista
-  if (sportSelectionProgram && !addedProgramIds.has(sportSelectionProgram.id)) {
-    allOurPrograms.push(sportSelectionProgram);
-    addedProgramIds.add(sportSelectionProgram.id);
-  }
-
-  // Aggiungi Turn up the Music dopo Sport Selection, se esiste e non è già nella lista
-  if (turnUpTheMusicProgram && !addedProgramIds.has(turnUpTheMusicProgram.id)) {
-    allOurPrograms.push(turnUpTheMusicProgram);
-    addedProgramIds.add(turnUpTheMusicProgram.id);
-  }
-
-  // Aggiungi Tutto Rugby dopo Turn up the Music, se esiste e non è già nella lista
-  if (tuttoRugbyProgram && !addedProgramIds.has(tuttoRugbyProgram.id)) {
-    allOurPrograms.push(tuttoRugbyProgram);
-    addedProgramIds.add(tuttoRugbyProgram.id);
-  }
-
-  // Aggiungi Urban Talk dopo Tutto Rugby, se esiste e non è già nella lista
-  if (urbanTalkProgram && !addedProgramIds.has(urbanTalkProgram.id)) {
-    allOurPrograms.push(urbanTalkProgram);
-    addedProgramIds.add(urbanTalkProgram.id);
-  }
-
-  // Aggiungi Webgiornale dopo Urban Talk, se esiste e non è già nella lista
-  if (webgiornaleProgram && !addedProgramIds.has(webgiornaleProgram.id)) {
-    allOurPrograms.push(webgiornaleProgram);
-    addedProgramIds.add(webgiornaleProgram.id);
-  }
-
-  // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente
-  const otherNonFeaturedPrograms = programs.filter(p => 
-    !featuredProgramIds.has(p.id) && !addedProgramIds.has(p.id)
+  // Aggiungi eventuali programmi rimanenti che non sono stati esplicitamente elencati in allOurProgramIdsOrder
+  // e che non sono già presenti in featuredPrograms. Questo assicura che tutti i programmi siano mostrati.
+  const remainingPrograms = programs.filter(p => 
+    !featuredProgramIds.has(p.id) && !allOurProgramIdsOrder.includes(p.id)
   );
 
-  allOurPrograms = [...allOurPrograms, ...otherNonFeaturedPrograms];
+  allOurPrograms = [...allOurPrograms, ...remainingPrograms];
 
 
   // Funzione per scorrere la sezione "In Evidenza"
