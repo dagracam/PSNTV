@@ -120,17 +120,15 @@ export const programs: Program[] = [
     description: 'Il tuo notiziario quotidiano online, con le ultime notizie e approfondimenti dal mondo.',
     imageUrl: '/images/Webgiornale.png', // Immagine aggiornata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/webgiornale', // URL iframe specificato
-    tags: ['notizie', 'attualità', 'informazione', 'online', 'giornale'],
+    tags: ['notizie', 'attualità', 'informazione', 'online', 'giornale', 'rpsario lavorgna'],
   },
   {
     id: 'sport-selection', // Nuovo programma Sport Selection
     title: 'Sport Selection',
-    description: '
-    
-    .',
+    description: 'L\'appuntamento quotidiano con lo sport.',
     imageUrl: '/images/sport selection ok.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Sport_Selection', // URL iframe specificato
-    tags: ['sport', 'highlights', 'interviste', 'analisi', 'calcio', 'basket', 'tennis'],
+    tags: ['sport', 'highlights', 'analisi', 'calcio', 'basket', 'tennis', 'notizie', 'filippo idone', 'pippo idone'],
   },
   {
     id: 'turn-up-the-music', // Nuovo programma Turn up the Music
