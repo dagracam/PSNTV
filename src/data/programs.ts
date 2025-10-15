@@ -61,7 +61,8 @@ export const programs: Program[] = [
   {
     id: 'la-vita-questo-palcoscenico', // Nuovo ID per il programma
     title: 'La Vita questo Palcoscenico',
-    description: 'Un viaggio attraverso le storie di vita, le sfide e i trionfi, come in un grande palcoscenico.', // Descrizione per il nuovo programma
+    description: 'Mimmo Annunziata dà voce al teatro amatoriale con interviste alle compagnie del territorio.
+', // Descrizione per il nuovo programma
     imageUrl: '/images/LA VITA QUESTO PALCOSCENICO.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaVitaquestoPalcoscenico', // URL video aggiornato
     tags: ['vita', 'storie', 'palcoscenico', 'emozioni', 'federica avallone', 'mimmo annunziata', 'domenico annunziata', 'teatro', 'chicca avallone'], // Tag per il nuovo programma
