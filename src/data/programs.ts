@@ -69,7 +69,7 @@ export const programs: Program[] = [
   {
     id: 'libridine', // Nuovo programma "Libridine"
     title: 'Libridine',
-    description: 'Un viaggio affascinante nel mondo dei libri, tra recensioni, interviste agli autori e consigli di lettura.',
+    description: 'Marianna Scagliola dialoga con gli autori: racconti, libri e passioni in uno spazio dedicato alla lettura.',
     imageUrl: '/images/LIBRIDINE.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Libridine', // URL iframe specificato
     tags: ['libri', 'lettura', 'cultura', 'recensioni', 'autori'],
