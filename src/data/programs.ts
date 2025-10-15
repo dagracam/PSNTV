@@ -28,8 +28,7 @@ export const programs: Program[] = [
   {
     id: 'parlamidamore', // Nuovo ID per il programma
     title: 'Parlami d\'amore',
-    description: 'Tiziana Castaldo esplora il mondo dell’amore tra emozioni, sfide e riflessioni sul sentimento più complesso di tutti.
-', // Descrizione per il nuovo programma
+    description: 'Tiziana Castaldo esplora il mondo dell’amore tra emozioni, sfide e riflessioni sul sentimento più complesso di tutti.', // Descrizione per il nuovo programma
     imageUrl: '/images/PARLAMI D AMORE.jpg', // Immagine aggiornata come richiesto
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/parlamidamore', // URL video aggiornato come richiesto
     tags: ['amore', 'relazioni', 'sentimenti', 'storie', 'tiziana castaldo', 'tiziana', 'francesca corizza', 'parlami d '], // Tag per il nuovo programma
@@ -37,7 +36,7 @@ export const programs: Program[] = [
   {
     id: 'per-sempre-chef', // Nuovo programma "Per Sempre Chef"
     title: 'Per Sempre Chef',
-    description: 'Ricette, consigli e segreti spiegati dagli chef dell\'APCI.',
+    description: "Ricette, consigli e segreti spiegati dagli chef dell'APCI.",
     imageUrl: '/images/PER SEMPRE CHEF.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Per_Sempre_Chef', // URL iframe specificato
     tags: ['cucina', 'ricette', 'chef', 'gastronomia', 'food', 'apci', 'antonio sorrentino'],
@@ -101,7 +100,7 @@ export const programs: Program[] = [
   {
     id: 'schole',
     title: 'Scholé',
-    description: 'Vincenzo Cautiero e Laura Cascio parlano di scuola a 360°, tra innovazione didattica, educazione e attualità.',
+    description: 'Vincenzo Cautiero e Laura Cascio parlano di scuola a 360°, tra innovazione didattica, educazione e attualità.',
     imageUrl: '/images/SCHOLé.png', // Aggiornato con l'immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/schole', // URL iframe corretto
     tags: ['cultura', 'approfondimento', 'società', 'filosofia', 'scuola', 'podcast', 'vincenzo cautiero', 'laura cascio', 'scuola'],
