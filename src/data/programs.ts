@@ -15,7 +15,7 @@ export const programs: Program[] = [
     description: 'Il Premio internazionale "Per Sempre con Diego" nasce nel 2021 con lo scopo di dedicare un riconoscimento sportivo nella memoria del campione argentino Diego Armando Maradona. Viene assegnato a tutte le figure, che si impegnano nello sport e nel diffondere la cultura dello sport.',
     imageUrl: '/images/premio-per-sempre-con-diego.jpg',
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_con_Diego',
-    tags: ['maradona', 'calcio', 'napoli', 'premio', 'speciale'],
+    tags: ['maradona', 'calcio', 'napoli', 'premio', 'speciale', 'msc', 'msc world europa', 'malagò', 'abbagnale', 'zazzaroni', 'krol', 'silipo', 'massa', 'domenico sepe', 'sport'],
   },
   {
     id: 'premio-per-sempre-original',
@@ -23,7 +23,7 @@ export const programs: Program[] = [
     description: 'Il Premio “Per Sempre Scugnizzo” è riservato a tutte quelle personalità nazionali ed internazionali della società che hanno contribuito alla crescita economica, lo sviluppo sociale e civile del nostro Paese.', // Descrizione aggiornata
     imageUrl: '/images/premio-per-sempre-scugnizzo.jpg', // Aggiornato all'immagine ottimizzata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Premio_per_Sempre_Scugnizzi', // URL video aggiornato
-    tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli'], // Aggiunti tag
+    tags: ['premio', 'scugnizzo', 'società', 'cultura', 'napoli', 'domenico sepe'], // Aggiunti tag
   },
   {
     id: 'parlamidamore', // Nuovo ID per il programma
@@ -47,7 +47,7 @@ export const programs: Program[] = [
     description: 'Le ultime notizie in tempo reale, aggiornamenti rapidi e approfondimenti sui fatti del giorno.',
     imageUrl: '/images/FLASH NEWS.png', // Immagine di copertina specificata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/FlashNews', // URL iframe corretto per Flash News
-    tags: ['notizie', 'attualità', 'breaking news', 'informazione', 'flash news'],
+    tags: ['notizie', 'attualità', 'breaking news', 'informazione', 'flash news', 'massimiliano de falco', 'max de falco'],
   },
   {
     id: 'la-salute-in-un-click', // Nuovo ID per il programma
@@ -63,7 +63,7 @@ export const programs: Program[] = [
     description: 'Mimmo Annunziata dà voce al teatro amatoriale con interviste alle compagnie del territorio.', // Descrizione per il nuovo programma
     imageUrl: '/images/LA VITA QUESTO PALCOSCENICO.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaVitaquestoPalcoscenico', // URL video aggiornato
-    tags: ['vita', 'storie', 'palcoscenico', 'emozioni', 'federica avallone', 'mimmo annunziata', 'domenico annunziata', 'teatro', 'chicca avallone'], // Tag per il nuovo programma
+    tags: ['vita', 'storie', 'palcoscenico', 'emozioni', 'federica avallone', 'mimmo annunziata', 'domenico annunziata', 'teatro', 'chicca avallone', 'federica avallone', 'maria aprile', 'compagnie teatrali amatoriali', 'teatro', ], // Tag per il nuovo programma
   },
   {
     id: 'libridine', // Nuovo programma "Libridine"
@@ -71,7 +71,7 @@ export const programs: Program[] = [
     description: 'Marianna Scagliola dialoga con gli autori: racconti, libri e passioni in uno spazio dedicato alla lettura.',
     imageUrl: '/images/LIBRIDINE.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Libridine', // URL iframe specificato
-    tags: ['libri', 'lettura', 'cultura', 'recensioni', 'autori'],
+    tags: ['libri', 'lettura', 'cultura', 'recensioni', 'autori', 'marianna scagliola', 'scrittori'],
   },
   {
     id: 'palazzo-civico', // Nuovo programma "Palazzo Civico"
