@@ -4,8 +4,7 @@ export const programs: Program[] = [
   {
     id: 'in-sicurezza', // Nuovo ID per il programma "In Sicurezza"
     title: 'In Sicurezza',
-    description: 'Francesca Corizza e Luigi Carfora parlano di sicurezza sul lavoro con imprenditori e professionisti del settore.
-',
+    description: 'Francesca Corizza e Luigi Carfora parlano di sicurezza sul lavoro con imprenditori e professionisti del settore.',
     imageUrl: '/images/IN SICUREZZA.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/insicurezza', // URL video specificato
     tags: ['sicurezza', 'prevenzione', 'consigli', 'attualità', 'luigi carfora', 'francesca corizza', 'lavoro'], // Tag per il nuovo programma
