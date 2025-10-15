@@ -201,5 +201,5 @@ export const programs: Program[] = [
     imageUrl: '/images/in the paint.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/In_The_Paint', // URL iframe specificato
     tags: ['basket', 'nba', 'sport', 'approfondimenti', 'pallacanestro'],
-  
+  }
 ];
