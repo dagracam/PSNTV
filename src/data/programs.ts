@@ -189,26 +189,18 @@ export const programs: Program[] = [
   {
     id: 'il-mondo-in-tasca', // Nuovo programma "Il mondo in Tasca"
     title: 'Il mondo in Tasca',
-    description: 'Un programma che esplora il mondo, le sue culture e le sue storie, a portata di mano.',
+    description: 'Un programma che esplora i mestieri attraverso gli oggetti.',
     imageUrl: '/images/mondo in tasca.jpg', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/IlMondoinTasca', // URL iframe specificato
-    tags: ['viaggi', 'cultura', 'mondo', 'storie', 'geografia'],
+    tags: ['viaggi', 'cultura', 'mondo', 'storie', 'geografia', 'oggetti', 'laura cascio', 'lavoro'],
   },
   {
     id: 'in-the-paint', // Nuovo programma "In the Paint"
     title: 'In the Paint',
-    description: 'Tutto il basket americano e non solo, con approfondimenti, analisi e interviste.',
+    description: 'Tutto il basket con approfondimenti, analisi e interviste.',
     imageUrl: '/images/in the paint.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/In_The_Paint', // URL iframe specificato
     tags: ['basket', 'nba', 'sport', 'approfondimenti', 'pallacanestro'],
-  },
-  {
-    id: 'il-paradiso-delle-signore',
-    title: 'Il Paradiso delle Signore',
-    description: 'Le vicende del grande magazzino milanese e le vite delle persone che ci lavorano e lo frequentano.',
-    imageUrl: 'https://www.raiplay.it/resizegd/320x180/dl/img/2024/05/23/1716409000000_16x9_1716409000000-il_paradiso_delle_signore.jpg',
-    videoUrl: 'https://www.raiplay.it/video/2024/05/Il-Paradiso-delle-Signore---Puntata-del-23052024-e0211212-2211-4211-8211-221121221122.html',
-    tags: ['fiction', 'rai', 'dramma', 'moda'], // Aggiunti tag
   },
   {
     id: 'un-posto-al-sole',
