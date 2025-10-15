@@ -46,7 +46,8 @@ const Index = () => {
   const premioPerSempreOriginalProgram = programs.find(p => p.id === 'premio-per-sempre-original');
   const psnSportClubProgram = programs.find(p => p.id === 'psn-sport-club');
   const scholeProgram = programs.find(p => p.id === 'schole');
-  const psnSpecialeProgram = programs.find(p => p.id === 'psn-speciale'); // Trova PSN Speciale
+  const psnSpecialeProgram = programs.find(p => p.id === 'psn-speciale');
+  const sportSelectionProgram = programs.find(p => p.id === 'sport-selection'); // Trova Sport Selection
 
   // Inizializza la lista per "Tutti i nostri programmi"
   let allOurPrograms: Program[] = [];
@@ -164,6 +165,12 @@ const Index = () => {
   if (psnSpecialeProgram && !addedProgramIds.has(psnSpecialeProgram.id)) {
     allOurPrograms.push(psnSpecialeProgram);
     addedProgramIds.add(psnSpecialeProgram.id);
+  }
+
+  // Aggiungi Sport Selection dopo PSN Speciale, se esiste e non è già nella lista
+  if (sportSelectionProgram && !addedProgramIds.has(sportSelectionProgram.id)) {
+    allOurPrograms.push(sportSelectionProgram);
+    addedProgramIds.add(sportSelectionProgram.id);
   }
 
   // Aggiungi tutti gli altri programmi che NON sono in "In Evidenza" e NON sono già stati aggiunti esplicitamente

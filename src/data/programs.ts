@@ -114,6 +114,14 @@ export const programs: Program[] = [
     tags: ['speciale', 'approfondimento', 'eventi', 'attualità'],
   },
   {
+    id: 'sport-selection', // Nuovo programma Sport Selection
+    title: 'Sport Selection',
+    description: 'Il meglio dello sport, con highlights, interviste e analisi approfondite.',
+    imageUrl: '/images/sport selection ok.jpg', // Immagine caricata
+    videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/Sport_Selection', // URL iframe specificato
+    tags: ['sport', 'highlights', 'interviste', 'analisi', 'calcio', 'basket', 'tennis'],
+  },
+  {
     id: 'tutto-rugby',
     title: 'Tutto Rugby',
     description: 'Qui trovi tutti gli approfondimenti, le interviste e le analisi sul mondo del rugby.', // Descrizione aggiornata
