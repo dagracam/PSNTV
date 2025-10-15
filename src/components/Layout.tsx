@@ -55,7 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className="container mx-auto px-4 flex-grow">{children}</main>
+      <main className="container mx-auto px-4 flex-grow pb-20 md:pb-0">{children}</main>
       
       {/* Nuovo Footer per il contenuto principale */}
       <footer className="w-full bg-[var(--dyad-footer-bg)] backdrop-blur-sm border-t border-dyad-border p-8 mt-10 text-center hidden md:block">
