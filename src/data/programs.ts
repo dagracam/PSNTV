@@ -54,7 +54,7 @@ export const programs: Program[] = [
   {
     id: 'la-salute-in-un-click', // Nuovo ID per il programma
     title: 'La Salute in un Click',
-    description: 'Approfondimenti e consigli per il benessere e la salute, a portata di click.', // Descrizione per il nuovo programma
+    description: 'Approfondimenti e consigli per il benessere e la salute, con Rosario Lavorgna, il Dott. Saverio Annunziata e medici esperti ', // Descrizione per il nuovo programma
     imageUrl: '/images/LA SALUTE IN UN CLICK.png', // Immagine caricata
     videoUrl: 'https://web.psntv.eu/embed-playlist/persemprenews/LaSaluteinUnClick', // URL video aggiornato
     tags: ['salute', 'benessere', 'medicina', 'consigli', 'la salute in un click', 'rosario lavorgna', 'lavorgna', 'dottor saverio annunziata', 'saverio annunziata', 'annunziata', 'salute','medici',], // Tag per il nuovo programma
